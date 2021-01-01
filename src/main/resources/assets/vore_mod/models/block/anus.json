@@ -1,0 +1,9 @@
+{
+  "parent": "vore_mod:custom/ass",
+  "textures": {
+    "all": "vore_mod:blocks/ass",
+    "particle": "vore_mod:blocks/fleshs",
+    "ass": "vore_mod:blocks/ass",
+    "fleshs": "vore_mod:blocks/fleshs"
+  }
+}

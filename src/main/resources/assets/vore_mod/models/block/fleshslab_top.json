@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab_top",
+  "textures": {
+    "bottom": "vore_mod:blocks/fleshs",
+    "top": "vore_mod:blocks/fleshs",
+    "side": "vore_mod:blocks/fleshs"
+  }
+}

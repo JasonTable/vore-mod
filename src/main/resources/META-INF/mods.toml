@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[31,)"
+
+[[mods]]
+modId="vore_mod"
+version="1.0.0"
+displayName="Vore Mod"
+credits="Created with MCreator - https://mcreator.net/about \ntest"
+displayURL="https://jasontheleech.itch.io/minecraft-vore-mod"
+authors="Jason"
+description='''
+Eat and be eatd.
+'''
+
+[[dependencies.vore_mod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.15.2]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "vore_mod:block/tongue"
+    },
+    "facing=north": {
+      "model": "vore_mod:block/tongue"
+    },
+    "facing=east": {
+      "model": "vore_mod:block/tongue",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "vore_mod:block/tongue",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "vore_mod:block/tongue",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "vore_mod:block/tongue",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

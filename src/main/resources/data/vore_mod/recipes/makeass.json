@@ -1,0 +1,39 @@
+{
+  "group": "vore_mod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "vore_mod:flesh"
+    },
+    "1": {
+      "item": "vore_mod:flesh"
+    },
+    "2": {
+      "item": "vore_mod:flesh"
+    },
+    "3": {
+      "item": "vore_mod:flesh"
+    },
+    "5": {
+      "item": "vore_mod:flesh"
+    },
+    "6": {
+      "item": "vore_mod:flesh"
+    },
+    "7": {
+      "item": "vore_mod:flesh"
+    },
+    "8": {
+      "item": "vore_mod:flesh"
+    }
+  },
+  "result": {
+    "item": "vore_mod:anus",
+    "count": 1
+  }
+}

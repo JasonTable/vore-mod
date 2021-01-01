@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "vore_mod:blood",
+    "vore_mod:blood_flowing",
+    "vore_mod:acid",
+    "vore_mod:acid_flowing",
+    "vore_mod:cum",
+    "vore_mod:cum_flowing"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "group": "vore_mod",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "vore_mod:shit"
+    }
+  ],
+  "result": {
+    "item": "vore_mod:poo",
+    "count": 9
+  }
+}
