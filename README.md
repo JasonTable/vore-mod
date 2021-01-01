@@ -4,7 +4,7 @@ This is my Vore Mod for Minecraft. This mod adds items to the game that can be u
 
 This mod also adds the Shrink Gun. An item that players can use to make other players or mobs eat them.
 
-Currently, I consider this mod a prototype. It is funtional. There are more features that I want to add. But the core features have been added. They are as follows:
+Currently, I consider this mod a prototype. It is functional. There are more features that I want to add. But the core features have been added. They are as follows:
 
 * Adds blocks and fluids for building stomachs.
 * The shrink gun that can be used to make mobs eat the player.
@@ -27,4 +27,4 @@ This mod requires Forge. Installation instructions for Forge can be found online
 
 This mod was created using MCreator. MCreator is a tool that enables people to easily create Forge mods for Minecraft. This mod can be modified using MCreator (or one of its forks) or by editing the source code directly. To modify this mod with MCreator, either clone this repo or download the "MCreator Workspace.zip" file from the GitHub releases or itch.io and import it using the "Import from file..." button in MCreator.
 
-This mod may be redistributed and modified under the terms of the GNU General Public Licence Version 3.
+This mod may be redistributed and modified under the terms of the GNU General Public License Version 3.
