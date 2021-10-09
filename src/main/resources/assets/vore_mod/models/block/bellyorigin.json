@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "vore_mod:blocks/bellyorgin",
+    "particle": "vore_mod:blocks/bellyorgin"
+  }
+}

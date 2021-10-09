@@ -1,0 +1,11 @@
+{
+  "_fv": 24,
+  "_type": "command",
+  "definition": {
+    "commandName": "voredebug",
+    "permissionLevel": "3",
+    "onCommandExecuted": {
+      "name": "VoredebugCommandExecuted"
+    }
+  }
+}

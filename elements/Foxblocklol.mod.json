@@ -1,0 +1,131 @@
+{
+  "_fv": 24,
+  "_type": "block",
+  "definition": {
+    "texture": "fbloxk",
+    "textureTop": "",
+    "textureLeft": "",
+    "textureFront": "fbloxk",
+    "textureRight": "",
+    "textureBack": "",
+    "renderType": 2,
+    "customModelName": "foxrug:default",
+    "rotationMode": 4,
+    "emissiveRendering": false,
+    "displayFluidOverlay": false,
+    "itemTexture": "fbloxk2small",
+    "particleTexture": "",
+    "tintType": "No tint",
+    "isItemTinted": false,
+    "hasTransparency": true,
+    "connectedSides": false,
+    "transparencyType": "SOLID",
+    "disableOffset": false,
+    "boundingBoxes": [
+      {
+        "mx": 1.6,
+        "my": 1.6,
+        "mz": 15.0,
+        "Mx": 14.4,
+        "My": 14.4,
+        "Mz": 16.0,
+        "subtract": false
+      }
+    ],
+    "name": "Fox Block",
+    "specialInfo": [
+      "Fox block that can eat you."
+    ],
+    "hardness": 0.8999999999999999,
+    "resistance": 6.0,
+    "hasGravity": false,
+    "isWaterloggable": true,
+    "creativeTab": {
+      "value": "DECORATIONS"
+    },
+    "destroyTool": "Not specified",
+    "customDrop": {
+      "value": ""
+    },
+    "dropAmount": 0,
+    "useLootTableForDrops": false,
+    "enchantPowerBonus": 0.0,
+    "plantsGrowOn": false,
+    "canRedstoneConnect": false,
+    "lightOpacity": 0,
+    "material": {
+      "value": "CLOTH"
+    },
+    "tickRate": 10,
+    "tickRandomly": false,
+    "isReplaceable": false,
+    "canProvidePower": false,
+    "colorOnMap": "DEFAULT",
+    "creativePickItem": {
+      "value": ""
+    },
+    "offsetType": "NONE",
+    "aiPathNodeType": "DEFAULT",
+    "flammability": 0,
+    "fireSpreadSpeed": 0,
+    "isLadder": false,
+    "slipperiness": 0.6,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "reactionToPushing": "NORMAL",
+    "isNotColidable": true,
+    "isCustomSoundType": false,
+    "soundOnStep": {
+      "value": "CLOTH"
+    },
+    "luminance": 0,
+    "unbreakable": false,
+    "breakHarvestLevel": 1,
+    "spawnParticles": false,
+    "particleToSpawn": {
+      "value": "EXPLOSION_NORMAL"
+    },
+    "particleSpawningShape": "Spread",
+    "particleSpawningRadious": 0.5,
+    "particleAmount": 4,
+    "hasInventory": true,
+    "guiBoundTo": "<NONE>",
+    "openGUIOnRightClick": false,
+    "inventorySize": 0,
+    "inventoryStackSize": 64,
+    "inventoryDropWhenDestroyed": true,
+    "inventoryComparatorPower": true,
+    "inventoryOutSlotIDs": [],
+    "inventoryInSlotIDs": [],
+    "hasEnergyStorage": false,
+    "energyInitial": 0,
+    "energyCapacity": 400000,
+    "energyMaxReceive": 200,
+    "energyMaxExtract": 200,
+    "isFluidTank": false,
+    "fluidCapacity": 8000,
+    "fluidRestrictions": [],
+    "onRightClicked": {
+      "name": "FoxblocklolOnBlockRightClicked"
+    },
+    "onDestroyedByPlayer": {
+      "name": "FoxblocklolBlockDestroyedByPlayer"
+    },
+    "onDestroyedByExplosion": {
+      "name": "FoxblocklolBlockDestroyedByPlayer"
+    },
+    "onStartToDestroy": {
+      "name": "FoxblocklolStartsToDestroy"
+    },
+    "onBlockPlayedBy": {
+      "name": "FoxblocklolBlockIsPlacedBy"
+    },
+    "spawnWorldTypes": [],
+    "restrictionBiomes": [],
+    "blocksToReplace": [],
+    "frequencyPerChunks": 30,
+    "frequencyOnChunk": 16,
+    "minGenerateHeight": 10,
+    "maxGenerateHeight": 118
+  }
+}

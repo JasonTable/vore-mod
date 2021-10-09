@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "vore_mod:blocks/realflesh-rotten",
+    "particle": "vore_mod:blocks/realflesh-rotten"
+  }
+}

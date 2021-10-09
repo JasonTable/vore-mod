@@ -1,0 +1,22 @@
+{
+  "group": "vore_mod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "vore_mod:fleshblock"
+    },
+    "1": {
+      "item": "vore_mod:fleshblock"
+    },
+    "2": {
+      "item": "vore_mod:fleshblock"
+    }
+  },
+  "result": {
+    "item": "vore_mod:flesh_slab",
+    "count": 6
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "vore_mod:custom/poo",
+  "textures": {
+    "all": "vore_mod:blocks/shit",
+    "particle": "vore_mod:blocks/shit",
+    "0": "vore_mod:blocks/shit"
+  }
+}

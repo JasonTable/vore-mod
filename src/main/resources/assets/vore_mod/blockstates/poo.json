@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "vore_mod:block/poo"
+    },
+    "facing=east": {
+      "model": "vore_mod:block/poo",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "vore_mod:block/poo",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "vore_mod:block/poo",
+      "y": 270
+    }
+  }
+}

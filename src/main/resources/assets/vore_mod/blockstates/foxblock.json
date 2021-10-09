@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "vore_mod:block/foxblock"
+    },
+    "facing=east": {
+      "model": "vore_mod:block/foxblock",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "vore_mod:block/foxblock",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "vore_mod:block/foxblock",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "vore_mod:block/foxblock",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "vore_mod:block/foxblock",
+      "x": 90
+    }
+  }
+}

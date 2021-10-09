@@ -1,0 +1,7 @@
+{
+  "_fv": 24,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"event_trigger\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"controls_if\"><value name=\"IF0\"><block type=\"block_nbt_logic_get\"><value name=\"tagName\"><block type=\"text\"><field name=\"TEXT\">tight</field></block></value><value name=\"x\"><block type=\"coord_x\"/></value><value name=\"y\"><block type=\"coord_y\"/></value><value name=\"z\"><block type=\"coord_z\"/></value></block></value><statement name=\"DO0\"><block type=\"entity_setinweb\"><value name=\"entity\"><block type=\"entity_from_deps\"/></value></block></statement></block></next></block><block type=\"java_code\" x=\"134\" y=\"265\"><field name=\"CODE\">entity.setMotionMultiplier(null, new Vec3d(0.5D, (double) 0.15F, 0.5D));</field><comment h=\"141\" pinned=\"false\" w=\"262\">Override the motion multiplier set by the previous funtion to make it slow the player down a bit less than a cobweb does.</comment></block></xml>"
+  }
+}

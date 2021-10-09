@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "vore_mod:block/anus"
+    },
+    "facing=east": {
+      "model": "vore_mod:block/anus",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "vore_mod:block/anus",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "vore_mod:block/anus",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "vore_mod:block/anus",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "vore_mod:block/anus",
+      "x": 90
+    }
+  }
+}

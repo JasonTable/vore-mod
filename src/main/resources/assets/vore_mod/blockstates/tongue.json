@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "vore_mod:block/tongue",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "vore_mod:block/tongue"
+    },
+    "axis=z": {
+      "model": "vore_mod:block/tongue",
+      "x": 90
+    }
+  }
+}

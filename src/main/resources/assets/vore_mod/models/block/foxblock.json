@@ -1,0 +1,8 @@
+{
+  "parent": "vore_mod:custom/foxrug",
+  "textures": {
+    "all": "vore_mod:blocks/fbloxk",
+    "particle": "vore_mod:blocks/fbloxk",
+    "fbloxk": "vore_mod:blocks/fbloxk"
+  }
+}

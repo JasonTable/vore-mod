@@ -1,0 +1,10 @@
+{
+  "_fv": 24,
+  "_type": "fuel",
+  "definition": {
+    "power": 3200,
+    "block": {
+      "value": "CUSTOM:Shit"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "fbloxk": "minecraft:blocks/fbloxk"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.1, 0.1, 0.1 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.1, 0.1, 0.1 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ -16, -16, 15 ], 
+            "to": [ 32, 32, 16 ], 
+            "faces": {
+                "north": { "texture": "#fbloxk", "uv": [ 0, 0, 16, 16 ] },
+                "south": { "texture": "#fbloxk", "uv": [ 0, 0, 16, 16 ] }
+            }
+        }
+    ]
+}

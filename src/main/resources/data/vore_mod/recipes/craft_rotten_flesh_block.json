@@ -1,0 +1,26 @@
+{
+  "group": "vore_mod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "1": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "2": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "3": {
+      "item": "minecraft:rotten_flesh"
+    }
+  },
+  "result": {
+    "item": "vore_mod:rotten_flesh_block",
+    "count": 1
+  }
+}

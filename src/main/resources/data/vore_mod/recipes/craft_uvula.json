@@ -1,0 +1,20 @@
+{
+  "group": "vore_mod",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0",
+    "1"
+  ],
+  "key": {
+    "0": {
+      "item": "vore_mod:flesh"
+    },
+    "1": {
+      "item": "vore_mod:flesh"
+    }
+  },
+  "result": {
+    "item": "vore_mod:uvula",
+    "count": 1
+  }
+}
