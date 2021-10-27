@@ -1,8 +1,8 @@
 {
   "id_map": {
-    "ENTITY": 4,
+    "DIMENSION": 1,
     "GUI": 2,
-    "DIMENSION": 1
+    "ENTITY": 4
   },
   "mod_elements": [
     {
@@ -828,6 +828,10 @@
       "registry_name": "destroy_belly",
       "metadata": {
         "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
           {
             "name": "x",
             "type": "number"

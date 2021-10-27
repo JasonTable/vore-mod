@@ -58,7 +58,7 @@ public class MobSpawnGiveGunProcedure {
 		if (((((!(world.isRemote())) && (world.getWorldInfo().getGameRulesInstance().getBoolean(ShrinkGunMobUseGameRule.gamerule)))
 				&& (((world instanceof World ? (((World) world).getDimensionKey()) : World.OVERWORLD) == (World.OVERWORLD))
 						&& (((entity.getPersistentData().getString("bellyType"))).equals(""))))
-				&& (((entity instanceof FoxEntity) && (Math.random() < 0.05)) || ((entity instanceof ZombieEntity) && (Math.random() < 0.05))))) {
+				&& (((entity instanceof FoxEntity) && (Math.random() < 0.1)) || ((entity instanceof ZombieEntity) && (Math.random() < 0.05))))) {
 			if (entity instanceof LivingEntity) {
 				ItemStack _setstack = new ItemStack(ShrinkGunItem.block);
 				_setstack.setCount((int) 1);
@@ -67,13 +67,30 @@ public class MobSpawnGiveGunProcedure {
 					((ServerPlayerEntity) entity).inventory.markDirty();
 			}
 			if ((entity instanceof FoxEntity)) {
-				entity.setCustomName(new StringTextComponent("Jason the Fox"));
+				{
+					Map<String, Object> $_dependencies = new HashMap<>();
+					$_dependencies.put("entity", entity);
+					GetABellyProcedure.executeProcedure($_dependencies);
+				}
+				if ((Math.random() < 0.5)) {
+					entity.setCustomName(new StringTextComponent("Adam the Fox"));
+				} else {
+					entity.setCustomName(new StringTextComponent("Jason the Fox"));
+					{
+						Map<String, Object> $_dependencies = new HashMap<>();
+						$_dependencies.put("entity", entity);
+						ChangeToAVProcedure.executeProcedure($_dependencies);
+					}
+				}
 			}
 		}
 		{
 			Map<String, Object> $_dependencies = new HashMap<>();
 			$_dependencies.put("entity", entity);
 			GetABellyProcedure.executeProcedure($_dependencies);
+		}
+		if (((entity.getPersistentData().getDouble("voreID")) == 0)) {
+			entity.getPersistentData().putDouble("voreID", (Math.random() * 1000000000));
 		}
 	}
 }

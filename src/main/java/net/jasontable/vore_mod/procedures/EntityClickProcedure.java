@@ -37,8 +37,6 @@ import java.util.Random;
 import java.util.Map;
 import java.util.HashMap;
 
-import com.google.common.collect.ImmutableMap;
-
 public class EntityClickProcedure {
 	@Mod.EventBusSubscriber
 	private static class GlobalTrigger {
@@ -101,6 +99,7 @@ public class EntityClickProcedure {
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+		String dimid = "";
 		if ((((sourceentity instanceof LivingEntity) ? ((LivingEntity) sourceentity).getHeldItemMainhand() : ItemStack.EMPTY)
 				.getItem() == ShrinkGunItem.block)) {
 			VoreModMod.LOGGER.info((((entity.getDisplayName().getString())) + "" + (" was right clicked on with shrink gun by ") + ""
@@ -145,9 +144,13 @@ public class EntityClickProcedure {
 				}
 				sourceentity.getPersistentData().putString("bellyDest", (entity.getPersistentData().getString("bellyType")));
 				sourceentity.getPersistentData().putString("eatenBy", (entity.getDisplayName().getString()));
-				sourceentity.getPersistentData().putString("exitCMD",
-						(("execute in ") + "" + (GetDimensionTPIDProcedure.executeProcedure(ImmutableMap.of("world", world))) + "" + (" run tp @s ")
-								+ "" + (x) + "" + (" ") + "" + (y) + "" + (" ") + "" + (z)));
+				sourceentity.getPersistentData().putDouble("eatenByID", (entity.getPersistentData().getDouble("voreID")));
+				sourceentity.getPersistentData().putDouble("exitX", x);
+				sourceentity.getPersistentData().putDouble("exitY", y);
+				sourceentity.getPersistentData().putDouble("exitZ", z);
+				sourceentity.getPersistentData().putString("exitDIM",
+						((("" + ((world instanceof World ? (((World) world).getDimensionKey()) : World.OVERWORLD))).replace("]", ""))
+								.replace("ResourceKey[minecraft:dimension / ", "")));
 				if ((entity instanceof FoxEntity)) {
 					if (world instanceof World && !world.isRemote()) {
 						((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),

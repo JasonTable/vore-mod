@@ -104,6 +104,7 @@ public class VoredebugCommandExecutedProcedure {
 		}.getText())).equals("destroy"))) {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
 				$_dependencies.put("world", world);
 				$_dependencies.put("x", (Math.floor((x / 48)) * 48));
 				$_dependencies.put("y", 0);

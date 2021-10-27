@@ -61,26 +61,14 @@ public class GetABellyProcedure {
 			System.out.println((((entity.getDisplayName().getString())) + "" + (" got assigned belly name of ") + ""
 					+ ((entity.getPersistentData().getString("bellyType")))));
 			if ((((entity.getPersistentData().getString("bellyType"))).equals("animal"))) {
-				if ((((entity.getDisplayName().getString())).equals("AV"))) {
-					entity.getPersistentData().putDouble("bellyX", (thex + 4));
-					entity.getPersistentData().putDouble("bellyY", 14);
-					entity.getPersistentData().putDouble("bellyZ", (thez + 10));
-				} else {
-					entity.getPersistentData().putDouble("bellyX", (thex + 30));
-					entity.getPersistentData().putDouble("bellyY", 17);
-					entity.getPersistentData().putDouble("bellyZ", (thez + 10));
-				}
+				entity.getPersistentData().putDouble("bellyX", (thex + 30));
+				entity.getPersistentData().putDouble("bellyY", 17);
+				entity.getPersistentData().putDouble("bellyZ", (thez + 10));
 			} else if (((((entity.getPersistentData().getString("bellyType"))).equals("anthro"))
 					|| (((entity.getPersistentData().getString("bellyType"))).equals("rotten")))) {
-				if ((((entity.getDisplayName().getString())).equals("AV"))) {
-					entity.getPersistentData().putDouble("bellyX", (thex + 16));
-					entity.getPersistentData().putDouble("bellyY", 3);
-					entity.getPersistentData().putDouble("bellyZ", (thez + 10));
-				} else {
-					entity.getPersistentData().putDouble("bellyX", (thex + 9));
-					entity.getPersistentData().putDouble("bellyY", 23);
-					entity.getPersistentData().putDouble("bellyZ", (thez + 10));
-				}
+				entity.getPersistentData().putDouble("bellyX", (thex + 9));
+				entity.getPersistentData().putDouble("bellyY", 23);
+				entity.getPersistentData().putDouble("bellyZ", (thez + 10));
 			}
 			if ((((entity.getDisplayName().getString())).equals("AV"))) {
 				entity.getPersistentData().putString("eatText", "[eatee] got shoved up [eater]'s ass");

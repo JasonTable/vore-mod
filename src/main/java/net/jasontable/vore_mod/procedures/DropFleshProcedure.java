@@ -5,7 +5,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
-import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
@@ -116,21 +115,14 @@ public class DropFleshProcedure {
 			}
 		}
 		if ((!(((entity.getPersistentData().getString("bellyType"))).equals("")))) {
-			if (world instanceof ServerWorld) {
-				IWorld _worldorig = world;
-				world = ((ServerWorld) world).getServer()
-						.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("vore_mod:belly")));
-				if (world != null) {
-					{
-						Map<String, Object> $_dependencies = new HashMap<>();
-						$_dependencies.put("world", world);
-						$_dependencies.put("x", (Math.floor(((entity.getPersistentData().getDouble("bellyX")) / 48)) * 48));
-						$_dependencies.put("y", 0);
-						$_dependencies.put("z", (Math.floor(((entity.getPersistentData().getDouble("bellyZ")) / 48)) * 48));
-						DestroyBellyProcedure.executeProcedure($_dependencies);
-					}
-				}
-				world = _worldorig;
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("world", world);
+				$_dependencies.put("x", (Math.floor(((entity.getPersistentData().getDouble("bellyX")) / 48)) * 48));
+				$_dependencies.put("y", 0);
+				$_dependencies.put("z", (Math.floor(((entity.getPersistentData().getDouble("bellyZ")) / 48)) * 48));
+				DestroyBellyProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

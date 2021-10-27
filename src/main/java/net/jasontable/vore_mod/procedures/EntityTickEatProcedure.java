@@ -8,6 +8,7 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.MinecraftForge;
 
+import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
@@ -37,8 +38,7 @@ import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Comparator;
-
-import com.google.common.collect.ImmutableMap;
+import java.util.ArrayList;
 
 public class EntityTickEatProcedure {
 	@Mod.EventBusSubscriber
@@ -126,9 +126,13 @@ public class EntityTickEatProcedure {
 						}
 						entityiterator.getPersistentData().putString("bellyDest", (entity.getPersistentData().getString("bellyType")));
 						entityiterator.getPersistentData().putString("eatenBy", (entity.getDisplayName().getString()));
-						entityiterator.getPersistentData().putString("exitCMD",
-								(("execute in ") + "" + (GetDimensionTPIDProcedure.executeProcedure(ImmutableMap.of("world", world))) + ""
-										+ (" run tp @s ") + "" + (x) + "" + (" ") + "" + (y) + "" + (" ") + "" + (z)));
+						entityiterator.getPersistentData().putDouble("eatenByID", (entity.getPersistentData().getDouble("voreID")));
+						entityiterator.getPersistentData().putDouble("exitX", x);
+						entityiterator.getPersistentData().putDouble("exitY", y);
+						entityiterator.getPersistentData().putDouble("exitZ", z);
+						entityiterator.getPersistentData().putString("exitDIM",
+								((("" + ((world instanceof World ? (((World) world).getDimensionKey()) : World.OVERWORLD))).replace("]", ""))
+										.replace("ResourceKey[minecraft:dimension / ", "")));
 						if ((entity instanceof FoxEntity)) {
 							if (world instanceof World && !world.isRemote()) {
 								((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
@@ -210,6 +214,28 @@ public class EntityTickEatProcedure {
 		}
 		if (((entity.getPersistentData().getDouble("eatCoolDown")) > 0)) {
 			entity.getPersistentData().putDouble("eatCoolDown", ((entity.getPersistentData().getDouble("eatCoolDown")) - 1));
+		}
+		if (((entity.getPersistentData().getDouble("voreID")) != 0)) {
+			if (world instanceof ServerWorld) {
+				IWorld _worldorig = world;
+				world = ((ServerWorld) world).getServer()
+						.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("vore_mod:belly")));
+				if (world != null) {
+					{
+						List<? extends PlayerEntity> _players = new ArrayList<>(world.getPlayers());
+						for (Entity entityiterator : _players) {
+							if (((entityiterator.getPersistentData().getDouble("eatenByID")) == (entity.getPersistentData().getDouble("voreID")))) {
+								entityiterator.getPersistentData().putDouble("exitX", x);
+								entityiterator.getPersistentData().putDouble("exitY", y);
+								entityiterator.getPersistentData().putDouble("exitZ", z);
+								entityiterator.getPersistentData().putString("exitDIM", ((("" + ((entity.world.getDimensionKey()))).replace("]", ""))
+										.replace("ResourceKey[minecraft:dimension / ", "")));
+							}
+						}
+					}
+				}
+				world = _worldorig;
+			}
 		}
 	}
 }

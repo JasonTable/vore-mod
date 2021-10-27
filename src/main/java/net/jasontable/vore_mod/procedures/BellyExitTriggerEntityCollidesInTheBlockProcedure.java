@@ -80,7 +80,10 @@ public class BellyExitTriggerEntityCollidesInTheBlockProcedure {
 									if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 										_ent.world.getServer().getCommandManager().handleCommand(
 												_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-												(entity.getPersistentData().getString("exitCMD")));
+												(("execute in ") + "" + ((entity.getPersistentData().getString("exitDIM"))) + "" + (" run tp @s ")
+														+ "" + ((entity.getPersistentData().getDouble("exitX"))) + "" + (" ") + ""
+														+ ((entity.getPersistentData().getDouble("exitY"))) + "" + (" ") + ""
+														+ ((entity.getPersistentData().getDouble("exitZ")))));
 									}
 								}
 								if (!entityiterator.world.isRemote())
@@ -100,7 +103,10 @@ public class BellyExitTriggerEntityCollidesInTheBlockProcedure {
 						if (!_ent.world.isRemote && _ent.world.getServer() != null) {
 							_ent.world.getServer().getCommandManager().handleCommand(
 									_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-									(entity.getPersistentData().getString("exitCMD")));
+									(("execute in ") + "" + ((entity.getPersistentData().getString("exitDIM"))) + "" + (" run tp @s ") + ""
+											+ ((entity.getPersistentData().getDouble("exitX"))) + "" + (" ") + ""
+											+ ((entity.getPersistentData().getDouble("exitY"))) + "" + (" ") + ""
+											+ ((entity.getPersistentData().getDouble("exitZ")))));
 						}
 					}
 					countmobb = (double) 0;
