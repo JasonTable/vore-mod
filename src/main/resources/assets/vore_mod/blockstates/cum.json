@@ -1,15 +1,7 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "forge:fluid"
-  },
   "variants": {
-    "cum": [
-      {
-        "custom": {
-          "fluid": "cum"
-        }
-      }
-    ]
+    "": {
+      "model": "vore_mod:block/cum"
+    }
   }
 }

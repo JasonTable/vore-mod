@@ -1,126 +1,80 @@
 package net.jasontable.vore_mod.procedures;
 
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.registry.Registry;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.RegistryKey;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.core.Registry;
+import net.minecraft.core.BlockPos;
 
-import net.jasontable.vore_mod.block.BellyoriginBlock;
-import net.jasontable.vore_mod.VoreModMod;
+import net.jasontable.vore_mod.init.VoreModModBlocks;
 
 import java.util.stream.Collectors;
-import java.util.function.Function;
-import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
 
 public class DestroyBellyProcedure {
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				VoreModMod.LOGGER.warn("Failed to load dependency entity for procedure DestroyBelly!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				VoreModMod.LOGGER.warn("Failed to load dependency x for procedure DestroyBelly!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				VoreModMod.LOGGER.warn("Failed to load dependency y for procedure DestroyBelly!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				VoreModMod.LOGGER.warn("Failed to load dependency z for procedure DestroyBelly!");
-			return;
-		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				VoreModMod.LOGGER.warn("Failed to load dependency world for procedure DestroyBelly!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if (world instanceof ServerWorld) {
-			IWorld _worldorig = world;
-			world = ((ServerWorld) world).getServer()
-					.getWorld(RegistryKey.getOrCreateKey(Registry.WORLD_KEY, new ResourceLocation("vore_mod:belly")));
+		if (world instanceof ServerLevel _origLevel) {
+			LevelAccessor _worldorig = world;
+			world = _origLevel.getServer().getLevel(ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("vore_mod:belly")));
 			if (world != null) {
-				if (world instanceof World)
-					((World) world).notifyNeighborsOfStateChange(new BlockPos((int) (x + 24), (int) (y + 24), (int) (z + 24)),
-							((World) world).getBlockState(new BlockPos((int) (x + 24), (int) (y + 24), (int) (z + 24))).getBlock());
 				{
-					List<Entity> _entfound = world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB((x + 24) - (48 / 2d), (y + 24) - (48 / 2d),
-							(z + 24) - (48 / 2d), (x + 24) + (48 / 2d), (y + 24) + (48 / 2d), (z + 24) + (48 / 2d)), null).stream()
-							.sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparing((Function<Entity, Double>) (_entcnd -> _entcnd.getDistanceSq(_x, _y, _z)));
-								}
-							}.compareDistOf((x + 24), (y + 24), (z + 24))).collect(Collectors.toList());
+					final Vec3 _center = new Vec3((x + 24), (y + 24), (z + 24));
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(48 / 2d), e -> true).stream()
+							.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 					for (Entity entityiterator : _entfound) {
-						if (entityiterator instanceof PlayerEntity && !entityiterator.world.isRemote()) {
-							((PlayerEntity) entityiterator).sendStatusMessage(new StringTextComponent("The creature you were inside of has died."),
-									(false));
-						}
-						if (((world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock() == BellyoriginBlock.block)) {
-							if ((((new Object() {
-								public String getValue(IWorld world, BlockPos pos, String tag) {
-									TileEntity tileEntity = world.getTileEntity(pos);
-									if (tileEntity != null)
-										return tileEntity.getTileData().getString(tag);
+						if (entityiterator instanceof Player _player && !_player.level.isClientSide())
+							_player.displayClientMessage(new TextComponent("The creature you were inside of has died."), (false));
+						if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == VoreModModBlocks.BELLYORIGIN.get()) {
+							if ((new Object() {
+								public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+									BlockEntity blockEntity = world.getBlockEntity(pos);
+									if (blockEntity != null)
+										return blockEntity.getTileData().getString(tag);
 									return "";
 								}
-							}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "exitCMD"))).equals("uneat"))) {
+							}.getValue(world, new BlockPos(x, y, z), "exitCMD")).equals("uneat")) {
 								{
 									Entity _ent = entityiterator;
-									if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-										_ent.world.getServer().getCommandManager().handleCommand(
-												_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
-												(("execute in ") + ""
-														+ (((("" + ((entity.world.getDimensionKey()))).replace("]", ""))
-																.replace("ResourceKey[minecraft:dimension / ", "")))
-														+ "" + (" run tp @s ") + "" + ((entity.getPosX())) + "" + (" ") + "" + ((entity.getPosY()))
-														+ "" + (" ") + "" + ((entity.getPosZ()))));
-									}
+									if (!_ent.level.isClientSide() && _ent.getServer() != null)
+										_ent.getServer().getCommands().performCommand(
+												_ent.createCommandSourceStack().withSuppressedOutput().withPermission(4),
+												("execute in "
+														+ (("" + entity.level.dimension()).replace("]", ""))
+																.replace("ResourceKey[minecraft:dimension / ", "")
+														+ " run tp @s " + entity.getX() + " " + entity.getY() + " " + entity.getZ()));
 								}
 							} else {
 								{
 									Entity _ent = entityiterator;
-									if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-										_ent.world.getServer().getCommandManager()
-												.handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4), (new Object() {
-													public String getValue(IWorld world, BlockPos pos, String tag) {
-														TileEntity tileEntity = world.getTileEntity(pos);
-														if (tileEntity != null)
-															return tileEntity.getTileData().getString(tag);
+									if (!_ent.level.isClientSide() && _ent.getServer() != null)
+										_ent.getServer().getCommands().performCommand(
+												_ent.createCommandSourceStack().withSuppressedOutput().withPermission(4), (new Object() {
+													public String getValue(LevelAccessor world, BlockPos pos, String tag) {
+														BlockEntity blockEntity = world.getBlockEntity(pos);
+														if (blockEntity != null)
+															return blockEntity.getTileData().getString(tag);
 														return "";
 													}
-												}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "exitCMD")));
-									}
+												}.getValue(world, new BlockPos(x, y, z), "exitCMD")));
 								}
 							}
 						}
-						if ((!(entityiterator instanceof PlayerEntity))) {
-							if (!entityiterator.world.isRemote())
-								entityiterator.remove();
+						if (!(entityiterator instanceof Player)) {
+							if (!entityiterator.level.isClientSide())
+								entityiterator.discard();
 						}
 					}
 				}
-				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), Blocks.AIR.getDefaultState(), 3);
 			}
 			world = _worldorig;
 		}

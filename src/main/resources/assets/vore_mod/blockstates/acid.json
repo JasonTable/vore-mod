@@ -1,15 +1,7 @@
 {
-  "forge_marker": 1,
-  "defaults": {
-    "model": "forge:fluid"
-  },
   "variants": {
-    "acid": [
-      {
-        "custom": {
-          "fluid": "acid"
-        }
-      }
-    ]
+    "": {
+      "model": "vore_mod:block/acid"
+    }
   }
 }

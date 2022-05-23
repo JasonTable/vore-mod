@@ -1,55 +1,24 @@
 package net.jasontable.vore_mod.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.core.BlockPos;
 
-import net.jasontable.vore_mod.block.BloodBlock;
-import net.jasontable.vore_mod.VoreModMod;
-
-import java.util.Map;
+import net.jasontable.vore_mod.init.VoreModModBlocks;
 
 public class FleshBlockBlockDestroyedByPlayerProcedure {
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				VoreModMod.LOGGER.warn("Failed to load dependency entity for procedure FleshBlockBlockDestroyedByPlayer!");
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
 			return;
-		}
-		if (dependencies.get("x") == null) {
-			if (!dependencies.containsKey("x"))
-				VoreModMod.LOGGER.warn("Failed to load dependency x for procedure FleshBlockBlockDestroyedByPlayer!");
-			return;
-		}
-		if (dependencies.get("y") == null) {
-			if (!dependencies.containsKey("y"))
-				VoreModMod.LOGGER.warn("Failed to load dependency y for procedure FleshBlockBlockDestroyedByPlayer!");
-			return;
-		}
-		if (dependencies.get("z") == null) {
-			if (!dependencies.containsKey("z"))
-				VoreModMod.LOGGER.warn("Failed to load dependency z for procedure FleshBlockBlockDestroyedByPlayer!");
-			return;
-		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				VoreModMod.LOGGER.warn("Failed to load dependency world for procedure FleshBlockBlockDestroyedByPlayer!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
-		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
-		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((!(((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).abilities.isCreativeMode : false)
-				|| ((EnchantmentHelper.getEnchantmentLevel(Enchantments.FIRE_ASPECT,
-						((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY))) > 0)))) {
-			world.setBlockState(new BlockPos((int) x, (int) y, (int) z), BloodBlock.block.getDefaultState(), 3);
+		if (!((entity instanceof Player _plr ? _plr.getAbilities().instabuild : false)
+				|| EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FIRE_ASPECT,
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) > 0)) {
+			world.setBlock(new BlockPos(x, y, z), VoreModModBlocks.BLOOD.get().defaultBlockState(), 3);
 		}
 	}
 }

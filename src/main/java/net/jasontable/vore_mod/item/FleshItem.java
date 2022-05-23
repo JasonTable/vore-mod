@@ -1,39 +1,28 @@
 
 package net.jasontable.vore_mod.item;
 
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.food.FoodProperties;
 
-import net.minecraft.item.UseAction;
-import net.minecraft.item.Rarity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.item.Food;
+public class FleshItem extends Item {
+	public FleshItem() {
+		super(new Item.Properties().tab(CreativeModeTab.TAB_FOOD).stacksTo(64).rarity(Rarity.COMMON)
+				.food((new FoodProperties.Builder()).nutrition(2).saturationMod(0.300000011920929f)
 
-import net.jasontable.vore_mod.VoreModModElements;
-
-@VoreModModElements.ModElement.Tag
-public class FleshItem extends VoreModModElements.ModElement {
-	@ObjectHolder("vore_mod:flesh")
-	public static final Item block = null;
-	public FleshItem(VoreModModElements instance) {
-		super(instance, 8);
+						.meat().build()));
 	}
 
 	@Override
-	public void initElements() {
-		elements.items.add(() -> new FoodItemCustom());
+	public int getUseDuration(ItemStack itemstack) {
+		return 32;
 	}
-	public static class FoodItemCustom extends Item {
-		public FoodItemCustom() {
-			super(new Item.Properties().group(ItemGroup.FOOD).maxStackSize(64).rarity(Rarity.COMMON)
-					.food((new Food.Builder()).hunger(2).saturation(0.300000011920929f).meat().build()));
-			setRegistryName("flesh");
-		}
 
-		@Override
-		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.EAT;
-		}
+	@Override
+	public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
+		return 0F;
 	}
 }

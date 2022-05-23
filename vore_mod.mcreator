@@ -1,9 +1,4 @@
 {
-  "id_map": {
-    "GUI": 2,
-    "ENTITY": 4,
-    "DIMENSION": 1
-  },
   "mod_elements": [
     {
       "name": "FleshBlock",
@@ -11,24 +6,14 @@
       "sortid": 1,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "fleshblock"
-    },
-    {
-      "name": "Flesh",
-      "type": "food",
-      "sortid": 8,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {}
     },
     {
       "name": "Makefleshblock",
       "type": "recipe",
       "sortid": 18,
       "compiles": true,
-      "locked_code": false,
-      "ids": {}
+      "locked_code": false
     },
     {
       "name": "Blood",
@@ -36,7 +21,6 @@
       "sortid": 14,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "metadata": {
         "gb": true
       }
@@ -47,7 +31,6 @@
       "sortid": 19,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "metadata": {
         "dependencies": [
           {
@@ -79,7 +62,6 @@
       "sortid": 20,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "metadata": {
         "dependencies": [
           {
@@ -95,7 +77,6 @@
       "sortid": 15,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "metadata": {
         "gb": true
       }
@@ -106,7 +87,6 @@
       "sortid": 9,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "foxblock"
     },
     {
@@ -114,8 +94,7 @@
       "type": "recipe",
       "sortid": 21,
       "compiles": true,
-      "locked_code": false,
-      "ids": {}
+      "locked_code": false
     },
     {
       "name": "FoxblocklolStartsToDestroy",
@@ -123,7 +102,6 @@
       "sortid": 22,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "metadata": {
         "dependencies": [
           {
@@ -138,8 +116,7 @@
       "type": "block",
       "sortid": 6,
       "compiles": true,
-      "locked_code": false,
-      "ids": {}
+      "locked_code": false
     },
     {
       "name": "Cum",
@@ -147,7 +124,6 @@
       "sortid": 13,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "metadata": {
         "gb": true
       }
@@ -158,7 +134,6 @@
       "sortid": 5,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "shit"
     },
     {
@@ -166,40 +141,35 @@
       "type": "fuel",
       "sortid": 23,
       "compiles": true,
-      "locked_code": false,
-      "ids": {}
+      "locked_code": false
     },
     {
       "name": "Anus",
       "type": "block",
       "sortid": 10,
       "compiles": true,
-      "locked_code": false,
-      "ids": {}
+      "locked_code": false
     },
     {
       "name": "Makeass",
       "type": "recipe",
       "sortid": 24,
       "compiles": true,
-      "locked_code": false,
-      "ids": {}
+      "locked_code": false
     },
     {
       "name": "Tongue",
       "type": "block",
       "sortid": 4,
       "compiles": true,
-      "locked_code": false,
-      "ids": {}
+      "locked_code": false
     },
     {
       "name": "Maketung",
       "type": "recipe",
       "sortid": 25,
       "compiles": true,
-      "locked_code": false,
-      "ids": {}
+      "locked_code": false
     },
     {
       "name": "DropFlesh",
@@ -207,7 +177,6 @@
       "sortid": 26,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "metadata": {
         "dependencies": [
           {
@@ -238,16 +207,14 @@
       "type": "block",
       "sortid": 2,
       "compiles": true,
-      "locked_code": false,
-      "ids": {}
+      "locked_code": false
     },
     {
       "name": "Fleshslabcraft",
       "type": "recipe",
       "sortid": 27,
       "compiles": true,
-      "locked_code": false,
-      "ids": {}
+      "locked_code": false
     },
     {
       "name": "Belly",
@@ -255,7 +222,6 @@
       "sortid": 16,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "metadata": {
         "ep": false
       }
@@ -266,7 +232,6 @@
       "sortid": 28,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "belly_player_enters_dimension",
       "metadata": {
         "dependencies": [
@@ -295,7 +260,6 @@
       "sortid": 29,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "voredebug_command_executed",
       "metadata": {
         "dependencies": [
@@ -332,7 +296,6 @@
       "sortid": 30,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "voredebug"
     },
     {
@@ -341,7 +304,6 @@
       "sortid": 31,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "bellyorigin"
     },
     {
@@ -350,7 +312,6 @@
       "sortid": 32,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "bogui"
     },
     {
@@ -359,7 +320,6 @@
       "sortid": 33,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "bellyorigin_on_block_right_clicked",
       "metadata": {
         "dependencies": [
@@ -392,7 +352,6 @@
       "sortid": 34,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "changag",
       "metadata": {
         "dependencies": [
@@ -429,7 +388,6 @@
       "sortid": 17,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "shrink_gun"
     },
     {
@@ -438,7 +396,6 @@
       "sortid": 35,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "entity_click",
       "metadata": {
         "dependencies": [
@@ -475,7 +432,6 @@
       "sortid": 11,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "small_anus"
     },
     {
@@ -484,7 +440,6 @@
       "sortid": 36,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "small_anus_block_is_placed_by",
       "metadata": {
         "dependencies": [
@@ -517,7 +472,6 @@
       "sortid": 37,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "small_anus_entity_collides_in_the_block",
       "metadata": {
         "dependencies": [
@@ -550,7 +504,6 @@
       "sortid": 38,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "craft_small_anus"
     },
     {
@@ -559,7 +512,6 @@
       "sortid": 39,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "get_a_belly",
       "metadata": {
         "dependencies": [
@@ -576,7 +528,6 @@
       "sortid": 40,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "belly_exit_trigger"
     },
     {
@@ -585,7 +536,6 @@
       "sortid": 41,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "belly_exit_trigger_entity_collides_in_the_block",
       "metadata": {
         "dependencies": [
@@ -614,7 +564,6 @@
       "sortid": 42,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "get_dimension_tpid",
       "metadata": {
         "return_type": "string",
@@ -632,7 +581,6 @@
       "sortid": 12,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "poo"
     },
     {
@@ -641,7 +589,6 @@
       "sortid": 43,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "make_s_block"
     },
     {
@@ -650,7 +597,6 @@
       "sortid": 44,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "break_up_poo"
     },
     {
@@ -659,7 +605,6 @@
       "sortid": 45,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "poo_fuel"
     },
     {
@@ -668,7 +613,6 @@
       "sortid": 46,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "foxblocklol_block_is_placed_by",
       "metadata": {
         "dependencies": [
@@ -701,7 +645,6 @@
       "sortid": 48,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "eatcom_command_executed",
       "metadata": {
         "dependencies": [
@@ -726,7 +669,6 @@
       "sortid": 3,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "rotten_flesh_block"
     },
     {
@@ -735,7 +677,6 @@
       "sortid": 7,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "adminrotflesh"
     },
     {
@@ -744,7 +685,6 @@
       "sortid": 51,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "craft_rotten_flesh_block"
     },
     {
@@ -753,7 +693,6 @@
       "sortid": 52,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "craft_shrink_gun"
     },
     {
@@ -762,7 +701,6 @@
       "sortid": 53,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "foxblocklol_on_block_right_clicked",
       "metadata": {
         "dependencies": [
@@ -795,7 +733,6 @@
       "sortid": 56,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "foxblocklol_block_destroyed_by_player",
       "metadata": {
         "dependencies": [
@@ -824,7 +761,6 @@
       "sortid": 57,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "destroy_belly",
       "metadata": {
         "dependencies": [
@@ -857,7 +793,6 @@
       "sortid": 59,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "innards"
     },
     {
@@ -866,7 +801,6 @@
       "sortid": 60,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "shrink_gun_item_is_craftedsmelted",
       "metadata": {
         "dependencies": [
@@ -903,7 +837,6 @@
       "sortid": 61,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "entity_tick_eat",
       "metadata": {
         "dependencies": [
@@ -936,7 +869,6 @@
       "sortid": 62,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "shrinkGunAllowed",
       "metadata": {
         "type": "logic"
@@ -948,7 +880,6 @@
       "sortid": 63,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "shrinkGunMobUse",
       "metadata": {
         "type": "logic"
@@ -960,7 +891,6 @@
       "sortid": 64,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "mob_spawn_give_gun",
       "metadata": {
         "dependencies": [
@@ -981,7 +911,6 @@
       "sortid": 65,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "uvula"
     },
     {
@@ -990,7 +919,6 @@
       "sortid": 70,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "craft_uvula"
     },
     {
@@ -999,7 +927,6 @@
       "sortid": 71,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "scab"
     },
     {
@@ -1008,7 +935,6 @@
       "sortid": 72,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "blood_update_tick",
       "metadata": {
         "dependencies": [
@@ -1037,7 +963,6 @@
       "sortid": 73,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "scab_update_tick",
       "metadata": {
         "dependencies": [
@@ -1066,7 +991,6 @@
       "sortid": 74,
       "compiles": true,
       "locked_code": false,
-      "ids": {},
       "registry_name": "change_to_av",
       "metadata": {
         "dependencies": [
@@ -1076,6 +1000,14 @@
           }
         ]
       }
+    },
+    {
+      "name": "Flesh",
+      "type": "item",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flesh"
     }
   ],
   "variable_elements": [
@@ -1146,7 +1078,7 @@
   "workspaceSettings": {
     "modid": "vore_mod",
     "modName": "Vore Mod",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Eat and be eatd.",
     "author": "Jason",
     "websiteURL": "https://jasontheleech.itch.io/minecraft-vore-mod",
@@ -1157,10 +1089,10 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.16.5",
+    "currentGenerator": "forge-1.18.2",
     "credits": "Created with MCreator - https://mcreator.net/about \\ntest",
     "modElementsPackage": "net.jasontable.vore_mod",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202100236710
+  "mcreatorVersion": 202200120510
 }

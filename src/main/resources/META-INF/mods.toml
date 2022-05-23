@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[36,)"
+loaderVersion="[40,)"
 license="GNU General Public License version 3 (GPLv3)"
 
 [[mods]]
 modId="vore_mod"
-version="1.1.1"
+version="1.1.2"
 displayName="Vore Mod"
 credits="Created with MCreator - https://mcreator.net/about \ntest"
 displayURL="https://jasontheleech.itch.io/minecraft-vore-mod"
@@ -16,7 +16,7 @@ Eat and be eatd.
 [[dependencies.vore_mod]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.5]"
+    versionRange="[1.18.2]"
     ordering="NONE"
     side="BOTH"
 

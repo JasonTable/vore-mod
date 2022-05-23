@@ -1,75 +1,39 @@
 package net.jasontable.vore_mod.procedures;
 
-import net.minecraftforge.fml.server.ServerLifecycleHooks;
+import net.minecraftforge.server.ServerLifecycleHooks;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ChatType;
-import net.minecraft.util.Util;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.ChatType;
+import net.minecraft.Util;
 
-import net.jasontable.vore_mod.VoreModMod;
-
-import java.util.Map;
 import java.util.HashMap;
 
 public class EatcomCommandExecutedProcedure {
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				VoreModMod.LOGGER.warn("Failed to load dependency entity for procedure EatcomCommandExecuted!");
+	public static void execute(LevelAccessor world, Entity entity, HashMap cmdparams) {
+		if (entity == null || cmdparams == null)
 			return;
-		}
-		if (dependencies.get("cmdparams") == null) {
-			if (!dependencies.containsKey("cmdparams"))
-				VoreModMod.LOGGER.warn("Failed to load dependency cmdparams for procedure EatcomCommandExecuted!");
-			return;
-		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				VoreModMod.LOGGER.warn("Failed to load dependency world for procedure EatcomCommandExecuted!");
-			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		HashMap cmdparams = (HashMap) dependencies.get("cmdparams");
-		IWorld world = (IWorld) dependencies.get("world");
-		if ((entity.hasPermissionLevel((int) 3))) {
-			if (!world.isRemote()) {
-				MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
-				if (mcserv != null)
-					mcserv.getPlayerList().func_232641_a_(
-							new StringTextComponent((((entity.getDisplayName().getString())) + "" + (" used eat ") + "" + ((new Object() {
-								public String getText() {
-									String param = (String) cmdparams.get("0");
-									if (param != null) {
-										return param;
-									}
-									return "";
-								}
-							}.getText())))), ChatType.SYSTEM, Util.DUMMY_UUID);
+		if (entity.hasPermissions(3)) {
+			if (!world.isClientSide()) {
+				MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+				if (_mcserv != null)
+					_mcserv.getPlayerList().broadcastMessage(new TextComponent(
+							(entity.getDisplayName().getString() + " used eat " + (cmdparams.containsKey("0") ? cmdparams.get("0").toString() : ""))),
+							ChatType.SYSTEM, Util.NIL_UUID);
 			}
-			entity.getPersistentData().putString("bellyDest", (new Object() {
-				public String getText() {
-					String param = (String) cmdparams.get("0");
-					if (param != null) {
-						return param;
-					}
-					return "";
-				}
-			}.getText()));
+			entity.getPersistentData().putString("bellyDest", (cmdparams.containsKey("0") ? cmdparams.get("0").toString() : ""));
 			{
 				Entity _ent = entity;
-				if (!_ent.world.isRemote && _ent.world.getServer() != null) {
-					_ent.world.getServer().getCommandManager().handleCommand(_ent.getCommandSource().withFeedbackDisabled().withPermissionLevel(4),
+				if (!_ent.level.isClientSide() && _ent.getServer() != null)
+					_ent.getServer().getCommands().performCommand(_ent.createCommandSourceStack().withSuppressedOutput().withPermission(4),
 							"execute in vore_mod:belly run tp @s ~ ~ ~");
-				}
 			}
 		} else {
-			if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("This is a debug command for OPs only."), (false));
-			}
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(new TextComponent("This is a debug command for OPs only."), (false));
 		}
 	}
 }

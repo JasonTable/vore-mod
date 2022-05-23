@@ -1,23 +1,36 @@
 {
-  "_fv": 24,
-  "_type": "food",
+  "_fv": 28,
+  "_type": "item",
   "definition": {
     "renderType": 0,
     "texture": "flesitem",
     "customModelName": "Normal",
     "name": "Flesh",
     "rarity": "COMMON",
-    "specialInfo": [],
     "creativeTab": {
       "value": "FOOD"
     },
     "stackSize": 64,
+    "enchantability": 0,
+    "useDuration": 32,
+    "toolType": 0.0,
+    "damageCount": 0,
+    "destroyAnyBlock": false,
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "specialInfo": [],
+    "hasGlow": false,
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "hasDispenseBehavior": false,
+    "isFood": true,
     "nutritionalValue": 2,
     "saturation": 0.30000001192092896,
-    "eatingSpeed": 32,
-    "forDogs": true,
+    "isMeat": true,
     "isAlwaysEdible": false,
-    "animation": "eat",
-    "hasGlow": false
+    "animation": "eat"
   }
 }

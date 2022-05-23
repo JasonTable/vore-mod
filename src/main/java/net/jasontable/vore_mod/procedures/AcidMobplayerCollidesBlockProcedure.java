@@ -1,20 +1,12 @@
 package net.jasontable.vore_mod.procedures;
 
-import net.minecraft.util.DamageSource;
-import net.minecraft.entity.Entity;
-
-import net.jasontable.vore_mod.VoreModMod;
-
-import java.util.Map;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.DamageSource;
 
 public class AcidMobplayerCollidesBlockProcedure {
-	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				VoreModMod.LOGGER.warn("Failed to load dependency entity for procedure AcidMobplayerCollidesBlock!");
+	public static void execute(Entity entity) {
+		if (entity == null)
 			return;
-		}
-		Entity entity = (Entity) dependencies.get("entity");
-		entity.attackEntityFrom(DamageSource.GENERIC, (float) 1);
+		entity.hurt(DamageSource.GENERIC, 1);
 	}
 }
