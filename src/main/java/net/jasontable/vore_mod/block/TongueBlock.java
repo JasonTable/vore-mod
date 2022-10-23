@@ -45,21 +45,20 @@ public class TongueBlock extends Block {
 	}
 
 	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		return this.defaultBlockState().setValue(AXIS, context.getClickedFace().getAxis());
+	}
+
+	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
 		if (rot == Rotation.CLOCKWISE_90 || rot == Rotation.COUNTERCLOCKWISE_90) {
-			if ((Direction.Axis) state.getValue(AXIS) == Direction.Axis.X) {
+			if (state.getValue(AXIS) == Direction.Axis.X) {
 				return state.setValue(AXIS, Direction.Axis.Z);
-			} else if ((Direction.Axis) state.getValue(AXIS) == Direction.Axis.Z) {
+			} else if (state.getValue(AXIS) == Direction.Axis.Z) {
 				return state.setValue(AXIS, Direction.Axis.X);
 			}
 		}
 		return state;
-	}
-
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		Direction.Axis axis = context.getClickedFace().getAxis();;
-		return this.defaultBlockState().setValue(AXIS, axis);
 	}
 
 	@Override

@@ -28,3 +28,14 @@ This mod requires Forge. Installation instructions for Forge can be found online
 This mod was created using MCreator. MCreator is a tool that enables people to easily create Forge mods for Minecraft. This mod can be modified using MCreator (or one of its forks) or by editing the source code directly. To modify this mod with MCreator, either clone this repo or download the "MCreator Workspace.zip" file from the GitHub releases or itch.io and import it using the "Import from file..." button in MCreator.
 
 This mod may be redistributed and modified under the terms of the GNU General Public License Version 3.
+
+# Credit
+
+Thanks to [MCreator](https://mcreator.net) for making this possible to do somewhat almost easily.
+
+Block models created with [Blockbench](https://blockbench.net/) and [MrCrayfish's Model Creator](https://mrcrayfish.com/tools?id=mc)
+
+Yawning fox photo is 'Pickles' by [Peter Trimming](https://www.flickr.com/photos/peter-trimming/5626627741/in/photostream/)
+
+Stomach and heartbeat sounds from freesound.org.
+

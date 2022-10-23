@@ -1,11 +1,9 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "command",
   "definition": {
     "commandName": "voredebug",
     "permissionLevel": "3",
-    "onCommandExecuted": {
-      "name": "VoredebugCommandExecuted"
-    }
+    "argsxml": "<xml><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"old_command\"><field name=\"procedure\">VoredebugCommandExecuted</field></block></next></block></xml>"
   }
 }

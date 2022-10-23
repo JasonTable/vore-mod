@@ -137,13 +137,6 @@
       "registry_name": "shit"
     },
     {
-      "name": "Shitfuel",
-      "type": "fuel",
-      "sortid": 23,
-      "compiles": true,
-      "locked_code": false
-    },
-    {
       "name": "Anus",
       "type": "block",
       "sortid": 10,
@@ -518,6 +511,10 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -598,14 +595,6 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "break_up_poo"
-    },
-    {
-      "name": "PooFuel",
-      "type": "fuel",
-      "sortid": 45,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "poo_fuel"
     },
     {
       "name": "FoxblocklolBlockIsPlacedBy",
@@ -1008,6 +997,33 @@
       "compiles": true,
       "locked_code": false,
       "registry_name": "flesh"
+    },
+    {
+      "name": "Shitfuel",
+      "type": "itemextension",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shitfuel"
+    },
+    {
+      "name": "PooFuel",
+      "type": "itemextension",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "poo_fuel"
+    },
+    {
+      "name": "Vorebose",
+      "type": "gamerule",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vorebose",
+      "metadata": {
+        "type": "logic"
+      }
     }
   ],
   "variable_elements": [
@@ -1022,9 +1038,34 @@
       "type": "logic",
       "scope": "map",
       "value": "true"
+    },
+    {
+      "name": "verboses",
+      "type": "logic",
+      "scope": "global",
+      "value": "true"
     }
   ],
-  "sound_elements": [],
+  "sound_elements": [
+    {
+      "name": "heart_beat",
+      "files": [
+        "571204__samuelgremaud__heartbeat"
+      ],
+      "category": "neutral",
+      "subtitle": "Beating"
+    },
+    {
+      "name": "stomach_gurgles",
+      "files": [
+        "202945__sribubba__stomach-gurgle-2",
+        "414975__borygmi__groaning1",
+        "523824__garuda1982__digestion-belly-stomach-sounds"
+      ],
+      "category": "neutral",
+      "subtitle": "Gurgling"
+    }
+  ],
   "language_map": {
     "en_us": {
       "item.vore_mod.acid_bucket": "Acid Bucket",
@@ -1043,12 +1084,14 @@
       "fluid.blood": "Blood",
       "fluid.vore_mod.blood": "Blood",
       "tile.shit.name": "Shit Block",
+      "subtitles.heart_beat": "Beating",
       "fluid.cum": "Cum",
       "fluid.vore_mod.cum": "Cum",
       "gamerule.shrinkGunMobUse.description": "Can mobs that are holding a Shrink Gun use it to eat other mobs?",
       "tile.fleshblock.name": "Flesh Block",
       "block.vore_mod.anus": "Anus",
       "fluid.vore_mod.acid": "Acid",
+      "subtitles.stomach_gurgles": "Gurgling",
       "item.vore_mod.flesh": "Flesh",
       "block.vore_mod.poo": "Poo",
       "item.vore_mod.belly": "Belly Portal Igniter",
@@ -1063,9 +1106,11 @@
       "item.vore_mod.shrink_gun": "Shrink Gun",
       "block.vore_mod.scab": "Scab",
       "tile.anus.name": "Anus",
+      "gamerule.vorebose": "Vorebose",
       "fluid.acid": "Acid",
       "block.vore_mod.tongue": "Tongue",
       "tile.tongue.name": "Tongue",
+      "gamerule.vorebose.description": "Verbose console output from the vore mod.",
       "biome.vore_mod.innards": "Innards",
       "item.vore_mod.cum_bucket": "Cum Bucket",
       "gamerule.shrinkGunMobUse": "Shrink Gun Mob Use"
@@ -1094,5 +1139,5 @@
     "modElementsPackage": "net.jasontable.vore_mod",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200120510
+  "mcreatorVersion": 202200234517
 }

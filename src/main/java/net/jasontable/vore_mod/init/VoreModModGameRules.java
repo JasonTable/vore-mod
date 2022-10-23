@@ -14,4 +14,6 @@ public class VoreModModGameRules {
 			GameRules.BooleanValue.create(true));
 	public static final GameRules.Key<GameRules.BooleanValue> SHRINKGUNMOBUSE = GameRules.register("shrinkGunMobUse", GameRules.Category.MOBS,
 			GameRules.BooleanValue.create(true));
+	public static final GameRules.Key<GameRules.BooleanValue> VOREBOSE = GameRules.register("vorebose", GameRules.Category.MISC,
+			GameRules.BooleanValue.create(false));
 }

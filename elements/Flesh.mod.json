@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "item",
   "definition": {
     "renderType": 0,
@@ -25,7 +25,6 @@
     "hasGlow": false,
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "hasDispenseBehavior": false,
     "isFood": true,
     "nutritionalValue": 2,
     "saturation": 0.30000001192092896,

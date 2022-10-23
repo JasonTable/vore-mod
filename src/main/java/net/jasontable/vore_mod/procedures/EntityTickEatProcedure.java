@@ -55,12 +55,15 @@ public class EntityTickEatProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
+		boolean whatthefuckwhywontthissave = false;
+		String anothershitworkaroundbullshit = "";
+		whatthefuckwhywontthissave = false;
 		if (!(entity instanceof Player)
 				&& (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == VoreModModItems.SHRINK_GUN
 						.get()
 				&& world.getLevelData().getGameRules().getBoolean(VoreModModGameRules.SHRINKGUNMOBUSE)
 				&& !((entity.level.dimension()) == (ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("vore_mod:belly"))))) {
-			GetABellyProcedure.execute(entity);
+			GetABellyProcedure.execute(world, entity);
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream()
@@ -145,15 +148,17 @@ public class EntityTickEatProcedure {
 							}.start(world, 1);
 						}
 						if (!(entity.getPersistentData().getString("eatText")).equals("")) {
-							if (!world.isClientSide()) {
-								MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
-								if (_mcserv != null)
-									_mcserv.getPlayerList()
-											.broadcastMessage(
-													new TextComponent((((entity.getPersistentData().getString("eatText")).replace("[eatee]",
-															entityiterator.getDisplayName().getString()))
-															.replace("[eater]", entity.getDisplayName().getString()))),
-													ChatType.SYSTEM, Util.NIL_UUID);
+							anothershitworkaroundbullshit = ((entity.getPersistentData().getString("eatText")).replace("[eatee]",
+									entityiterator.getDisplayName().getString())).replace("[eater]", entity.getDisplayName().getString());
+							if (entityiterator instanceof Player || entity instanceof Player) {
+								if (!world.isClientSide()) {
+									MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+									if (_mcserv != null)
+										_mcserv.getPlayerList().broadcastMessage(new TextComponent(anothershitworkaroundbullshit), ChatType.SYSTEM,
+												Util.NIL_UUID);
+								}
+							} else {
+								whatthefuckwhywontthissave = true;
 							}
 						}
 						if (!(entityiterator instanceof Player)) {
@@ -161,6 +166,17 @@ public class EntityTickEatProcedure {
 								entityiterator.discard();
 						}
 					}
+				}
+			}
+		}
+		if (whatthefuckwhywontthissave) {
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(14 / 2d), e -> true).stream()
+						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof Player _player && !_player.level.isClientSide())
+						_player.displayClientMessage(new TextComponent(anothershitworkaroundbullshit), (false));
 				}
 			}
 		}

@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "biome",
   "definition": {
     "name": "Innards",
@@ -8,6 +8,9 @@
     },
     "undergroundBlock": {
       "value": "Blocks.AIR"
+    },
+    "underwaterBlock": {
+      "value": ""
     },
     "grassColor": {
       "value": -13210,
@@ -18,7 +21,7 @@
       "falpha": 0.0
     },
     "ambientSound": {
-      "value": ""
+      "value": "CUSTOM:heart_beat"
     },
     "additionsSound": {
       "value": ""
@@ -27,9 +30,9 @@
       "value": ""
     },
     "moodSound": {
-      "value": ""
+      "value": "CUSTOM:stomach_gurgles"
     },
-    "moodSoundDelay": 0,
+    "moodSoundDelay": 250,
     "spawnParticles": true,
     "particleToSpawn": {
       "value": "WATER_DROP"

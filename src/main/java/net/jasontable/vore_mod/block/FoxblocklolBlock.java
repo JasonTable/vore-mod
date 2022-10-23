@@ -6,7 +6,6 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.Fluids;
@@ -83,27 +82,26 @@ public class FoxblocklolBlock extends Block implements SimpleWaterloggedBlock, E
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		Vec3 offset = state.getOffset(world, pos);
-		switch ((Direction) state.getValue(FACING)) {
-			case SOUTH :
-			default :
-				return box(1.6, 1.6, 0, 14.4, 14.4, 1).move(offset.x, offset.y, offset.z);
-			case NORTH :
-				return box(1.6, 1.6, 15, 14.4, 14.4, 16).move(offset.x, offset.y, offset.z);
-			case EAST :
-				return box(0, 1.6, 1.6, 1, 14.4, 14.4).move(offset.x, offset.y, offset.z);
-			case WEST :
-				return box(15, 1.6, 1.6, 16, 14.4, 14.4).move(offset.x, offset.y, offset.z);
-			case UP :
-				return box(1.6, 0, 1.6, 14.4, 1, 14.4).move(offset.x, offset.y, offset.z);
-			case DOWN :
-				return box(1.6, 15, 1.6, 14.4, 16, 14.4).move(offset.x, offset.y, offset.z);
-		}
+
+		return switch (state.getValue(FACING)) {
+			default -> box(1.6, 1.6, 0, 14.4, 14.4, 1);
+			case NORTH -> box(1.6, 1.6, 15, 14.4, 14.4, 16);
+			case EAST -> box(0, 1.6, 1.6, 1, 14.4, 14.4);
+			case WEST -> box(15, 1.6, 1.6, 16, 14.4, 14.4);
+			case UP -> box(1.6, 0, 1.6, 14.4, 1, 14.4);
+			case DOWN -> box(1.6, 15, 1.6, 14.4, 16, 14.4);
+		};
 	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(FACING, WATERLOGGED);
+	}
+
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
+		return this.defaultBlockState().setValue(FACING, context.getClickedFace()).setValue(WATERLOGGED, flag);
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -112,13 +110,6 @@ public class FoxblocklolBlock extends Block implements SimpleWaterloggedBlock, E
 
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
-	}
-
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		Direction facing = context.getClickedFace();
-		boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;;
-		return this.defaultBlockState().setValue(FACING, facing).setValue(WATERLOGGED, flag);
 	}
 
 	@Override

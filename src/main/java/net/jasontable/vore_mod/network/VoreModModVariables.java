@@ -23,6 +23,7 @@ import java.util.function.Supplier;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class VoreModModVariables {
 	public static boolean replaceron = false;
+	public static boolean verboses = true;
 
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {

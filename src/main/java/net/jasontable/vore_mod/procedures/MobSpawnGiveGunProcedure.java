@@ -47,7 +47,7 @@ public class MobSpawnGiveGunProcedure {
 					_player.getInventory().setChanged();
 			}
 			if (entity instanceof Fox) {
-				GetABellyProcedure.execute(entity);
+				GetABellyProcedure.execute(world, entity);
 				if (Math.random() < 0.5) {
 					entity.setCustomName(new TextComponent("Adam the Fox"));
 				} else {
@@ -56,7 +56,7 @@ public class MobSpawnGiveGunProcedure {
 				}
 			}
 		}
-		GetABellyProcedure.execute(entity);
+		GetABellyProcedure.execute(world, entity);
 		if (entity.getPersistentData().getDouble("voreID") == 0) {
 			entity.getPersistentData().putDouble("voreID", (Math.random() * 1000000000));
 		}

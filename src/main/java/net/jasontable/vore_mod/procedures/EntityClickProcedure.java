@@ -56,7 +56,7 @@ public class EntityClickProcedure {
 				.get()) {
 			VoreModMod.LOGGER.info(
 					(entity.getDisplayName().getString() + " was right clicked on with shrink gun by " + sourceentity.getDisplayName().getString()));
-			GetABellyProcedure.execute(entity);
+			GetABellyProcedure.execute(world, entity);
 			if (!entity.getPersistentData().getBoolean("noEat")
 					&& !((world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == (ResourceKey.create(Registry.DIMENSION_REGISTRY,
 							new ResourceLocation("vore_mod:belly"))))) {

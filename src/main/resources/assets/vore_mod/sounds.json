@@ -1,1 +1,30 @@
-{}
+{
+  "heart_beat": {
+    "category": "neutral",
+    "subtitle": "subtitles.heart_beat",
+    "sounds": [
+      {
+        "name": "vore_mod:571204__samuelgremaud__heartbeat",
+        "stream": false
+      }
+    ]
+  },
+  "stomach_gurgles": {
+    "category": "neutral",
+    "subtitle": "subtitles.stomach_gurgles",
+    "sounds": [
+      {
+        "name": "vore_mod:202945__sribubba__stomach-gurgle-2",
+        "stream": false
+      },
+      {
+        "name": "vore_mod:414975__borygmi__groaning1",
+        "stream": false
+      },
+      {
+        "name": "vore_mod:523824__garuda1982__digestion-belly-stomach-sounds",
+        "stream": false
+      }
+    ]
+  }
+}

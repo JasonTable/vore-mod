@@ -42,7 +42,7 @@ public class BOGUIScreen extends AbstractContainerScreen<BOGUIMenu> {
 		this.imageHeight = 110;
 	}
 
-	private static final ResourceLocation texture = new ResourceLocation("vore_mod:textures/bogui.png");
+	private static final ResourceLocation texture = new ResourceLocation("vore_mod:textures/screens/bogui.png");
 
 	@Override
 	public void render(PoseStack ms, int mouseX, int mouseY, float partialTicks) {

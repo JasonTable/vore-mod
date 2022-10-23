@@ -140,7 +140,7 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="/home/awesome/.mcreator/gradle/caches/modules-2/files-2.1/net.minecraftforge/forgespi/4.0.11/6ca77f2060059bdace81c3606d774cee5d40d451/forgespi-4.0.11-sources.jar" kind="lib" path="/home/awesome/.mcreator/gradle/caches/modules-2/files-2.1/net.minecraftforge/forgespi/4.0.11/beba03c49f418c8d66aae30a6df69bde4fce2f18/forgespi-4.0.11.jar">
+	<classpathentry sourcepath="/home/awesome/.mcreator/gradle/caches/modules-2/files-2.1/net.minecraftforge/forgespi/4.0.15-4.x/9ed810ee2b75b78158079e4243bd3f9f22780d12/forgespi-4.0.15-4.x-sources.jar" kind="lib" path="/home/awesome/.mcreator/gradle/caches/modules-2/files-2.1/net.minecraftforge/forgespi/4.0.15-4.x/1d10ffe779684cb20f2b63bdcc030152e47116bb/forgespi-4.0.15-4.x.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>

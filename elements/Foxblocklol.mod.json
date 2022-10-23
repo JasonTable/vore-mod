@@ -1,5 +1,5 @@
 {
-  "_fv": 28,
+  "_fv": 33,
   "_type": "block",
   "definition": {
     "texture": "fbloxk",
@@ -11,6 +11,7 @@
     "renderType": 2,
     "customModelName": "foxrug:default",
     "rotationMode": 4,
+    "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "fbloxk2small",
@@ -49,6 +50,7 @@
     },
     "dropAmount": 0,
     "useLootTableForDrops": false,
+    "requiresCorrectTool": false,
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canRedstoneConnect": false,

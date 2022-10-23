@@ -1,10 +1,15 @@
 {
-  "_fv": 28,
-  "_type": "fuel",
+  "_fv": 33,
+  "_type": "itemextension",
   "definition": {
-    "power": 300,
-    "block": {
+    "item": {
       "value": "CUSTOM:Poo"
-    }
+    },
+    "enableFuel": true,
+    "fuelPower": {
+      "fixedValue": 300.0
+    },
+    "hasDispenseBehavior": false,
+    "compostLayerChance": 0.3
   }
 }

@@ -8,13 +8,16 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 
+import net.minecraft.world.item.ItemStack;
+
 @Mod.EventBusSubscriber
 public class VoreModModFuels {
 	@SubscribeEvent
 	public static void furnaceFuelBurnTimeEvent(FurnaceFuelBurnTimeEvent event) {
-		if (event.getItemStack().getItem() == VoreModModBlocks.SHIT.get().asItem())
+		ItemStack itemstack = event.getItemStack();
+		if (itemstack.getItem() == VoreModModBlocks.SHIT.get().asItem())
 			event.setBurnTime(3200);
-		else if (event.getItemStack().getItem() == VoreModModBlocks.POO.get().asItem())
+		else if (itemstack.getItem() == VoreModModBlocks.POO.get().asItem())
 			event.setBurnTime(300);
 	}
 }

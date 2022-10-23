@@ -7,7 +7,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.material.MaterialColor;
@@ -66,27 +65,24 @@ public class PooBlock extends Block implements SimpleWaterloggedBlock
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		Vec3 offset = state.getOffset(world, pos);
-		switch ((Direction) state.getValue(FACING)) {
-			case SOUTH :
-			default :
-				return Shapes.or(box(5, 0, 5, 11, 1, 10), box(6, 1, 6, 10, 2, 9), box(7, 2, 7, 9, 3, 8), box(7, 3, 7, 8, 4, 8)).move(offset.x,
-						offset.y, offset.z);
-			case NORTH :
-				return Shapes.or(box(5, 0, 6, 11, 1, 11), box(6, 1, 7, 10, 2, 10), box(7, 2, 8, 9, 3, 9), box(8, 3, 8, 9, 4, 9)).move(offset.x,
-						offset.y, offset.z);
-			case EAST :
-				return Shapes.or(box(5, 0, 5, 10, 1, 11), box(6, 1, 6, 9, 2, 10), box(7, 2, 7, 8, 3, 9), box(7, 3, 8, 8, 4, 9)).move(offset.x,
-						offset.y, offset.z);
-			case WEST :
-				return Shapes.or(box(6, 0, 5, 11, 1, 11), box(7, 1, 6, 10, 2, 10), box(8, 2, 7, 9, 3, 9), box(8, 3, 7, 9, 4, 8)).move(offset.x,
-						offset.y, offset.z);
-		}
+
+		return switch (state.getValue(FACING)) {
+			default -> Shapes.or(box(5, 0, 5, 11, 1, 10), box(6, 1, 6, 10, 2, 9), box(7, 2, 7, 9, 3, 8), box(7, 3, 7, 8, 4, 8));
+			case NORTH -> Shapes.or(box(5, 0, 6, 11, 1, 11), box(6, 1, 7, 10, 2, 10), box(7, 2, 8, 9, 3, 9), box(8, 3, 8, 9, 4, 9));
+			case EAST -> Shapes.or(box(5, 0, 5, 10, 1, 11), box(6, 1, 6, 9, 2, 10), box(7, 2, 7, 8, 3, 9), box(7, 3, 8, 8, 4, 9));
+			case WEST -> Shapes.or(box(6, 0, 5, 11, 1, 11), box(7, 1, 6, 10, 2, 10), box(8, 2, 7, 9, 3, 9), box(8, 3, 7, 9, 4, 8));
+		};
 	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(FACING, WATERLOGGED);
+	}
+
+	@Override
+	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(WATERLOGGED, flag);
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -95,12 +91,6 @@ public class PooBlock extends Block implements SimpleWaterloggedBlock
 
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
-	}
-
-	@Override
-	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;;
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(WATERLOGGED, flag);
 	}
 
 	@Override
