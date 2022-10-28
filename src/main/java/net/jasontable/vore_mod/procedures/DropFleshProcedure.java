@@ -43,33 +43,29 @@ public class DropFleshProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == VoreModModBlocks.ACID.get()) {
-			if (entity instanceof Player) {
-				if ((world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == (ResourceKey.create(Registry.DIMENSION_REGISTRY,
-						new ResourceLocation("vore_mod:belly"))) && !(entity.getPersistentData().getString("eatenBy")).equals("")) {
-					if (!world.isClientSide()) {
-						MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
-						if (_mcserv != null)
-							_mcserv.getPlayerList().broadcastMessage(new TextComponent(
-									(entity.getDisplayName().getString() + " got digested by " + entity.getPersistentData().getString("eatenBy"))),
-									ChatType.SYSTEM, Util.NIL_UUID);
-					}
-				} else {
-					if (!world.isClientSide()) {
-						MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
-						if (_mcserv != null)
-							_mcserv.getPlayerList().broadcastMessage(new TextComponent((entity.getDisplayName().getString() + " got digested")),
-									ChatType.SYSTEM, Util.NIL_UUID);
-					}
+		if ((world.getBlockState(new BlockPos(x, y, z))).getBlock() == VoreModModBlocks.ACID.get() && entity instanceof Player) {
+			if ((world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == (ResourceKey.create(Registry.DIMENSION_REGISTRY,
+					new ResourceLocation("vore_mod:belly"))) && !(entity.getPersistentData().getString("eatenBy")).equals("")) {
+				if (!world.isClientSide()) {
+					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+					if (_mcserv != null)
+						_mcserv.getPlayerList().broadcastMessage(new TextComponent(
+								(entity.getDisplayName().getString() + " got digested by " + entity.getPersistentData().getString("eatenBy"))),
+								ChatType.SYSTEM, Util.NIL_UUID);
+				}
+			} else {
+				if (!world.isClientSide()) {
+					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
+					if (_mcserv != null)
+						_mcserv.getPlayerList().broadcastMessage(new TextComponent((entity.getDisplayName().getString() + " got digested")),
+								ChatType.SYSTEM, Util.NIL_UUID);
 				}
 			}
-		} else {
-			if (Math.random() < 0.3 && entity instanceof Animal) {
-				if (world instanceof Level _level && !_level.isClientSide()) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(VoreModModItems.FLESH.get()));
-					entityToSpawn.setPickUpDelay(10);
-					_level.addFreshEntity(entityToSpawn);
-				}
+		} else if (Math.random() < 0.3 && entity instanceof Animal) {
+			if (world instanceof Level _level && !_level.isClientSide()) {
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(VoreModModItems.FLESH.get()));
+				entityToSpawn.setPickUpDelay(10);
+				_level.addFreshEntity(entityToSpawn);
 			}
 		}
 		if (!(entity.getPersistentData().getString("bellyType")).equals("")) {
