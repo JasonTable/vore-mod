@@ -1060,7 +1060,14 @@
       "files": [
         "202945__sribubba__stomach-gurgle-2",
         "414975__borygmi__groaning1",
-        "523824__garuda1982__digestion-belly-stomach-sounds"
+        "523824__garuda1982__digestion-belly-stomach-sound-01",
+        "523824__garuda1982__digestion-belly-stomach-sound-02",
+        "523824__garuda1982__digestion-belly-stomach-sound-03",
+        "523824__garuda1982__digestion-belly-stomach-sound-04",
+        "523824__garuda1982__digestion-belly-stomach-sound-05",
+        "523824__garuda1982__digestion-belly-stomach-sound-06",
+        "523824__garuda1982__digestion-belly-stomach-sound-07",
+        "523824__garuda1982__digestion-belly-stomach-sound-08"
       ],
       "category": "neutral",
       "subtitle": "Gurgling"
@@ -1123,7 +1130,7 @@
   "workspaceSettings": {
     "modid": "vore_mod",
     "modName": "Vore Mod",
-    "version": "1.3.0",
+    "version": "1.3.1",
     "description": "Eat and be eatd.",
     "author": "Jason",
     "websiteURL": "https://jasontheleech.itch.io/minecraft-vore-mod",

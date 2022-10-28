@@ -32,7 +32,7 @@
     "moodSound": {
       "value": "CUSTOM:stomach_gurgles"
     },
-    "moodSoundDelay": 250,
+    "moodSoundDelay": 200,
     "spawnParticles": true,
     "particleToSpawn": {
       "value": "WATER_DROP"
