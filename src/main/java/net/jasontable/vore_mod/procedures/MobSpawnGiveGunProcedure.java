@@ -3,7 +3,7 @@ package net.jasontable.vore_mod.procedures;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -14,7 +14,7 @@ import net.minecraft.world.entity.animal.Fox;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 
 import net.jasontable.vore_mod.init.VoreModModItems;
 import net.jasontable.vore_mod.init.VoreModModGameRules;
@@ -24,8 +24,8 @@ import javax.annotation.Nullable;
 @Mod.EventBusSubscriber
 public class MobSpawnGiveGunProcedure {
 	@SubscribeEvent
-	public static void onEntitySpawned(EntityJoinWorldEvent event) {
-		execute(event, event.getWorld(), event.getEntity());
+	public static void onEntitySpawned(EntityJoinLevelEvent event) {
+		execute(event, event.getLevel(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -35,6 +35,7 @@ public class MobSpawnGiveGunProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
+		GetABellyProcedure.execute(world, entity);
 		if (!world.isClientSide() && world.getLevelData().getGameRules().getBoolean(VoreModModGameRules.SHRINKGUNMOBUSE)
 				&& (world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == (Level.OVERWORLD)
 				&& (entity.getPersistentData().getString("bellyType")).equals("")
@@ -47,16 +48,14 @@ public class MobSpawnGiveGunProcedure {
 					_player.getInventory().setChanged();
 			}
 			if (entity instanceof Fox) {
-				GetABellyProcedure.execute(world, entity);
 				if (Math.random() < 0.5) {
-					entity.setCustomName(new TextComponent("Adam the Fox"));
+					entity.setCustomName(Component.literal("Adam the Fox"));
 				} else {
-					entity.setCustomName(new TextComponent("Jason the Fox"));
+					entity.setCustomName(Component.literal("Jason the Fox"));
 					ChangeToAVProcedure.execute(entity);
 				}
 			}
 		}
-		GetABellyProcedure.execute(world, entity);
 		if (entity.getPersistentData().getDouble("voreID") == 0) {
 			entity.getPersistentData().putDouble("voreID", (Math.random() * 1000000000));
 		}

@@ -15,25 +15,25 @@ public class ChangagProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, HashMap guistate) {
 		if (entity == null || guistate == null)
 			return;
-		if (!(guistate.containsKey("text:bellyname") ? ((EditBox) guistate.get("text:bellyname")).getValue() : "").equals("")) {
+		if (!(guistate.containsKey("text:bellyname") ? ((EditBox) guistate.get("text:bellyname")).getValue() : "").isEmpty()) {
 			if (!world.isClientSide()) {
 				BlockPos _bp = new BlockPos(x, y, z);
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("bellyname",
+					_blockEntity.getPersistentData().putString("bellyname",
 							(guistate.containsKey("text:bellyname") ? ((EditBox) guistate.get("text:bellyname")).getValue() : ""));
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		}
-		if (!(guistate.containsKey("text:exitCMD") ? ((EditBox) guistate.get("text:exitCMD")).getValue() : "").equals("")) {
+		if (!(guistate.containsKey("text:exitCMD") ? ((EditBox) guistate.get("text:exitCMD")).getValue() : "").isEmpty()) {
 			if (!world.isClientSide()) {
 				BlockPos _bp = new BlockPos(x, y, z);
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
-					_blockEntity.getTileData().putString("exitCMD",
+					_blockEntity.getPersistentData().putString("exitCMD",
 							(guistate.containsKey("text:exitCMD") ? ((EditBox) guistate.get("text:exitCMD")).getValue() : ""));
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);

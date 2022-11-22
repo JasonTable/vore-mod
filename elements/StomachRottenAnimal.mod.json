@@ -1,0 +1,21 @@
+{
+  "_fv": 34,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "EntityZoglin"
+      },
+      {
+        "value": "EntityZombieHorse"
+      }
+    ],
+    "biomes": [],
+    "name": "stomach_rotten_animal",
+    "namespace": "forge"
+  }
+}

@@ -19,7 +19,7 @@ public class FoxblocklolBlockIsPlacedByProcedure {
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putString("placedby", (entity.getDisplayName().getString()));
+				_blockEntity.getPersistentData().putString("placedby", (entity.getDisplayName().getString()));
 			if (world instanceof Level _level)
 				_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 		}
@@ -28,7 +28,7 @@ public class FoxblocklolBlockIsPlacedByProcedure {
 			BlockEntity _blockEntity = world.getBlockEntity(_bp);
 			BlockState _bs = world.getBlockState(_bp);
 			if (_blockEntity != null)
-				_blockEntity.getTileData().putBoolean("noEat",
+				_blockEntity.getPersistentData().putBoolean("noEat",
 						(y == 255 || (world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == (ResourceKey
 								.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("vore_mod:belly")))));
 			if (world instanceof Level _level)

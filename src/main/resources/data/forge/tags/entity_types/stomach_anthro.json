@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "vindicator",
+    "piglin",
+    "villager",
+    "wandering_trader",
+    "piglin_brute",
+    "evoker",
+    "pillager",
+    "giant",
+    "witch",
+    "illusioner"
+  ]
+}

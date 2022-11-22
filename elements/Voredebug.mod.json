@@ -1,9 +1,9 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "command",
   "definition": {
     "commandName": "voredebug",
-    "permissionLevel": "3",
-    "argsxml": "<xml><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"old_command\"><field name=\"procedure\">VoredebugCommandExecuted</field></block></next></block></xml>"
+    "permissionLevel": "4",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"literal\"><field name=\"name\">belly</field><statement name=\"args\"><block type=\"literal\"><field name=\"name\">place</field><statement name=\"args\"><block type=\"string\"><field name=\"type\">word</field><field name=\"name\">bellyname</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">VDBSetBellyDest</field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">exit</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\">ExitBelly</field></block></statement></block></next></block></statement></block></next></block></xml>"
   }
 }

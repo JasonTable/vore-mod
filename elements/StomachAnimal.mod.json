@@ -1,0 +1,87 @@
+{
+  "_fv": 34,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "EntityAxolotl"
+      },
+      {
+        "value": "EntityCat"
+      },
+      {
+        "value": "EntityChicken"
+      },
+      {
+        "value": "EntityCow"
+      },
+      {
+        "value": "EntityDolphin"
+      },
+      {
+        "value": "EntityDonkey"
+      },
+      {
+        "value": "EntityFox"
+      },
+      {
+        "value": "EntityFrog"
+      },
+      {
+        "value": "EntityGoat"
+      },
+      {
+        "value": "EntityHoglin"
+      },
+      {
+        "value": "EntityHorse"
+      },
+      {
+        "value": "EntityLlama"
+      },
+      {
+        "value": "EntityMooshroom"
+      },
+      {
+        "value": "EntityMule"
+      },
+      {
+        "value": "EntityOcelot"
+      },
+      {
+        "value": "EntityPanda"
+      },
+      {
+        "value": "EntityParrot"
+      },
+      {
+        "value": "EntityPig"
+      },
+      {
+        "value": "EntityPolarBear"
+      },
+      {
+        "value": "EntityRabbit"
+      },
+      {
+        "value": "EntitySheep"
+      },
+      {
+        "value": "EntityTraderLlama"
+      },
+      {
+        "value": "EntityTurtle"
+      },
+      {
+        "value": "EntityWolf"
+      }
+    ],
+    "biomes": [],
+    "name": "stomach_animal",
+    "namespace": "forge"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "vore_mod:block/tongue_slab"
+    },
+    "type=top": {
+      "model": "vore_mod:block/tongue_slab_top"
+    },
+    "type=double": {
+      "model": "vore_mod:block/tongue_slab_full"
+    }
+  }
+}

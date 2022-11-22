@@ -1,0 +1,57 @@
+{
+  "variants": {
+    "face=floor,facing=north": {
+      "model": "vore_mod:block/thin_tongue"
+    },
+    "face=floor,facing=east": {
+      "model": "vore_mod:block/thin_tongue",
+      "y": 90
+    },
+    "face=floor,facing=south": {
+      "model": "vore_mod:block/thin_tongue",
+      "y": 180
+    },
+    "face=floor,facing=west": {
+      "model": "vore_mod:block/thin_tongue",
+      "y": 270
+    },
+    "face=wall,facing=north": {
+      "model": "vore_mod:block/thin_tongue",
+      "x": 90
+    },
+    "face=wall,facing=east": {
+      "model": "vore_mod:block/thin_tongue",
+      "x": 90,
+      "y": 90
+    },
+    "face=wall,facing=south": {
+      "model": "vore_mod:block/thin_tongue",
+      "x": 90,
+      "y": 180
+    },
+    "face=wall,facing=west": {
+      "model": "vore_mod:block/thin_tongue",
+      "x": 90,
+      "y": 270
+    },
+    "face=ceiling,facing=north": {
+      "model": "vore_mod:block/thin_tongue",
+      "x": 180,
+      "y": 180
+    },
+    "face=ceiling,facing=east": {
+      "model": "vore_mod:block/thin_tongue",
+      "x": 180,
+      "y": 270
+    },
+    "face=ceiling,facing=south": {
+      "model": "vore_mod:block/thin_tongue",
+      "x": 180
+    },
+    "face=ceiling,facing=west": {
+      "model": "vore_mod:block/thin_tongue",
+      "x": 180,
+      "y": 90
+    }
+  }
+}

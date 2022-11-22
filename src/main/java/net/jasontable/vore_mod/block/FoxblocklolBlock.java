@@ -1,18 +1,17 @@
 
 package net.jasontable.vore_mod.block;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -21,53 +20,39 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.FaceAttachedHorizontalDirectionalBlock;
 import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.Containers;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.Component;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import net.jasontable.vore_mod.procedures.FoxblocklolStartsToDestroyProcedure;
 import net.jasontable.vore_mod.procedures.FoxblocklolOnBlockRightClickedProcedure;
 import net.jasontable.vore_mod.procedures.FoxblocklolBlockIsPlacedByProcedure;
 import net.jasontable.vore_mod.procedures.FoxblocklolBlockDestroyedByPlayerProcedure;
-import net.jasontable.vore_mod.init.VoreModModBlocks;
 import net.jasontable.vore_mod.block.entity.FoxblocklolBlockEntity;
 
-import java.util.List;
-
 public class FoxblocklolBlock extends Block implements SimpleWaterloggedBlock, EntityBlock {
-	public static final DirectionProperty FACING = DirectionalBlock.FACING;
+	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+	public static final EnumProperty<AttachFace> FACE = FaceAttachedHorizontalDirectionalBlock.FACE;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public FoxblocklolBlock() {
-		super(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(0.8999999999999999f, 6f).noCollission().noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false).noDrops());
-		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
-	}
-
-	@Override
-	public void appendHoverText(ItemStack itemstack, BlockGetter world, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("Fox block that can eat you."));
+		super(BlockBehaviour.Properties.of(Material.WOOL).sound(SoundType.WOOL).strength(0.8999999999999999f, 2f).noCollission().noOcclusion()
+				.isRedstoneConductor((bs, br, bp) -> false).noLootTable());
+		this.registerDefaultState(
+				this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(FACE, AttachFace.WALL).setValue(WATERLOGGED, false));
 	}
 
 	@Override
@@ -84,24 +69,39 @@ public class FoxblocklolBlock extends Block implements SimpleWaterloggedBlock, E
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 
 		return switch (state.getValue(FACING)) {
-			default -> box(1.6, 1.6, 0, 14.4, 14.4, 1);
-			case NORTH -> box(1.6, 1.6, 15, 14.4, 14.4, 16);
-			case EAST -> box(0, 1.6, 1.6, 1, 14.4, 14.4);
-			case WEST -> box(15, 1.6, 1.6, 16, 14.4, 14.4);
-			case UP -> box(1.6, 0, 1.6, 14.4, 1, 14.4);
-			case DOWN -> box(1.6, 15, 1.6, 14.4, 16, 14.4);
+			default -> switch (state.getValue(FACE)) {
+				case FLOOR -> box(2, 0, 2, 14, 1, 14);
+				case WALL -> box(2, 2, 0, 14, 14, 1);
+				case CEILING -> box(2, 15, 2, 14, 16, 14);
+			};
+			case NORTH -> switch (state.getValue(FACE)) {
+				case FLOOR -> box(2, 0, 2, 14, 1, 14);
+				case WALL -> box(2, 2, 15, 14, 14, 16);
+				case CEILING -> box(2, 15, 2, 14, 16, 14);
+			};
+			case EAST -> switch (state.getValue(FACE)) {
+				case FLOOR -> box(2, 0, 2, 14, 1, 14);
+				case WALL -> box(0, 2, 2, 1, 14, 14);
+				case CEILING -> box(2, 15, 2, 14, 16, 14);
+			};
+			case WEST -> switch (state.getValue(FACE)) {
+				case FLOOR -> box(2, 0, 2, 14, 1, 14);
+				case WALL -> box(15, 2, 2, 16, 14, 14);
+				case CEILING -> box(2, 15, 2, 14, 16, 14);
+			};
 		};
 	}
 
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-		builder.add(FACING, WATERLOGGED);
+		builder.add(FACING, FACE, WATERLOGGED);
 	}
 
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		boolean flag = context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER;
-		return this.defaultBlockState().setValue(FACING, context.getClickedFace()).setValue(WATERLOGGED, flag);
+		return this.defaultBlockState().setValue(FACE, faceForDirection(context.getNearestLookingDirection()))
+				.setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(WATERLOGGED, flag);
 	}
 
 	public BlockState rotate(BlockState state, Rotation rot) {
@@ -110,6 +110,13 @@ public class FoxblocklolBlock extends Block implements SimpleWaterloggedBlock, E
 
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.getRotation(state.getValue(FACING)));
+	}
+
+	private AttachFace faceForDirection(Direction direction) {
+		if (direction.getAxis() == Direction.Axis.Y)
+			return direction == Direction.UP ? AttachFace.CEILING : AttachFace.FLOOR;
+		else
+			return AttachFace.WALL;
 	}
 
 	@Override
@@ -129,14 +136,8 @@ public class FoxblocklolBlock extends Block implements SimpleWaterloggedBlock, E
 	@Override
 	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
 		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
-		FoxblocklolBlockDestroyedByPlayerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		FoxblocklolBlockDestroyedByPlayerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
 		return retval;
-	}
-
-	@Override
-	public void wasExploded(Level world, BlockPos pos, Explosion e) {
-		super.wasExploded(world, pos, e);
-		FoxblocklolBlockDestroyedByPlayerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override
@@ -182,36 +183,5 @@ public class FoxblocklolBlock extends Block implements SimpleWaterloggedBlock, E
 		super.triggerEvent(state, world, pos, eventID, eventParam);
 		BlockEntity blockEntity = world.getBlockEntity(pos);
 		return blockEntity == null ? false : blockEntity.triggerEvent(eventID, eventParam);
-	}
-
-	@Override
-	public void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean isMoving) {
-		if (state.getBlock() != newState.getBlock()) {
-			BlockEntity blockEntity = world.getBlockEntity(pos);
-			if (blockEntity instanceof FoxblocklolBlockEntity be) {
-				Containers.dropContents(world, pos, be);
-				world.updateNeighbourForOutputSignal(pos, this);
-			}
-			super.onRemove(state, world, pos, newState, isMoving);
-		}
-	}
-
-	@Override
-	public boolean hasAnalogOutputSignal(BlockState state) {
-		return true;
-	}
-
-	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
-		BlockEntity tileentity = world.getBlockEntity(pos);
-		if (tileentity instanceof FoxblocklolBlockEntity be)
-			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);
-		else
-			return 0;
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(VoreModModBlocks.FOXBLOCK.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

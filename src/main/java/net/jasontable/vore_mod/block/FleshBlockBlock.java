@@ -23,7 +23,7 @@ import java.util.Collections;
 
 public class FleshBlockBlock extends Block {
 	public FleshBlockBlock() {
-		super(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_PINK).sound(SoundType.SLIME_BLOCK).strength(0.8999999999999999f, 5f));
+		super(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_PINK).sound(SoundType.SLIME_BLOCK).strength(0.8999999999999999f, 3f));
 	}
 
 	@Override

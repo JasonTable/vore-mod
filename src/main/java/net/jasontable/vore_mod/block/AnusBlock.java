@@ -1,9 +1,6 @@
 
 package net.jasontable.vore_mod.block;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
 import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.Fluids;
@@ -26,11 +23,8 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import net.jasontable.vore_mod.init.VoreModModItems;
-import net.jasontable.vore_mod.init.VoreModModBlocks;
 
 import java.util.List;
 import java.util.Collections;
@@ -42,7 +36,7 @@ public class AnusBlock extends Block implements SimpleWaterloggedBlock
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public AnusBlock() {
-		super(BlockBehaviour.Properties.of(Material.DIRT).sound(SoundType.SLIME_BLOCK).strength(0.8999999999999999f, 5f).noCollission().noOcclusion()
+		super(BlockBehaviour.Properties.of(Material.DIRT).sound(SoundType.SLIME_BLOCK).strength(0.8999999999999999f, 3f).noCollission().noOcclusion()
 				.isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
 	}
@@ -96,10 +90,5 @@ public class AnusBlock extends Block implements SimpleWaterloggedBlock
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
 		return Collections.singletonList(new ItemStack(VoreModModItems.FLESH.get(), 8));
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(VoreModModBlocks.ANUS.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

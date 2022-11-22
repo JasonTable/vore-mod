@@ -11,16 +11,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.TagKey;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.ChatType;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.Registry;
 import net.minecraft.core.BlockPos;
-import net.minecraft.Util;
 
 import net.jasontable.vore_mod.init.VoreModModItems;
 import net.jasontable.vore_mod.init.VoreModModBlocks;
@@ -49,19 +47,20 @@ public class DropFleshProcedure {
 				if (!world.isClientSide()) {
 					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 					if (_mcserv != null)
-						_mcserv.getPlayerList().broadcastMessage(new TextComponent(
+						_mcserv.getPlayerList().broadcastSystemMessage(Component.literal(
 								(entity.getDisplayName().getString() + " got digested by " + entity.getPersistentData().getString("eatenBy"))),
-								ChatType.SYSTEM, Util.NIL_UUID);
+								false);
 				}
 			} else {
 				if (!world.isClientSide()) {
 					MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 					if (_mcserv != null)
-						_mcserv.getPlayerList().broadcastMessage(new TextComponent((entity.getDisplayName().getString() + " got digested")),
-								ChatType.SYSTEM, Util.NIL_UUID);
+						_mcserv.getPlayerList().broadcastSystemMessage(Component.literal((entity.getDisplayName().getString() + " got digested")),
+								false);
 				}
 			}
-		} else if (Math.random() < 0.3 && entity instanceof Animal) {
+		} else if (Math.random() < 0.3
+				&& entity.getType().is(TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge:stomach_animal")))) {
 			if (world instanceof Level _level && !_level.isClientSide()) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(VoreModModItems.FLESH.get()));
 				entityToSpawn.setPickUpDelay(10);
@@ -69,8 +68,8 @@ public class DropFleshProcedure {
 			}
 		}
 		if (!(entity.getPersistentData().getString("bellyType")).equals("")) {
-			DestroyBellyProcedure.execute(world, (Math.floor(entity.getPersistentData().getDouble("bellyX") / 48) * 48), 0,
-					(Math.floor(entity.getPersistentData().getDouble("bellyZ") / 48) * 48), entity);
+			DestroyBellyProcedure.execute(world, (entity.getPersistentData().getDouble("bellyOriginX")), 0,
+					(entity.getPersistentData().getDouble("bellyOriginZ")));
 		}
 	}
 }

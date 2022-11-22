@@ -2,24 +2,20 @@
 package net.jasontable.vore_mod.block;
 
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.Level;
+import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.jasontable.vore_mod.procedures.BloodUpdateTickProcedure;
 import net.jasontable.vore_mod.init.VoreModModFluids;
 
-import java.util.Random;
-
 public class BloodBlock extends LiquidBlock {
 	public BloodBlock() {
-		super(() -> (FlowingFluid) VoreModModFluids.BLOOD.get(), BlockBehaviour.Properties.of(Material.WATER).strength(100f)
-
-		);
+		super(() -> VoreModModFluids.BLOOD.get(), BlockBehaviour.Properties.of(Material.WATER).strength(100f).noCollission().noLootTable());
 	}
 
 	@Override
@@ -29,7 +25,7 @@ public class BloodBlock extends LiquidBlock {
 	}
 
 	@Override
-	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, Random random) {
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
 		BloodUpdateTickProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 		world.scheduleTick(pos, this, 2000);

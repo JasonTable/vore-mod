@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "block",
   "definition": {
     "texture": "scab",
@@ -36,7 +36,7 @@
     "name": "Scab",
     "specialInfo": [],
     "hardness": 1.0,
-    "resistance": 6.0,
+    "resistance": 3.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {

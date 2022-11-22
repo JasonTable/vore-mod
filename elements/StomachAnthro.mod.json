@@ -1,0 +1,45 @@
+{
+  "_fv": 34,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "EntityEvoker"
+      },
+      {
+        "value": "EntityGiantZombie"
+      },
+      {
+        "value": "EntityIllusionIllager"
+      },
+      {
+        "value": "EntityPiglin"
+      },
+      {
+        "value": "EntityPiglinBrute"
+      },
+      {
+        "value": "EntityPillager"
+      },
+      {
+        "value": "EntityVillager"
+      },
+      {
+        "value": "EntityVindicator"
+      },
+      {
+        "value": "EntityWanderingTrader"
+      },
+      {
+        "value": "EntityWitch"
+      }
+    ],
+    "biomes": [],
+    "name": "stomach_anthro",
+    "namespace": "forge"
+  }
+}

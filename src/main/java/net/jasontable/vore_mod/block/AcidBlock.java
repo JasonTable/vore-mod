@@ -2,7 +2,6 @@
 package net.jasontable.vore_mod.block;
 
 import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.LiquidBlock;
@@ -15,9 +14,7 @@ import net.jasontable.vore_mod.init.VoreModModFluids;
 
 public class AcidBlock extends LiquidBlock {
 	public AcidBlock() {
-		super(() -> (FlowingFluid) VoreModModFluids.ACID.get(), BlockBehaviour.Properties.of(Material.WATER).strength(100f)
-
-		);
+		super(() -> VoreModModFluids.ACID.get(), BlockBehaviour.Properties.of(Material.WATER).strength(100f).noCollission().noLootTable());
 	}
 
 	@Override

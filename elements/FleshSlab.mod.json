@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "block",
   "definition": {
     "texture": "fleshs",
@@ -37,7 +37,7 @@
     "name": "Flesh Slab",
     "specialInfo": [],
     "hardness": 0.8999999999999999,
-    "resistance": 5.0,
+    "resistance": 3.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
@@ -61,6 +61,9 @@
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
+    "emittedRedstonePower": {
+      "fixedValue": 15.0
+    },
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
       "value": ""
@@ -78,6 +81,21 @@
     "isCustomSoundType": false,
     "soundOnStep": {
       "value": "SLIME"
+    },
+    "breakSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
     },
     "luminance": 0,
     "unbreakable": false,
@@ -106,9 +124,6 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onDestroyedByPlayer": {
-      "name": "FleshBlockBlockDestroyedByPlayer"
-    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

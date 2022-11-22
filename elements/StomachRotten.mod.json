@@ -1,0 +1,33 @@
+{
+  "_fv": 34,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "EntityDrowned"
+      },
+      {
+        "value": "EntityGiantZombie"
+      },
+      {
+        "value": "EntityZombie"
+      },
+      {
+        "value": "EntityZombieVillager"
+      },
+      {
+        "value": "EntityPigZombie"
+      },
+      {
+        "value": "EntityHusk"
+      }
+    ],
+    "biomes": [],
+    "name": "stomach_rotten",
+    "namespace": "forge"
+  }
+}

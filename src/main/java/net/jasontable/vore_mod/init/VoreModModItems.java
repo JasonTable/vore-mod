@@ -25,23 +25,27 @@ public class VoreModModItems {
 	public static final RegistryObject<Item> FLESHBLOCK = block(VoreModModBlocks.FLESHBLOCK, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> FLESH_SLAB = block(VoreModModBlocks.FLESH_SLAB, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> ROTTEN_FLESH_BLOCK = block(VoreModModBlocks.ROTTEN_FLESH_BLOCK, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Item> ROTTEN_FLESH_SLAB = block(VoreModModBlocks.ROTTEN_FLESH_SLAB, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> TONGUE = block(VoreModModBlocks.TONGUE, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Item> TONGUE_SLAB = block(VoreModModBlocks.TONGUE_SLAB, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> SHIT = block(VoreModModBlocks.SHIT, CreativeModeTab.TAB_BUILDING_BLOCKS);
+	public static final RegistryObject<Item> SCAB = block(VoreModModBlocks.SCAB, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> ADMINFLESH = block(VoreModModBlocks.ADMINFLESH, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> ADMINROTFLESH = block(VoreModModBlocks.ADMINROTFLESH, CreativeModeTab.TAB_BUILDING_BLOCKS);
 	public static final RegistryObject<Item> FOXBLOCK = block(VoreModModBlocks.FOXBLOCK, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Item> ANUS = block(VoreModModBlocks.ANUS, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Item> SMALL_ANUS = block(VoreModModBlocks.SMALL_ANUS, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Item> POO = block(VoreModModBlocks.POO, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Item> UVULA = block(VoreModModBlocks.UVULA, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Item> ESOPHAGUS = block(VoreModModBlocks.ESOPHAGUS, CreativeModeTab.TAB_DECORATIONS);
+	public static final RegistryObject<Item> THIN_TONGUE = block(VoreModModBlocks.THIN_TONGUE, CreativeModeTab.TAB_DECORATIONS);
 	public static final RegistryObject<Item> CUM_BUCKET = REGISTRY.register("cum_bucket", () -> new CumItem());
 	public static final RegistryObject<Item> BLOOD_BUCKET = REGISTRY.register("blood_bucket", () -> new BloodItem());
 	public static final RegistryObject<Item> ACID_BUCKET = REGISTRY.register("acid_bucket", () -> new AcidItem());
 	public static final RegistryObject<Item> SHRINK_GUN = REGISTRY.register("shrink_gun", () -> new ShrinkGunItem());
+	public static final RegistryObject<Item> FLESH = REGISTRY.register("flesh", () -> new FleshItem());
 	public static final RegistryObject<Item> BELLYORIGIN = block(VoreModModBlocks.BELLYORIGIN, null);
 	public static final RegistryObject<Item> BELLY_EXIT_TRIGGER = block(VoreModModBlocks.BELLY_EXIT_TRIGGER, null);
-	public static final RegistryObject<Item> UVULA = block(VoreModModBlocks.UVULA, CreativeModeTab.TAB_DECORATIONS);
-	public static final RegistryObject<Item> SCAB = block(VoreModModBlocks.SCAB, CreativeModeTab.TAB_BUILDING_BLOCKS);
-	public static final RegistryObject<Item> FLESH = REGISTRY.register("flesh", () -> new FleshItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

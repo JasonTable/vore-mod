@@ -1,9 +1,6 @@
 
 package net.jasontable.vore_mod.block;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
@@ -33,11 +30,8 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import net.jasontable.vore_mod.procedures.BellyExitTriggerEntityCollidesInTheBlockProcedure;
-import net.jasontable.vore_mod.init.VoreModModBlocks;
 
 import java.util.List;
 import java.util.Collections;
@@ -129,12 +123,7 @@ public class BellyExitTriggerBlock extends Block implements SimpleWaterloggedBlo
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
 
-		BellyExitTriggerEntityCollidesInTheBlockProcedure.execute(world, x, z, entity);
+		BellyExitTriggerEntityCollidesInTheBlockProcedure.execute(world, entity);
 		return InteractionResult.SUCCESS;
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(VoreModModBlocks.BELLY_EXIT_TRIGGER.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

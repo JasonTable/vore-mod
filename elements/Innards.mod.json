@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "biome",
   "definition": {
     "name": "Innards",
@@ -11,6 +11,10 @@
     },
     "underwaterBlock": {
       "value": ""
+    },
+    "airColor": {
+      "value": -10092544,
+      "falpha": 0.0
     },
     "grassColor": {
       "value": -13210,
@@ -38,7 +42,6 @@
       "value": "WATER_DROP"
     },
     "particlesProbability": 1.0,
-    "biomeCategory": "NONE",
     "rainingPossibility": 0.0,
     "temperature": 1.5,
     "baseHeight": 0.1,
@@ -47,7 +50,6 @@
     "spawnBiomeNether": false,
     "spawnInCaves": false,
     "biomeWeight": 10,
-    "biomeDictionaryTypes": [],
     "grassPerChunk": 0,
     "seagrassPerChunk": 0,
     "flowersPerChunk": 0,
@@ -93,9 +95,7 @@
     "spawnBastionRemnant": false,
     "spawnEndCity": false,
     "spawnRuinedPortal": "NONE",
-    "defaultFeatures": [
-      "FrozenTopLayer"
-    ],
+    "defaultFeatures": [],
     "spawnEntries": []
   }
 }

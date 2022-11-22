@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "block",
   "definition": {
     "texture": "realflesh-rotten",
@@ -36,7 +36,7 @@
     "name": "Rotten Flesh Block",
     "specialInfo": [],
     "hardness": 0.7999999999999999,
-    "resistance": 4.0,
+    "resistance": 2.5,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
@@ -60,6 +60,9 @@
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
+    "emittedRedstonePower": {
+      "fixedValue": 15.0
+    },
     "colorOnMap": "ORANGE_TERRACOTTA",
     "creativePickItem": {
       "value": ""
@@ -77,6 +80,21 @@
     "isCustomSoundType": false,
     "soundOnStep": {
       "value": "SLIME"
+    },
+    "breakSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
     },
     "luminance": 0,
     "unbreakable": false,

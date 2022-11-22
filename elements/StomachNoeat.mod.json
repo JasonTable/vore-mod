@@ -1,0 +1,114 @@
+{
+  "_fv": 34,
+  "_type": "tag",
+  "definition": {
+    "type": "Entities",
+    "items": [],
+    "blocks": [],
+    "functions": [],
+    "entities": [
+      {
+        "value": "EntityAreaEffectCloud"
+      },
+      {
+        "value": "EntityArmorStand"
+      },
+      {
+        "value": "EntityArrow"
+      },
+      {
+        "value": "EntityBoat"
+      },
+      {
+        "value": "EntityChestBoat"
+      },
+      {
+        "value": "EntityEgg"
+      },
+      {
+        "value": "EntityEnderCrystal"
+      },
+      {
+        "value": "EntityEnderPearl"
+      },
+      {
+        "value": "EntityEvokerFangs"
+      },
+      {
+        "value": "EntityExpBottle"
+      },
+      {
+        "value": "EntityXPOrb"
+      },
+      {
+        "value": "EntityEnderEye"
+      },
+      {
+        "value": "EntityFallingBlock"
+      },
+      {
+        "value": "EntityFireball"
+      },
+      {
+        "value": "EntityFireworkRocket"
+      },
+      {
+        "value": "EntityGlowItemFrame"
+      },
+      {
+        "value": "EntityItem"
+      },
+      {
+        "value": "EntityItemFrame"
+      },
+      {
+        "value": "EntityLeashKnot"
+      },
+      {
+        "value": "EntityLightningBolt"
+      },
+      {
+        "value": "EntityLlamaSpit"
+      },
+      {
+        "value": "EntityMarker"
+      },
+      {
+        "value": "EntityMinecart"
+      },
+      {
+        "value": "EntityMinecartChest"
+      },
+      {
+        "value": "EntityMinecartCommandBlock"
+      },
+      {
+        "value": "EntityMinecartFurnace"
+      },
+      {
+        "value": "EntityMinecartHopper"
+      },
+      {
+        "value": "EntityMinecartMobSpawner"
+      },
+      {
+        "value": "EntityMinecartTNT"
+      },
+      {
+        "value": "EntityPainting"
+      },
+      {
+        "value": "EntityShulkerBullet"
+      },
+      {
+        "value": "EntityTNTPrimed"
+      },
+      {
+        "value": "EntityTrident"
+      }
+    ],
+    "biomes": [],
+    "name": "stomach_noeat",
+    "namespace": "forge"
+  }
+}

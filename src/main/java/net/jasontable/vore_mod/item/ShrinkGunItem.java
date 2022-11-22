@@ -12,7 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.Component;
 
 import net.jasontable.vore_mod.procedures.ShrinkGunItemIsCraftedsmeltedProcedure;
@@ -38,7 +37,7 @@ public class ShrinkGunItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level world, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, world, list, flag);
-		list.add(new TextComponent("Used to shrink yourself and be eaten."));
+		list.add(Component.literal("Used to shrink yourself and be eaten."));
 	}
 
 	@Override

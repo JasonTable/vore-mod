@@ -13,9 +13,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.commands.Commands;
 
-import net.jasontable.vore_mod.procedures.VoredebugCommandExecutedProcedure;
-
-import java.util.HashMap;
+import net.jasontable.vore_mod.procedures.VDBSetBellyDestProcedure;
+import net.jasontable.vore_mod.procedures.ExitBellyProcedure;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 
@@ -23,8 +22,8 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 public class VoredebugCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("voredebug").requires(s -> s.hasPermission(3))
-				.then(Commands.argument("arguments", StringArgumentType.greedyString()).executes(arguments -> {
+		event.getDispatcher().register(Commands.literal("voredebug").requires(s -> s.hasPermission(4)).then(Commands.literal("belly")
+				.then(Commands.literal("place").then(Commands.argument("bellyname", StringArgumentType.word()).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -33,17 +32,10 @@ public class VoredebugCommand {
 					if (entity == null)
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getDirection();
-					HashMap<String, String> cmdparams = new HashMap<>();
-					int index = -1;
-					for (String param : arguments.getInput().split("\\s+")) {
-						if (index >= 0)
-							cmdparams.put(Integer.toString(index), param);
-						index++;
-					}
 
-					VoredebugCommandExecutedProcedure.execute(world, x, y, z, entity, cmdparams);
+					VDBSetBellyDestProcedure.execute(world, x, z, arguments, entity);
 					return 0;
-				})).executes(arguments -> {
+				}))).then(Commands.literal("exit").executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();
@@ -52,16 +44,9 @@ public class VoredebugCommand {
 					if (entity == null)
 						entity = FakePlayerFactory.getMinecraft(world);
 					Direction direction = entity.getDirection();
-					HashMap<String, String> cmdparams = new HashMap<>();
-					int index = -1;
-					for (String param : arguments.getInput().split("\\s+")) {
-						if (index >= 0)
-							cmdparams.put(Integer.toString(index), param);
-						index++;
-					}
 
-					VoredebugCommandExecutedProcedure.execute(world, x, y, z, entity, cmdparams);
+					ExitBellyProcedure.execute(world, entity);
 					return 0;
-				}));
+				}))));
 	}
 }

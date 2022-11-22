@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "foxtonguetexture64"
+      },
+      "name": "default"
+    }
+  }
+}

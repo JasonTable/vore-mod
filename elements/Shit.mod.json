@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "block",
   "definition": {
     "texture": "shit",
@@ -42,7 +42,7 @@
     "creativeTab": {
       "value": "BUILDING_BLOCKS"
     },
-    "destroyTool": "Not specified",
+    "destroyTool": "shovel",
     "customDrop": {
       "value": "CUSTOM:Shit"
     },
@@ -60,6 +60,9 @@
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
+    "emittedRedstonePower": {
+      "fixedValue": 15.0
+    },
     "colorOnMap": "DIRT",
     "creativePickItem": {
       "value": ""
@@ -77,6 +80,21 @@
     "isCustomSoundType": false,
     "soundOnStep": {
       "value": "GROUND"
+    },
+    "breakSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
     },
     "luminance": 0,
     "unbreakable": false,

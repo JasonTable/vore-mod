@@ -1,0 +1,46 @@
+{
+  "_fv": 34,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 6,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RottenFleshBlock"
+      },
+      {
+        "value": "CUSTOM:RottenFleshBlock"
+      },
+      {
+        "value": "CUSTOM:RottenFleshBlock"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:RottenFleshSlab"
+    },
+    "name": "rotten_flesh_slab_craft",
+    "namespace": "mod"
+  }
+}

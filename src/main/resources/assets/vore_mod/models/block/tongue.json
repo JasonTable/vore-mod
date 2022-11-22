@@ -3,5 +3,6 @@
   "textures": {
     "all": "vore_mod:blocks/foxtonguetexture64",
     "particle": "vore_mod:blocks/foxtonguetexture64"
-  }
+  },
+  "render_type": "solid"
 }

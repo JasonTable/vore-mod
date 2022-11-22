@@ -19,7 +19,7 @@ import java.util.Collections;
 public class RottenFleshBlockBlock extends Block {
 	public RottenFleshBlockBlock() {
 		super(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.TERRACOTTA_ORANGE).sound(SoundType.SLIME_BLOCK).strength(0.7999999999999999f,
-				4f));
+				2.5f));
 	}
 
 	@Override

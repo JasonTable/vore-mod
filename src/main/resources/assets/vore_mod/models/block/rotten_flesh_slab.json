@@ -1,0 +1,9 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "vore_mod:blocks/realflesh-rotten",
+    "top": "vore_mod:blocks/realflesh-rotten",
+    "side": "vore_mod:blocks/realflesh-rotten"
+  },
+  "render_type": "solid"
+}

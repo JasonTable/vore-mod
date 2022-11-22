@@ -1,0 +1,9 @@
+{
+  "parent": "vore_mod:custom/thintoungue",
+  "textures": {
+    "all": "vore_mod:blocks/foxtonguetexture64",
+    "particle": "vore_mod:blocks/foxtonguetexture64",
+    "0": "vore_mod:blocks/foxtonguetexture64"
+  },
+  "render_type": "solid"
+}

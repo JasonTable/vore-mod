@@ -4,5 +4,6 @@
     "all": "vore_mod:blocks/exittrig",
     "particle": "vore_mod:blocks/exittrig",
     "0": "vore_mod:blocks/exittrig"
-  }
+  },
+  "render_type": "solid"
 }

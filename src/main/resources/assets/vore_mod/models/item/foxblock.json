@@ -2,5 +2,6 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "vore_mod:items/fbloxk2small"
-  }
+  },
+  "render_type": "solid"
 }

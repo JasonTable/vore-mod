@@ -1,9 +1,6 @@
 
 package net.jasontable.vore_mod.block;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -25,10 +22,6 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-
-import net.jasontable.vore_mod.init.VoreModModBlocks;
 
 import java.util.List;
 import java.util.Collections;
@@ -91,10 +84,5 @@ public class UvulaBlock extends Block implements SimpleWaterloggedBlock
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
 		return Collections.singletonList(new ItemStack(this, 1));
-	}
-
-	@OnlyIn(Dist.CLIENT)
-	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(VoreModModBlocks.UVULA.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

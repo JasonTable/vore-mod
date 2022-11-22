@@ -2,27 +2,29 @@ package net.jasontable.vore_mod.procedures;
 
 import net.minecraft.world.entity.Entity;
 
-import net.jasontable.vore_mod.VoreModMod;
-
 public class ChangeToAVProcedure {
-	public static void execute(Entity entity) {
+	public static boolean execute(Entity entity) {
 		if (entity == null)
-			return;
+			return false;
 		double thex = 0;
 		double thez = 0;
-		thex = Math.floor(entity.getPersistentData().getDouble("bellyX") / 48) * 48;
-		thez = Math.floor(entity.getPersistentData().getDouble("bellyZ") / 48) * 48;
-		VoreModMod.LOGGER.info("[Vore Mod] Your belly origin is X: " + thex + "Z: " + thez);
-		if ((entity.getPersistentData().getString("bellyType")).equals("animal")) {
-			entity.getPersistentData().putDouble("bellyX", (thex + 4));
-			entity.getPersistentData().putDouble("bellyY", 14);
-			entity.getPersistentData().putDouble("bellyZ", (thez + 10));
+		if (entity.getPersistentData().getBoolean("noEat")) {
+			return false;
+		} else if ((entity.getPersistentData().getString("bellyType")).equals("animal")
+				|| (entity.getPersistentData().getString("bellyType")).equals("rotten_animal")) {
+			entity.getPersistentData().putDouble("bellyOffsetX", 4);
+			entity.getPersistentData().putDouble("bellyOffsetY", 14);
+			entity.getPersistentData().putDouble("bellyOffsetZ", 10);
+			entity.getPersistentData().putString("eatText", "[prey] got shoved up [pred]'s ass");
+			return true;
 		} else if ((entity.getPersistentData().getString("bellyType")).equals("anthro")
 				|| (entity.getPersistentData().getString("bellyType")).equals("rotten")) {
-			entity.getPersistentData().putDouble("bellyX", (thex + 16));
-			entity.getPersistentData().putDouble("bellyY", 3);
-			entity.getPersistentData().putDouble("bellyZ", (thez + 10));
+			entity.getPersistentData().putDouble("bellyOffsetX", 16);
+			entity.getPersistentData().putDouble("bellyOffsetY", 3);
+			entity.getPersistentData().putDouble("bellyOffsetZ", 10);
+			entity.getPersistentData().putString("eatText", "[prey] got shoved up [pred]'s ass");
+			return true;
 		}
-		entity.getPersistentData().putString("eatText", "[eatee] got shoved up [eater]'s ass");
+		return false;
 	}
 }

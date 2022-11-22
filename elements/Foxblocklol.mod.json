@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "block",
   "definition": {
     "texture": "fbloxk",
@@ -9,9 +9,9 @@
     "textureRight": "",
     "textureBack": "",
     "renderType": 2,
-    "customModelName": "foxrug:default",
-    "rotationMode": 4,
-    "enablePitch": false,
+    "customModelName": "foxrug2:default",
+    "rotationMode": 1,
+    "enablePitch": true,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "fbloxk2small",
@@ -24,21 +24,19 @@
     "disableOffset": false,
     "boundingBoxes": [
       {
-        "mx": 1.6,
-        "my": 1.6,
-        "mz": 15.0,
-        "Mx": 14.4,
-        "My": 14.4,
-        "Mz": 16.0,
+        "mx": 2.0,
+        "my": 0.0,
+        "mz": 2.0,
+        "Mx": 14.0,
+        "My": 1.0,
+        "Mz": 14.0,
         "subtract": false
       }
     ],
     "name": "Fox Block",
-    "specialInfo": [
-      "Fox block that can eat you."
-    ],
+    "specialInfo": [],
     "hardness": 0.8999999999999999,
-    "resistance": 6.0,
+    "resistance": 2.0,
     "hasGravity": false,
     "isWaterloggable": true,
     "creativeTab": {
@@ -62,6 +60,9 @@
     "tickRandomly": false,
     "isReplaceable": false,
     "canProvidePower": false,
+    "emittedRedstonePower": {
+      "fixedValue": 15.0
+    },
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
       "value": ""
@@ -80,6 +81,21 @@
     "soundOnStep": {
       "value": "CLOTH"
     },
+    "breakSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
+    },
     "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
@@ -95,8 +111,8 @@
     "openGUIOnRightClick": false,
     "inventorySize": 0,
     "inventoryStackSize": 64,
-    "inventoryDropWhenDestroyed": true,
-    "inventoryComparatorPower": true,
+    "inventoryDropWhenDestroyed": false,
+    "inventoryComparatorPower": false,
     "inventoryOutSlotIDs": [],
     "inventoryInSlotIDs": [],
     "hasEnergyStorage": false,
@@ -111,9 +127,6 @@
       "name": "FoxblocklolOnBlockRightClicked"
     },
     "onDestroyedByPlayer": {
-      "name": "FoxblocklolBlockDestroyedByPlayer"
-    },
-    "onDestroyedByExplosion": {
       "name": "FoxblocklolBlockDestroyedByPlayer"
     },
     "onStartToDestroy": {

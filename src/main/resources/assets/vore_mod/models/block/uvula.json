@@ -4,5 +4,6 @@
     "all": "vore_mod:blocks/fleshs",
     "particle": "vore_mod:blocks/fleshs",
     "0": "vore_mod:blocks/fleshs"
-  }
+  },
+  "render_type": "solid"
 }

@@ -1,0 +1,9 @@
+{
+  "parent": "block/slab_top",
+  "textures": {
+    "bottom": "vore_mod:blocks/foxtonguetexture64",
+    "top": "vore_mod:blocks/foxtonguetexture64",
+    "side": "vore_mod:blocks/foxtonguetexture64"
+  },
+  "render_type": "solid"
+}

@@ -3,5 +3,6 @@
   "textures": {
     "all": "vore_mod:blocks/ass",
     "particle": "vore_mod:blocks/ass"
-  }
+  },
+  "render_type": "cutout"
 }

@@ -6,8 +6,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
@@ -18,24 +16,25 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.animal.Fox;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.network.chat.ChatType;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.Registry;
 import net.minecraft.core.BlockPos;
-import net.minecraft.Util;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.commands.CommandSource;
 
 import net.jasontable.vore_mod.init.VoreModModItems;
 import net.jasontable.vore_mod.init.VoreModModGameRules;
+import net.jasontable.vore_mod.VoreModMod;
 
 import javax.annotation.Nullable;
 
 import java.util.stream.Collectors;
-import java.util.Random;
 import java.util.List;
 import java.util.Comparator;
 import java.util.ArrayList;
@@ -43,9 +42,8 @@ import java.util.ArrayList;
 @Mod.EventBusSubscriber
 public class EntityTickEatProcedure {
 	@SubscribeEvent
-	public static void onEntityTick(LivingEvent.LivingUpdateEvent event) {
-		execute(event, event.getEntityLiving().level, event.getEntityLiving().getX(), event.getEntityLiving().getY(), event.getEntityLiving().getZ(),
-				event.getEntityLiving());
+	public static void onEntityTick(LivingEvent.LivingTickEvent event) {
+		execute(event, event.getEntity().level, event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
 	}
 
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -69,19 +67,20 @@ public class EntityTickEatProcedure {
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream()
 						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					if (!("" + entity).equals("" + entityiterator)
+					if (!(entity == entityiterator)
 							&& !((entityiterator instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)
 									.getItem() == VoreModModItems.SHRINK_GUN.get())
-							&& entityiterator instanceof LivingEntity && true && entityiterator.getPersistentData().getDouble("eatCoolDown") == 0) {
+							&& entityiterator instanceof LivingEntity && entityiterator.getPersistentData().getDouble("eatCoolDown") == 0) {
 						entityiterator.getPersistentData().putDouble("eatCoolDown", 60);
 						{
 							ItemStack _ist = (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
-							if (_ist.hurt(1, new Random(), null)) {
+							if (_ist.hurt(1, RandomSource.create(), null)) {
 								_ist.shrink(1);
 								_ist.setDamageValue(0);
 							}
 						}
 						entityiterator.getPersistentData().putString("bellyDest", (entity.getPersistentData().getString("bellyType")));
+						entityiterator.getPersistentData().putString("preyExitCMD", (entity.getPersistentData().getString("predExitCMD")));
 						entityiterator.getPersistentData().putString("eatenBy", (entity.getDisplayName().getString()));
 						entityiterator.getPersistentData().putDouble("eatenByID", (entity.getPersistentData().getDouble("voreID")));
 						entityiterator.getPersistentData().putDouble("exitX", x);
@@ -113,49 +112,37 @@ public class EntityTickEatProcedure {
 							}
 						}
 						if (true) {
-							new Object() {
-								private int ticks = 0;
-								private float waitTicks;
-								private LevelAccessor world;
-
-								public void start(LevelAccessor world, int waitTicks) {
-									this.waitTicks = waitTicks;
-									MinecraftForge.EVENT_BUS.register(this);
-									this.world = world;
-								}
-
-								@SubscribeEvent
-								public void tick(TickEvent.ServerTickEvent event) {
-									if (event.phase == TickEvent.Phase.END) {
-										this.ticks += 1;
-										if (this.ticks >= this.waitTicks)
-											run();
+							VoreModMod.queueServerWork(1, () -> {
+								{
+									Entity _ent = entityiterator;
+									if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+										_ent.getServer().getCommands().performPrefixedCommand(
+												new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
+														_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
+														_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent),
+												("execute in vore_mod:belly run tp @s "
+														+ (entity.getPersistentData().getDouble("bellyOriginX")
+																+ entity.getPersistentData().getDouble("bellyOffsetX"))
+														+ " " + entity.getPersistentData().getDouble("bellyOffsetY") + " "
+														+ (entity.getPersistentData().getDouble("bellyOriginZ")
+																+ entity.getPersistentData().getDouble("bellyOffsetZ"))));
 									}
 								}
-
-								private void run() {
-									{
-										Entity _ent = entityiterator;
-										if (!_ent.level.isClientSide() && _ent.getServer() != null)
-											_ent.getServer().getCommands().performCommand(
-													_ent.createCommandSourceStack().withSuppressedOutput().withPermission(4),
-													("execute in vore_mod:belly run tp @s " + entity.getPersistentData().getDouble("bellyX") + " "
-															+ entity.getPersistentData().getDouble("bellyY") + " "
-															+ entity.getPersistentData().getDouble("bellyZ")));
-									}
-									MinecraftForge.EVENT_BUS.unregister(this);
-								}
-							}.start(world, 1);
+							});
 						}
 						if (!(entity.getPersistentData().getString("eatText")).equals("")) {
-							anothershitworkaroundbullshit = ((entity.getPersistentData().getString("eatText")).replace("[eatee]",
-									entityiterator.getDisplayName().getString())).replace("[eater]", entity.getDisplayName().getString());
+							anothershitworkaroundbullshit = entity.getPersistentData().getString("eatText");
+							anothershitworkaroundbullshit = anothershitworkaroundbullshit.replace("[pred]", entity.getDisplayName().getString());
+							anothershitworkaroundbullshit = anothershitworkaroundbullshit.replace("[prey]",
+									entityiterator.getDisplayName().getString());
+							anothershitworkaroundbullshit = anothershitworkaroundbullshit.replace("[eater]", entity.getDisplayName().getString());
+							anothershitworkaroundbullshit = anothershitworkaroundbullshit.replace("[eatee]",
+									entityiterator.getDisplayName().getString());
 							if (entityiterator instanceof Player || entity instanceof Player) {
 								if (!world.isClientSide()) {
 									MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
 									if (_mcserv != null)
-										_mcserv.getPlayerList().broadcastMessage(new TextComponent(anothershitworkaroundbullshit), ChatType.SYSTEM,
-												Util.NIL_UUID);
+										_mcserv.getPlayerList().broadcastSystemMessage(Component.literal(anothershitworkaroundbullshit), false);
 								}
 							} else {
 								whatthefuckwhywontthissave = true;
@@ -172,11 +159,11 @@ public class EntityTickEatProcedure {
 		if (whatthefuckwhywontthissave) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(14 / 2d), e -> true).stream()
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(16 / 2d), e -> true).stream()
 						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof Player _player && !_player.level.isClientSide())
-						_player.displayClientMessage(new TextComponent(anothershitworkaroundbullshit), (false));
+						_player.displayClientMessage(Component.literal(anothershitworkaroundbullshit), (false));
 				}
 			}
 		}
@@ -191,7 +178,9 @@ public class EntityTickEatProcedure {
 					{
 						List<? extends Player> _players = new ArrayList<>(world.players());
 						for (Entity entityiterator : _players) {
-							if (entityiterator.getPersistentData().getDouble("eatenByID") == entity.getPersistentData().getDouble("voreID")) {
+							if (entityiterator.getPersistentData().getDouble("eatenByID") == entity.getPersistentData().getDouble("voreID")
+									&& !((entity.level.dimension()) == (ResourceKey.create(Registry.DIMENSION_REGISTRY,
+											new ResourceLocation("vore_mod:belly"))))) {
 								entityiterator.getPersistentData().putDouble("exitX", x);
 								entityiterator.getPersistentData().putDouble("exitY", y);
 								entityiterator.getPersistentData().putDouble("exitZ", z);

@@ -3,5 +3,6 @@
   "textures": {
     "all": "vore_mod:blocks/realflesh-rotten",
     "particle": "vore_mod:blocks/realflesh-rotten"
-  }
+  },
+  "render_type": "solid"
 }

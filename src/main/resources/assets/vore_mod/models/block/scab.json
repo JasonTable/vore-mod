@@ -3,5 +3,6 @@
   "textures": {
     "all": "vore_mod:blocks/scab",
     "particle": "vore_mod:blocks/scab"
-  }
+  },
+  "render_type": "solid"
 }

@@ -6,6 +6,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.Registry;
 
+import net.jasontable.vore_mod.init.VoreModModGameRules;
+import net.jasontable.vore_mod.VoreModMod;
+
 public class GetDimensionTPIDProcedure {
 	public static String execute(LevelAccessor world) {
 		String dimid = "";
@@ -21,6 +24,10 @@ public class GetDimensionTPIDProcedure {
 		} else {
 			dimid = (("" + (world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD)).replace("]", ""))
 					.replace("ResourceKey[minecraft:dimension / ", "");
+		}
+		if (world.getLevelData().getGameRules().getBoolean(VoreModModGameRules.VOREBOSE)) {
+			VoreModMod.LOGGER.info((("" + (world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD)).replace("]", ""))
+					.replace("ResourceKey[minecraft:dimension / ", ""));
 		}
 		return dimid;
 	}

@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "fluid",
   "definition": {
     "name": "Acid",
@@ -15,11 +15,10 @@
     "dripParticle": {
       "value": "EXPLOSION_NORMAL"
     },
-    "flowStrength": 1.0,
+    "flowStrength": 0.9,
     "luminosity": 0,
     "density": 1000,
     "viscosity": 1000,
-    "isGas": false,
     "temperature": 300,
     "type": "WATER",
     "generateBucket": true,

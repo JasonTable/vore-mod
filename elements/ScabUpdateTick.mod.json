@@ -1,5 +1,5 @@
 {
-  "_fv": 33,
+  "_fv": 34,
   "_type": "procedure",
   "definition": {
     "procedurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"event_trigger\" x=\"560\" y=\"257\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"controls_if\"><value name=\"IF0\"><block type=\"compare_dimensionids\"><value name=\"a\"><block type=\"world_data_dimensionid\"/></value><value name=\"b\"><block type=\"get_dimensionid\"><field name=\"dimension\">CUSTOM:Belly</field></block></value></block></value><statement name=\"DO0\"><block type=\"block_add\"><value name=\"block\"><block type=\"mcitem_allblocks\"><field name=\"value\">CUSTOM:FleshBlock</field></block></value><value name=\"x\"><block type=\"coord_x\"/></value><value name=\"y\"><block type=\"coord_y\"/></value><value name=\"z\"><block type=\"coord_z\"/></value></block></statement></block></next></block></xml>"

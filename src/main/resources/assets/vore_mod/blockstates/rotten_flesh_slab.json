@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "vore_mod:block/rotten_flesh_slab"
+    },
+    "type=top": {
+      "model": "vore_mod:block/rotten_flesh_slab_top"
+    },
+    "type=double": {
+      "model": "vore_mod:block/rotten_flesh_slab_full"
+    }
+  }
+}

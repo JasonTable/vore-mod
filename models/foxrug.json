@@ -27,22 +27,26 @@
         "firstperson_righthand": {
             "rotation": [ 0, 315, 0 ],
             "translation": [ 0, 2.5, 0 ],
-            "scale": [ 0.1, 0.1, 0.1 ]
+            "scale": [ 0.4, 0.4, 0.4 ]
         },
         "thirdperson_righthand": {
             "rotation": [ 75, 315, 0 ],
             "translation": [ 0, 2.5, 0 ],
-            "scale": [ 0.1, 0.1, 0.1 ]
+            "scale": [ 0.375, 0.375, 0.375 ]
         }
     },
     "elements": [
         {
             "name": "Cube",
-            "from": [ -16, -16, 15 ], 
-            "to": [ 32, 32, 16 ], 
+            "from": [ -16, 0, 0 ], 
+            "to": [ 32, 48, 1 ], 
             "faces": {
                 "north": { "texture": "#fbloxk", "uv": [ 0, 0, 16, 16 ] },
-                "south": { "texture": "#fbloxk", "uv": [ 0, 0, 16, 16 ] }
+                "east": { "texture": "#fbloxk", "uv": [ 0, 0, 1, 16 ] },
+                "south": { "texture": "#fbloxk", "uv": [ 0, 0, 16, 16 ] },
+                "west": { "texture": "#fbloxk", "uv": [ 0, 0, 1, 16 ] },
+                "up": { "texture": "#fbloxk", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#fbloxk", "uv": [ 0, 0, 16, 0 ] }
             }
         }
     ]

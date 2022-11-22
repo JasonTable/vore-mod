@@ -11,18 +11,18 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.jasontable.vore_mod.procedures.ScabUpdateTickProcedure;
 
-import java.util.Random;
 import java.util.List;
 import java.util.Collections;
 
 public class ScabBlock extends Block {
 	public ScabBlock() {
-		super(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_RED).sound(SoundType.SLIME_BLOCK).strength(1f, 6f));
+		super(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_RED).sound(SoundType.SLIME_BLOCK).strength(1f, 3f));
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class ScabBlock extends Block {
 	}
 
 	@Override
-	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, Random random) {
+	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
 		super.tick(blockstate, world, pos, random);
 		int x = pos.getX();
 		int y = pos.getY();

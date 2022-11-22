@@ -11,14 +11,14 @@
     {
       "name": "Makefleshblock",
       "type": "recipe",
-      "sortid": 18,
+      "sortid": 24,
       "compiles": true,
       "locked_code": false
     },
     {
       "name": "Blood",
       "type": "fluid",
-      "sortid": 14,
+      "sortid": 19,
       "compiles": true,
       "locked_code": false,
       "metadata": {
@@ -28,7 +28,7 @@
     {
       "name": "FleshBlockBlockDestroyedByPlayer",
       "type": "procedure",
-      "sortid": 19,
+      "sortid": 25,
       "compiles": true,
       "locked_code": false,
       "metadata": {
@@ -59,7 +59,7 @@
     {
       "name": "AcidMobplayerCollidesBlock",
       "type": "procedure",
-      "sortid": 20,
+      "sortid": 26,
       "compiles": true,
       "locked_code": false,
       "metadata": {
@@ -74,7 +74,7 @@
     {
       "name": "Acid",
       "type": "fluid",
-      "sortid": 15,
+      "sortid": 20,
       "compiles": true,
       "locked_code": false,
       "metadata": {
@@ -84,7 +84,7 @@
     {
       "name": "Foxblocklol",
       "type": "block",
-      "sortid": 9,
+      "sortid": 11,
       "compiles": true,
       "locked_code": false,
       "registry_name": "foxblock"
@@ -92,14 +92,14 @@
     {
       "name": "Makefoz",
       "type": "recipe",
-      "sortid": 21,
+      "sortid": 27,
       "compiles": true,
       "locked_code": false
     },
     {
       "name": "FoxblocklolStartsToDestroy",
       "type": "procedure",
-      "sortid": 22,
+      "sortid": 28,
       "compiles": true,
       "locked_code": false,
       "metadata": {
@@ -114,14 +114,14 @@
     {
       "name": "Adminflesh",
       "type": "block",
-      "sortid": 6,
+      "sortid": 9,
       "compiles": true,
       "locked_code": false
     },
     {
       "name": "Cum",
       "type": "fluid",
-      "sortid": 13,
+      "sortid": 18,
       "compiles": true,
       "locked_code": false,
       "metadata": {
@@ -131,7 +131,7 @@
     {
       "name": "Shit",
       "type": "block",
-      "sortid": 5,
+      "sortid": 7,
       "compiles": true,
       "locked_code": false,
       "registry_name": "shit"
@@ -139,35 +139,35 @@
     {
       "name": "Anus",
       "type": "block",
-      "sortid": 10,
+      "sortid": 12,
       "compiles": true,
       "locked_code": false
     },
     {
       "name": "Makeass",
       "type": "recipe",
-      "sortid": 24,
+      "sortid": 29,
       "compiles": true,
       "locked_code": false
     },
     {
       "name": "Tongue",
       "type": "block",
-      "sortid": 4,
+      "sortid": 5,
       "compiles": true,
       "locked_code": false
     },
     {
       "name": "Maketung",
       "type": "recipe",
-      "sortid": 25,
+      "sortid": 30,
       "compiles": true,
       "locked_code": false
     },
     {
       "name": "DropFlesh",
       "type": "procedure",
-      "sortid": 26,
+      "sortid": 31,
       "compiles": true,
       "locked_code": false,
       "metadata": {
@@ -205,14 +205,14 @@
     {
       "name": "Fleshslabcraft",
       "type": "recipe",
-      "sortid": 27,
+      "sortid": 32,
       "compiles": true,
       "locked_code": false
     },
     {
       "name": "Belly",
       "type": "dimension",
-      "sortid": 16,
+      "sortid": 21,
       "compiles": true,
       "locked_code": false,
       "metadata": {
@@ -222,7 +222,7 @@
     {
       "name": "BellyPlayerEntersDimension",
       "type": "procedure",
-      "sortid": 28,
+      "sortid": 33,
       "compiles": true,
       "locked_code": false,
       "registry_name": "belly_player_enters_dimension",
@@ -248,45 +248,9 @@
       }
     },
     {
-      "name": "VoredebugCommandExecuted",
-      "type": "procedure",
-      "sortid": 29,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "voredebug_command_executed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "cmdparams",
-            "type": "map"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "Voredebug",
       "type": "command",
-      "sortid": 30,
+      "sortid": 35,
       "compiles": true,
       "locked_code": false,
       "registry_name": "voredebug"
@@ -294,55 +258,15 @@
     {
       "name": "Bellyorigin",
       "type": "block",
-      "sortid": 31,
+      "sortid": 36,
       "compiles": true,
       "locked_code": false,
       "registry_name": "bellyorigin"
     },
     {
-      "name": "BOGUI",
-      "type": "gui",
-      "sortid": 32,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "bogui"
-    },
-    {
-      "name": "BellyoriginOnBlockRightClicked",
-      "type": "procedure",
-      "sortid": 33,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "bellyorigin_on_block_right_clicked",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "Changag",
       "type": "procedure",
-      "sortid": 34,
+      "sortid": 39,
       "compiles": true,
       "locked_code": false,
       "registry_name": "changag",
@@ -378,7 +302,7 @@
     {
       "name": "ShrinkGun",
       "type": "item",
-      "sortid": 17,
+      "sortid": 22,
       "compiles": true,
       "locked_code": false,
       "registry_name": "shrink_gun"
@@ -386,7 +310,7 @@
     {
       "name": "EntityClick",
       "type": "procedure",
-      "sortid": 35,
+      "sortid": 40,
       "compiles": true,
       "locked_code": false,
       "registry_name": "entity_click",
@@ -422,7 +346,7 @@
     {
       "name": "SmallAnus",
       "type": "block",
-      "sortid": 11,
+      "sortid": 13,
       "compiles": true,
       "locked_code": false,
       "registry_name": "small_anus"
@@ -430,7 +354,7 @@
     {
       "name": "SmallAnusBlockIsPlacedBy",
       "type": "procedure",
-      "sortid": 36,
+      "sortid": 41,
       "compiles": true,
       "locked_code": false,
       "registry_name": "small_anus_block_is_placed_by",
@@ -462,7 +386,7 @@
     {
       "name": "SmallAnusEntityCollidesInTheBlock",
       "type": "procedure",
-      "sortid": 37,
+      "sortid": 42,
       "compiles": true,
       "locked_code": false,
       "registry_name": "small_anus_entity_collides_in_the_block",
@@ -494,7 +418,7 @@
     {
       "name": "CraftSmallAnus",
       "type": "recipe",
-      "sortid": 38,
+      "sortid": 43,
       "compiles": true,
       "locked_code": false,
       "registry_name": "craft_small_anus"
@@ -502,7 +426,7 @@
     {
       "name": "GetABelly",
       "type": "procedure",
-      "sortid": 39,
+      "sortid": 44,
       "compiles": true,
       "locked_code": false,
       "registry_name": "get_a_belly",
@@ -522,7 +446,7 @@
     {
       "name": "BellyExitTrigger",
       "type": "block",
-      "sortid": 40,
+      "sortid": 45,
       "compiles": true,
       "locked_code": false,
       "registry_name": "belly_exit_trigger"
@@ -530,7 +454,7 @@
     {
       "name": "BellyExitTriggerEntityCollidesInTheBlock",
       "type": "procedure",
-      "sortid": 41,
+      "sortid": 46,
       "compiles": true,
       "locked_code": false,
       "registry_name": "belly_exit_trigger_entity_collides_in_the_block",
@@ -539,14 +463,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
           },
           {
             "name": "world",
@@ -558,7 +474,7 @@
     {
       "name": "GetDimensionTPID",
       "type": "procedure",
-      "sortid": 42,
+      "sortid": 47,
       "compiles": true,
       "locked_code": false,
       "registry_name": "get_dimension_tpid",
@@ -575,7 +491,7 @@
     {
       "name": "Poo",
       "type": "block",
-      "sortid": 12,
+      "sortid": 14,
       "compiles": true,
       "locked_code": false,
       "registry_name": "poo"
@@ -583,7 +499,7 @@
     {
       "name": "MakeSBlock",
       "type": "recipe",
-      "sortid": 43,
+      "sortid": 48,
       "compiles": true,
       "locked_code": false,
       "registry_name": "make_s_block"
@@ -591,7 +507,7 @@
     {
       "name": "BreakUpPoo",
       "type": "recipe",
-      "sortid": 44,
+      "sortid": 49,
       "compiles": true,
       "locked_code": false,
       "registry_name": "break_up_poo"
@@ -599,10 +515,10 @@
     {
       "name": "FoxblocklolBlockIsPlacedBy",
       "type": "procedure",
-      "sortid": 46,
+      "sortid": 50,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "foxblocklol_block_is_placed_by",
+      "registry_name": "foxblock_block_is_placed_by",
       "metadata": {
         "dependencies": [
           {
@@ -631,7 +547,7 @@
     {
       "name": "EatcomCommandExecuted",
       "type": "procedure",
-      "sortid": 48,
+      "sortid": 51,
       "compiles": true,
       "locked_code": false,
       "registry_name": "eatcom_command_executed",
@@ -663,7 +579,7 @@
     {
       "name": "Adminrotflesh",
       "type": "block",
-      "sortid": 7,
+      "sortid": 10,
       "compiles": true,
       "locked_code": false,
       "registry_name": "adminrotflesh"
@@ -671,7 +587,7 @@
     {
       "name": "CraftRottenFleshBlock",
       "type": "recipe",
-      "sortid": 51,
+      "sortid": 52,
       "compiles": true,
       "locked_code": false,
       "registry_name": "craft_rotten_flesh_block"
@@ -679,52 +595,24 @@
     {
       "name": "CraftShrinkGun",
       "type": "recipe",
-      "sortid": 52,
+      "sortid": 53,
       "compiles": true,
       "locked_code": false,
       "registry_name": "craft_shrink_gun"
     },
     {
-      "name": "FoxblocklolOnBlockRightClicked",
+      "name": "FoxblocklolBlockDestroyedByPlayer",
       "type": "procedure",
-      "sortid": 53,
+      "sortid": 54,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "foxblocklol_on_block_right_clicked",
+      "registry_name": "foxblocklol_block_destroyed_by_player",
       "metadata": {
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
           },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "FoxblocklolBlockDestroyedByPlayer",
-      "type": "procedure",
-      "sortid": 56,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "foxblocklol_block_destroyed_by_player",
-      "metadata": {
-        "dependencies": [
           {
             "name": "x",
             "type": "number"
@@ -747,16 +635,12 @@
     {
       "name": "DestroyBelly",
       "type": "procedure",
-      "sortid": 57,
+      "sortid": 55,
       "compiles": true,
       "locked_code": false,
       "registry_name": "destroy_belly",
       "metadata": {
         "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
           {
             "name": "x",
             "type": "number"
@@ -779,7 +663,7 @@
     {
       "name": "Innards",
       "type": "biome",
-      "sortid": 59,
+      "sortid": 56,
       "compiles": true,
       "locked_code": false,
       "registry_name": "innards"
@@ -787,7 +671,7 @@
     {
       "name": "ShrinkGunItemIsCraftedsmelted",
       "type": "procedure",
-      "sortid": 60,
+      "sortid": 57,
       "compiles": true,
       "locked_code": false,
       "registry_name": "shrink_gun_item_is_craftedsmelted",
@@ -823,7 +707,7 @@
     {
       "name": "EntityTickEat",
       "type": "procedure",
-      "sortid": 61,
+      "sortid": 58,
       "compiles": true,
       "locked_code": false,
       "registry_name": "entity_tick_eat",
@@ -855,7 +739,7 @@
     {
       "name": "ShrinkGunAllowed",
       "type": "gamerule",
-      "sortid": 62,
+      "sortid": 59,
       "compiles": true,
       "locked_code": false,
       "registry_name": "shrinkGunAllowed",
@@ -866,7 +750,7 @@
     {
       "name": "ShrinkGunMobUse",
       "type": "gamerule",
-      "sortid": 63,
+      "sortid": 60,
       "compiles": true,
       "locked_code": false,
       "registry_name": "shrinkGunMobUse",
@@ -877,7 +761,7 @@
     {
       "name": "MobSpawnGiveGun",
       "type": "procedure",
-      "sortid": 64,
+      "sortid": 61,
       "compiles": true,
       "locked_code": false,
       "registry_name": "mob_spawn_give_gun",
@@ -897,7 +781,7 @@
     {
       "name": "Uvula",
       "type": "block",
-      "sortid": 65,
+      "sortid": 15,
       "compiles": true,
       "locked_code": false,
       "registry_name": "uvula"
@@ -905,7 +789,7 @@
     {
       "name": "CraftUvula",
       "type": "recipe",
-      "sortid": 70,
+      "sortid": 62,
       "compiles": true,
       "locked_code": false,
       "registry_name": "craft_uvula"
@@ -913,7 +797,7 @@
     {
       "name": "Scab",
       "type": "block",
-      "sortid": 71,
+      "sortid": 8,
       "compiles": true,
       "locked_code": false,
       "registry_name": "scab"
@@ -921,7 +805,7 @@
     {
       "name": "BloodUpdateTick",
       "type": "procedure",
-      "sortid": 72,
+      "sortid": 63,
       "compiles": true,
       "locked_code": false,
       "registry_name": "blood_update_tick",
@@ -949,7 +833,7 @@
     {
       "name": "ScabUpdateTick",
       "type": "procedure",
-      "sortid": 73,
+      "sortid": 64,
       "compiles": true,
       "locked_code": false,
       "registry_name": "scab_update_tick",
@@ -977,11 +861,12 @@
     {
       "name": "ChangeToAV",
       "type": "procedure",
-      "sortid": 74,
+      "sortid": 65,
       "compiles": true,
       "locked_code": false,
       "registry_name": "change_to_av",
       "metadata": {
+        "return_type": "logic",
         "dependencies": [
           {
             "name": "entity",
@@ -993,7 +878,7 @@
     {
       "name": "Flesh",
       "type": "item",
-      "sortid": 75,
+      "sortid": 23,
       "compiles": true,
       "locked_code": false,
       "registry_name": "flesh"
@@ -1001,7 +886,7 @@
     {
       "name": "Shitfuel",
       "type": "itemextension",
-      "sortid": 76,
+      "sortid": 66,
       "compiles": true,
       "locked_code": false,
       "registry_name": "shitfuel"
@@ -1009,7 +894,7 @@
     {
       "name": "PooFuel",
       "type": "itemextension",
-      "sortid": 77,
+      "sortid": 67,
       "compiles": true,
       "locked_code": false,
       "registry_name": "poo_fuel"
@@ -1017,12 +902,224 @@
     {
       "name": "Vorebose",
       "type": "gamerule",
-      "sortid": 78,
+      "sortid": 68,
       "compiles": true,
       "locked_code": false,
       "registry_name": "vorebose",
       "metadata": {
         "type": "logic"
+      }
+    },
+    {
+      "name": "Esophagus",
+      "type": "block",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "esophagus"
+    },
+    {
+      "name": "CraftEsophagus",
+      "type": "recipe",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "craft_esophagus"
+    },
+    {
+      "name": "TongueSlab",
+      "type": "block",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tongue_slab"
+    },
+    {
+      "name": "TongueSlabCraft",
+      "type": "recipe",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tongue_slab_craft"
+    },
+    {
+      "name": "ThinTongue",
+      "type": "block",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thin_tongue"
+    },
+    {
+      "name": "ThinTongueCraft",
+      "type": "recipe",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thin_tongue_craft"
+    },
+    {
+      "name": "FoxblocklolOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "foxblocklol_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RottenFleshSlab",
+      "type": "block",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rotten_flesh_slab"
+    },
+    {
+      "name": "RottenFleshSlabCraft",
+      "type": "recipe",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rotten_flesh_slab_craft"
+    },
+    {
+      "name": "StomachAnimal",
+      "type": "tag",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stomach_animal"
+    },
+    {
+      "name": "StomachAnthro",
+      "type": "tag",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stomach_anthro"
+    },
+    {
+      "name": "StomachRotten",
+      "type": "tag",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stomach_rotten"
+    },
+    {
+      "name": "StomachNoeat",
+      "type": "tag",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stomach_noeat"
+    },
+    {
+      "name": "FallOutOFStomach",
+      "type": "procedure",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fall_out_of_stomach",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StomachRottenAnimal",
+      "type": "tag",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "stomach_rotten_animal"
+    },
+    {
+      "name": "ExitBelly",
+      "type": "procedure",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "exit_belly",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "VDBSetBellyDest",
+      "type": "procedure",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vdb_set_belly_dest",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     }
   ],
@@ -1078,47 +1175,51 @@
       "item.vore_mod.acid_bucket": "Acid Bucket",
       "block.vore_mod.uvula": "Uvula",
       "item.flesh.name": "Flesh",
-      "gamerule.shrinkGunAllowed.description": "Is crafting and use of the shrink gun is allowed?",
-      "item.vore_mod.blood_bucket": "Blood Bucket",
       "block.vore_mod.rotten_flesh_block": "Rotten Flesh Block",
       "block.vore_mod.small_anus": "Small Anus",
       "block.vore_mod.adminrotflesh": "Unbreakable Rotten Flesh Block",
-      "block.vore_mod.cum": "Cum",
       "block.vore_mod.bellyorigin": "Belly Origin",
+      "fluid.blood": "Blood",
+      "block.vore_mod.rotten_flesh_slab": "Rotten Flesh Slab",
+      "fluid.vore_mod.cum": "Cum",
+      "gamerule.shrinkGunMobUse.description": "Can mobs that are holding a Shrink Gun use it to eat other mobs?",
+      "block.vore_mod.anus": "Anus",
+      "fluid.vore_mod.acid": "Acid",
+      "block.vore_mod.poo": "Poo",
+      "item.vore_mod.belly": "Belly Portal Igniter",
+      "block.vore_mod.shit": "Shit Block",
+      "block.vore_mod.blood": "Blood",
+      "block.vore_mod.acid": "Acid",
+      "block.vore_mod.fleshslab": "Flesh Slab",
+      "tile.anus.name": "Anus",
+      "gamerule.vorebose": "Vorebose",
+      "fluid.acid": "Acid",
+      "biome.vore_mod.innards": "Innards",
+      "block.vore_mod.thin_tongue": "Thin Tongue",
+      "block.vore_mod.esophagus": "Esophagus",
+      "gamerule.shrinkGunAllowed.description": "Is crafting and use of the shrink gun is allowed?",
+      "block.vore_mod.tongue_slab": "Tongue Slab",
+      "item.vore_mod.blood_bucket": "Blood Bucket",
+      "block.vore_mod.cum": "Cum",
       "block.vore_mod.belly_exit_trigger": "Belly Exit Trigger",
       "block.vore_mod.foxblock": "Fox Block",
       "tile.adminflesh.name": "Unbreakable Flesh Block",
-      "fluid.blood": "Blood",
       "fluid.vore_mod.blood": "Blood",
       "tile.shit.name": "Shit Block",
       "subtitles.heart_beat": "Beating",
       "fluid.cum": "Cum",
-      "fluid.vore_mod.cum": "Cum",
-      "gamerule.shrinkGunMobUse.description": "Can mobs that are holding a Shrink Gun use it to eat other mobs?",
       "tile.fleshblock.name": "Flesh Block",
-      "block.vore_mod.anus": "Anus",
-      "fluid.vore_mod.acid": "Acid",
       "subtitles.stomach_gurgles": "Gurgling",
       "item.vore_mod.flesh": "Flesh",
-      "block.vore_mod.poo": "Poo",
-      "item.vore_mod.belly": "Belly Portal Igniter",
-      "block.vore_mod.shit": "Shit Block",
       "block.vore_mod.adminflesh": "Unbreakable Flesh Block",
-      "block.vore_mod.blood": "Blood",
       "gamerule.shrinkGunAllowed": "Shrink Gun Allowed",
       "block.vore_mod.fleshblock": "Flesh Block",
-      "block.vore_mod.acid": "Acid",
-      "block.vore_mod.fleshslab": "Flesh Slab",
       "block.vore_mod.flesh_slab": "Flesh Slab",
       "item.vore_mod.shrink_gun": "Shrink Gun",
       "block.vore_mod.scab": "Scab",
-      "tile.anus.name": "Anus",
-      "gamerule.vorebose": "Vorebose",
-      "fluid.acid": "Acid",
       "block.vore_mod.tongue": "Tongue",
       "tile.tongue.name": "Tongue",
       "gamerule.vorebose.description": "Verbose console output from the vore mod.",
-      "biome.vore_mod.innards": "Innards",
       "item.vore_mod.cum_bucket": "Cum Bucket",
       "gamerule.shrinkGunMobUse": "Shrink Gun Mob Use"
     }
@@ -1130,7 +1231,7 @@
   "workspaceSettings": {
     "modid": "vore_mod",
     "modName": "Vore Mod",
-    "version": "1.3.1",
+    "version": "2.0.0",
     "description": "Eat and be eatd.",
     "author": "Jason",
     "websiteURL": "https://jasontheleech.itch.io/minecraft-vore-mod",
@@ -1141,10 +1242,10 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.18.2",
+    "currentGenerator": "forge-1.19.2",
     "credits": "Created with MCreator - https://mcreator.net/about \\ntest",
     "modElementsPackage": "net.jasontable.vore_mod",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200234517
+  "mcreatorVersion": 202200347418
 }
