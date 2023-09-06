@@ -1,8 +1,10 @@
 
 package net.jasontable.vore_mod.block;
 
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
@@ -29,15 +31,12 @@ import net.jasontable.vore_mod.init.VoreModModItems;
 import java.util.List;
 import java.util.Collections;
 
-public class AnusBlock extends Block implements SimpleWaterloggedBlock
-
-{
+public class AnusBlock extends Block implements SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = DirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public AnusBlock() {
-		super(BlockBehaviour.Properties.of(Material.DIRT).sound(SoundType.SLIME_BLOCK).strength(0.8999999999999999f, 3f).noCollission().noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of().sound(SoundType.SLIME_BLOCK).strength(0.9f, 3f).noCollission().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
 	}
 
@@ -49,6 +48,11 @@ public class AnusBlock extends Block implements SimpleWaterloggedBlock
 	@Override
 	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
+	}
+
+	@Override
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
 	}
 
 	@Override
@@ -76,8 +80,7 @@ public class AnusBlock extends Block implements SimpleWaterloggedBlock
 	}
 
 	@Override
-	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos,
-			BlockPos facingPos) {
+	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
 		if (state.getValue(WATERLOGGED)) {
 			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
 		}
@@ -85,7 +88,7 @@ public class AnusBlock extends Block implements SimpleWaterloggedBlock
 	}
 
 	@Override
-	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+	public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;

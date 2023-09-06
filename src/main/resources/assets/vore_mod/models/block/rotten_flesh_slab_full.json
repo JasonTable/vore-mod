@@ -1,9 +1,9 @@
 {
   "parent": "block/cube_bottom_top",
   "textures": {
-    "bottom": "vore_mod:blocks/realflesh-rotten",
-    "top": "vore_mod:blocks/realflesh-rotten",
-    "side": "vore_mod:blocks/realflesh-rotten"
+    "bottom": "vore_mod:block/realflesh-rotten",
+    "top": "vore_mod:block/realflesh-rotten",
+    "side": "vore_mod:block/realflesh-rotten"
   },
   "render_type": "solid"
 }

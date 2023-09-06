@@ -10,7 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 
 import javax.annotation.Nullable;
 
@@ -19,7 +19,7 @@ public class FallOutOFStomachProcedure {
 	@SubscribeEvent
 	public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
 		if (event.phase == TickEvent.Phase.END) {
-			execute(event, event.player.level, event.player.getY(), event.player);
+			execute(event, event.player.level(), event.player.getY(), event.player);
 		}
 	}
 
@@ -30,8 +30,7 @@ public class FallOutOFStomachProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double y, Entity entity) {
 		if (entity == null)
 			return;
-		if (y < -6 && (world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == (ResourceKey.create(Registry.DIMENSION_REGISTRY,
-				new ResourceLocation("vore_mod:belly")))) {
+		if (y < -6 && (world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("vore_mod:belly")))) {
 			entity.fallDistance = 0;
 			ExitBellyProcedure.execute(world, entity);
 		}

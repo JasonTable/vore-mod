@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "biome",
   "definition": {
     "name": "Innards",
@@ -44,21 +44,29 @@
     "particlesProbability": 1.0,
     "rainingPossibility": 0.0,
     "temperature": 1.5,
-    "baseHeight": 0.1,
-    "heightVariation": 0.2,
     "spawnBiome": false,
-    "spawnBiomeNether": false,
     "spawnInCaves": false,
-    "biomeWeight": 10,
-    "grassPerChunk": 0,
-    "seagrassPerChunk": 0,
-    "flowersPerChunk": 0,
-    "mushroomsPerChunk": 0,
-    "bigMushroomsChunk": 0,
-    "sandPatchesPerChunk": 0,
-    "gravelPatchesPerChunk": 0,
-    "reedsPerChunk": 0,
-    "cactiPerChunk": 0,
+    "spawnBiomeNether": false,
+    "genTemperature": {
+      "min": 0.46666666666666673,
+      "max": 0.8666666666666667
+    },
+    "genHumidity": {
+      "min": -1.2,
+      "max": -0.8
+    },
+    "genContinentalness": {
+      "min": 0.31,
+      "max": 0.71
+    },
+    "genErosion": {
+      "min": 0.6000000000000001,
+      "max": 1.0
+    },
+    "genWeirdness": {
+      "min": -0.6575946253178278,
+      "max": -0.2575946253178278
+    },
     "treesPerChunk": 0,
     "vanillaTreeType": "Default",
     "treeType": 0,
@@ -75,6 +83,7 @@
     "treeFruits": {
       "value": ""
     },
+    "defaultFeatures": [],
     "spawnStronghold": false,
     "spawnMineshaft": false,
     "spawnMineshaftMesa": false,
@@ -95,7 +104,6 @@
     "spawnBastionRemnant": false,
     "spawnEndCity": false,
     "spawnRuinedPortal": "NONE",
-    "defaultFeatures": [],
     "spawnEntries": []
   }
 }

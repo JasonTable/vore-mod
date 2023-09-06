@@ -1,7 +1,7 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "procedure",
   "definition": {
-    "procedurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"event_trigger\" x=\"201\" y=\"136\"><field name=\"trigger\">no_ext_trigger</field><comment h=\"80\" pinned=\"false\" w=\"160\">Damage entity when in acid.</comment><next><block type=\"deal_damage\"><field name=\"damagesource\">GENERIC</field><value name=\"amount\"><block type=\"math_number\"><field name=\"NUM\">1</field></block></value><value name=\"entity\"><block type=\"entity_from_deps\"/></value></block></next></block></xml>"
+    "procedurexml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?><xml xmlns=\"https://developers.google.com/blockly/xml\"><block deletable=\"false\" type=\"event_trigger\" x=\"201\" y=\"136\"><field name=\"trigger\">no_ext_trigger</field><comment h=\"80\" pinned=\"false\" w=\"160\">Damage entity when in acid.</comment><next><block type=\"deal_damage\"><value name=\"amount\"><block type=\"math_number\"><field name=\"NUM\">1</field></block></value><value name=\"entity\"><block type=\"entity_from_deps\"/></value><value name=\"damagesource\"><block type=\"damagesource_from_type\"><field name=\"damagetype\">GENERIC</field></block></value></block></next></block></xml>"
   }
 }

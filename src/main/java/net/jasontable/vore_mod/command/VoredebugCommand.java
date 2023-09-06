@@ -22,8 +22,8 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 public class VoredebugCommand {
 	@SubscribeEvent
 	public static void registerCommand(RegisterCommandsEvent event) {
-		event.getDispatcher().register(Commands.literal("voredebug").requires(s -> s.hasPermission(4)).then(Commands.literal("belly")
-				.then(Commands.literal("place").then(Commands.argument("bellyname", StringArgumentType.word()).executes(arguments -> {
+		event.getDispatcher()
+				.register(Commands.literal("voredebug").requires(s -> s.hasPermission(4)).then(Commands.literal("belly").then(Commands.literal("place").then(Commands.argument("bellyname", StringArgumentType.word()).executes(arguments -> {
 					ServerLevel world = arguments.getSource().getLevel();
 					double x = arguments.getSource().getPosition().x();
 					double y = arguments.getSource().getPosition().y();

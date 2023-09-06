@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "vore_mod:blocks/foxtonguetexture64",
-    "particle": "vore_mod:blocks/foxtonguetexture64"
+    "all": "vore_mod:block/foxtonguetexture64",
+    "particle": "vore_mod:block/foxtonguetexture64"
   },
   "render_type": "solid"
 }

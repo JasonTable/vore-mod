@@ -14,8 +14,7 @@ import net.jasontable.vore_mod.init.VoreModModFluidTypes;
 import net.jasontable.vore_mod.init.VoreModModBlocks;
 
 public abstract class AcidFluid extends ForgeFlowingFluid {
-	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> VoreModModFluidTypes.ACID_TYPE.get(),
-			() -> VoreModModFluids.ACID.get(), () -> VoreModModFluids.FLOWING_ACID.get()).explosionResistance(100f)
+	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> VoreModModFluidTypes.ACID_TYPE.get(), () -> VoreModModFluids.ACID.get(), () -> VoreModModFluids.FLOWING_ACID.get()).explosionResistance(100f)
 			.bucket(() -> VoreModModItems.ACID_BUCKET.get()).block(() -> (LiquidBlock) VoreModModBlocks.ACID.get());
 
 	private AcidFluid() {

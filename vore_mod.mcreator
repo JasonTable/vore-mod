@@ -6,14 +6,27 @@
       "sortid": 1,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "fleshblock"
+      "registry_name": "fleshblock",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/blockstates/fleshblock.json",
+          "src/main/java/net/jasontable/vore_mod/block/FleshBlockBlock.java",
+          "src/main/resources/assets/vore_mod/models/item/fleshblock.json",
+          "src/main/resources/assets/vore_mod/models/block/fleshblock.json"
+        ]
+      }
     },
     {
       "name": "Makefleshblock",
       "type": "recipe",
       "sortid": 24,
       "compiles": true,
-      "locked_code": false
+      "locked_code": false,
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/makefleshblock.json"
+        ]
+      }
     },
     {
       "name": "Blood",
@@ -22,7 +35,16 @@
       "compiles": true,
       "locked_code": false,
       "metadata": {
-        "gb": true
+        "gb": true,
+        "files": [
+          "src/main/resources/assets/vore_mod/blockstates/blood.json",
+          "src/main/java/net/jasontable/vore_mod/fluid/types/BloodFluidType.java",
+          "src/main/java/net/jasontable/vore_mod/fluid/BloodFluid.java",
+          "src/main/java/net/jasontable/vore_mod/item/BloodItem.java",
+          "src/main/resources/assets/vore_mod/models/block/blood.json",
+          "src/main/java/net/jasontable/vore_mod/block/BloodBlock.java",
+          "src/main/resources/assets/vore_mod/models/item/blood_bucket.json"
+        ]
       }
     },
     {
@@ -32,6 +54,9 @@
       "compiles": true,
       "locked_code": false,
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/FleshBlockBlockDestroyedByPlayerProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -63,10 +88,17 @@
       "compiles": true,
       "locked_code": false,
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/AcidMobplayerCollidesBlockProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -78,7 +110,16 @@
       "compiles": true,
       "locked_code": false,
       "metadata": {
-        "gb": true
+        "gb": true,
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/item/AcidItem.java",
+          "src/main/java/net/jasontable/vore_mod/fluid/types/AcidFluidType.java",
+          "src/main/java/net/jasontable/vore_mod/fluid/AcidFluid.java",
+          "src/main/resources/assets/vore_mod/blockstates/acid.json",
+          "src/main/resources/assets/vore_mod/models/block/acid.json",
+          "src/main/resources/assets/vore_mod/models/item/acid_bucket.json",
+          "src/main/java/net/jasontable/vore_mod/block/AcidBlock.java"
+        ]
       }
     },
     {
@@ -87,14 +128,28 @@
       "sortid": 11,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "foxblock"
+      "registry_name": "foxblock",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/block/entity/FoxblocklolBlockEntity.java",
+          "src/main/resources/assets/vore_mod/models/item/foxblock.json",
+          "src/main/resources/assets/vore_mod/blockstates/foxblock.json",
+          "src/main/java/net/jasontable/vore_mod/block/FoxblocklolBlock.java",
+          "src/main/resources/assets/vore_mod/models/block/foxblock.json"
+        ]
+      }
     },
     {
       "name": "Makefoz",
       "type": "recipe",
       "sortid": 27,
       "compiles": true,
-      "locked_code": false
+      "locked_code": false,
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/makefoz.json"
+        ]
+      }
     },
     {
       "name": "FoxblocklolStartsToDestroy",
@@ -103,6 +158,9 @@
       "compiles": true,
       "locked_code": false,
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/FoxblocklolStartsToDestroyProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -116,7 +174,15 @@
       "type": "block",
       "sortid": 9,
       "compiles": true,
-      "locked_code": false
+      "locked_code": false,
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/models/block/adminflesh.json",
+          "src/main/resources/assets/vore_mod/blockstates/adminflesh.json",
+          "src/main/java/net/jasontable/vore_mod/block/AdminfleshBlock.java",
+          "src/main/resources/assets/vore_mod/models/item/adminflesh.json"
+        ]
+      }
     },
     {
       "name": "Cum",
@@ -125,7 +191,16 @@
       "compiles": true,
       "locked_code": false,
       "metadata": {
-        "gb": true
+        "gb": true,
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/item/CumItem.java",
+          "src/main/java/net/jasontable/vore_mod/fluid/types/CumFluidType.java",
+          "src/main/java/net/jasontable/vore_mod/fluid/CumFluid.java",
+          "src/main/java/net/jasontable/vore_mod/block/CumBlock.java",
+          "src/main/resources/assets/vore_mod/blockstates/cum.json",
+          "src/main/resources/assets/vore_mod/models/item/cum_bucket.json",
+          "src/main/resources/assets/vore_mod/models/block/cum.json"
+        ]
       }
     },
     {
@@ -134,35 +209,69 @@
       "sortid": 7,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "shit"
+      "registry_name": "shit",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/models/item/shit.json",
+          "src/main/resources/assets/vore_mod/models/block/shit.json",
+          "src/main/java/net/jasontable/vore_mod/block/ShitBlock.java",
+          "src/main/resources/assets/vore_mod/blockstates/shit.json"
+        ]
+      }
     },
     {
       "name": "Anus",
       "type": "block",
       "sortid": 12,
       "compiles": true,
-      "locked_code": false
+      "locked_code": false,
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/blockstates/anus.json",
+          "src/main/resources/assets/vore_mod/models/item/anus.json",
+          "src/main/java/net/jasontable/vore_mod/block/AnusBlock.java",
+          "src/main/resources/assets/vore_mod/models/block/anus.json"
+        ]
+      }
     },
     {
       "name": "Makeass",
       "type": "recipe",
       "sortid": 29,
       "compiles": true,
-      "locked_code": false
+      "locked_code": false,
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/makeass.json"
+        ]
+      }
     },
     {
       "name": "Tongue",
       "type": "block",
       "sortid": 5,
       "compiles": true,
-      "locked_code": false
+      "locked_code": false,
+      "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/block/TongueBlock.java",
+          "src/main/resources/assets/vore_mod/models/block/tongue.json",
+          "src/main/resources/assets/vore_mod/blockstates/tongue.json",
+          "src/main/resources/assets/vore_mod/models/item/tongue.json"
+        ]
+      }
     },
     {
       "name": "Maketung",
       "type": "recipe",
       "sortid": 30,
       "compiles": true,
-      "locked_code": false
+      "locked_code": false,
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/maketung.json"
+        ]
+      }
     },
     {
       "name": "DropFlesh",
@@ -171,6 +280,9 @@
       "compiles": true,
       "locked_code": false,
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/DropFleshProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -200,14 +312,29 @@
       "type": "block",
       "sortid": 2,
       "compiles": true,
-      "locked_code": false
+      "locked_code": false,
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/blockstates/flesh_slab.json",
+          "src/main/resources/assets/vore_mod/models/block/flesh_slab_full.json",
+          "src/main/resources/assets/vore_mod/models/block/flesh_slab_top.json",
+          "src/main/resources/assets/vore_mod/models/item/flesh_slab.json",
+          "src/main/java/net/jasontable/vore_mod/block/FleshSlabBlock.java",
+          "src/main/resources/assets/vore_mod/models/block/flesh_slab.json"
+        ]
+      }
     },
     {
       "name": "Fleshslabcraft",
       "type": "recipe",
       "sortid": 32,
       "compiles": true,
-      "locked_code": false
+      "locked_code": false,
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/fleshslabcraft.json"
+        ]
+      }
     },
     {
       "name": "Belly",
@@ -216,7 +343,12 @@
       "compiles": true,
       "locked_code": false,
       "metadata": {
-        "ep": false
+        "ep": false,
+        "files": [
+          "src/main/resources/data/vore_mod/dimension/belly.json",
+          "src/main/java/net/jasontable/vore_mod/world/dimension/BellyDimension.java",
+          "src/main/resources/data/vore_mod/dimension_type/belly.json"
+        ]
       }
     },
     {
@@ -227,6 +359,9 @@
       "locked_code": false,
       "registry_name": "belly_player_enters_dimension",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/BellyPlayerEntersDimensionProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -253,7 +388,12 @@
       "sortid": 35,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "voredebug"
+      "registry_name": "voredebug",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/command/VoredebugCommand.java"
+        ]
+      }
     },
     {
       "name": "Bellyorigin",
@@ -261,7 +401,15 @@
       "sortid": 36,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "bellyorigin"
+      "registry_name": "bellyorigin",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/models/item/bellyorigin.json",
+          "src/main/resources/assets/vore_mod/blockstates/bellyorigin.json",
+          "src/main/resources/assets/vore_mod/models/block/bellyorigin.json",
+          "src/main/java/net/jasontable/vore_mod/block/BellyoriginBlock.java"
+        ]
+      }
     },
     {
       "name": "Changag",
@@ -271,6 +419,9 @@
       "locked_code": false,
       "registry_name": "changag",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/ChangagProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -305,7 +456,13 @@
       "sortid": 22,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "shrink_gun"
+      "registry_name": "shrink_gun",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/item/ShrinkGunItem.java",
+          "src/main/resources/assets/vore_mod/models/item/shrink_gun.json"
+        ]
+      }
     },
     {
       "name": "EntityClick",
@@ -315,6 +472,9 @@
       "locked_code": false,
       "registry_name": "entity_click",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/EntityClickProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -349,7 +509,16 @@
       "sortid": 13,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "small_anus"
+      "registry_name": "small_anus",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/block/SmallAnusBlock.java",
+          "src/main/resources/assets/vore_mod/blockstates/small_anus.json",
+          "src/main/resources/assets/vore_mod/models/block/small_anus.json",
+          "src/main/java/net/jasontable/vore_mod/block/entity/SmallAnusBlockEntity.java",
+          "src/main/resources/assets/vore_mod/models/item/small_anus.json"
+        ]
+      }
     },
     {
       "name": "SmallAnusBlockIsPlacedBy",
@@ -359,6 +528,9 @@
       "locked_code": false,
       "registry_name": "small_anus_block_is_placed_by",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/SmallAnusBlockIsPlacedByProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -391,6 +563,9 @@
       "locked_code": false,
       "registry_name": "small_anus_entity_collides_in_the_block",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/SmallAnusEntityCollidesInTheBlockProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -421,7 +596,12 @@
       "sortid": 43,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "craft_small_anus"
+      "registry_name": "craft_small_anus",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/craft_small_anus.json"
+        ]
+      }
     },
     {
       "name": "GetABelly",
@@ -431,6 +611,9 @@
       "locked_code": false,
       "registry_name": "get_a_belly",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/GetABellyProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -449,7 +632,15 @@
       "sortid": 45,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "belly_exit_trigger"
+      "registry_name": "belly_exit_trigger",
+      "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/block/BellyExitTriggerBlock.java",
+          "src/main/resources/assets/vore_mod/models/block/belly_exit_trigger.json",
+          "src/main/resources/assets/vore_mod/blockstates/belly_exit_trigger.json",
+          "src/main/resources/assets/vore_mod/models/item/belly_exit_trigger.json"
+        ]
+      }
     },
     {
       "name": "BellyExitTriggerEntityCollidesInTheBlock",
@@ -459,6 +650,9 @@
       "locked_code": false,
       "registry_name": "belly_exit_trigger_entity_collides_in_the_block",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/BellyExitTriggerEntityCollidesInTheBlockProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -480,6 +674,9 @@
       "registry_name": "get_dimension_tpid",
       "metadata": {
         "return_type": "string",
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/GetDimensionTPIDProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "world",
@@ -494,7 +691,15 @@
       "sortid": 14,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "poo"
+      "registry_name": "poo",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/blockstates/poo.json",
+          "src/main/resources/assets/vore_mod/models/block/poo.json",
+          "src/main/java/net/jasontable/vore_mod/block/PooBlock.java",
+          "src/main/resources/assets/vore_mod/models/item/poo.json"
+        ]
+      }
     },
     {
       "name": "MakeSBlock",
@@ -502,7 +707,12 @@
       "sortid": 48,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "make_s_block"
+      "registry_name": "make_s_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/make_s_block.json"
+        ]
+      }
     },
     {
       "name": "BreakUpPoo",
@@ -510,7 +720,12 @@
       "sortid": 49,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "break_up_poo"
+      "registry_name": "break_up_poo",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/break_up_poo.json"
+        ]
+      }
     },
     {
       "name": "FoxblocklolBlockIsPlacedBy",
@@ -520,6 +735,9 @@
       "locked_code": false,
       "registry_name": "foxblock_block_is_placed_by",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/FoxblocklolBlockIsPlacedByProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -552,6 +770,9 @@
       "locked_code": false,
       "registry_name": "eatcom_command_executed",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/EatcomCommandExecutedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -574,7 +795,15 @@
       "sortid": 3,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "rotten_flesh_block"
+      "registry_name": "rotten_flesh_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/models/block/rotten_flesh_block.json",
+          "src/main/resources/assets/vore_mod/models/item/rotten_flesh_block.json",
+          "src/main/java/net/jasontable/vore_mod/block/RottenFleshBlockBlock.java",
+          "src/main/resources/assets/vore_mod/blockstates/rotten_flesh_block.json"
+        ]
+      }
     },
     {
       "name": "Adminrotflesh",
@@ -582,7 +811,15 @@
       "sortid": 10,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "adminrotflesh"
+      "registry_name": "adminrotflesh",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/models/block/adminrotflesh.json",
+          "src/main/java/net/jasontable/vore_mod/block/AdminrotfleshBlock.java",
+          "src/main/resources/assets/vore_mod/blockstates/adminrotflesh.json",
+          "src/main/resources/assets/vore_mod/models/item/adminrotflesh.json"
+        ]
+      }
     },
     {
       "name": "CraftRottenFleshBlock",
@@ -590,7 +827,12 @@
       "sortid": 52,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "craft_rotten_flesh_block"
+      "registry_name": "craft_rotten_flesh_block",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/craft_rotten_flesh_block.json"
+        ]
+      }
     },
     {
       "name": "CraftShrinkGun",
@@ -598,7 +840,12 @@
       "sortid": 53,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "craft_shrink_gun"
+      "registry_name": "craft_shrink_gun",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/craft_shrink_gun.json"
+        ]
+      }
     },
     {
       "name": "FoxblocklolBlockDestroyedByPlayer",
@@ -608,6 +855,9 @@
       "locked_code": false,
       "registry_name": "foxblocklol_block_destroyed_by_player",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/FoxblocklolBlockDestroyedByPlayerProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -640,6 +890,9 @@
       "locked_code": false,
       "registry_name": "destroy_belly",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/DestroyBellyProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -666,7 +919,12 @@
       "sortid": 56,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "innards"
+      "registry_name": "innards",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/worldgen/biome/innards.json"
+        ]
+      }
     },
     {
       "name": "ShrinkGunItemIsCraftedsmelted",
@@ -676,6 +934,9 @@
       "locked_code": false,
       "registry_name": "shrink_gun_item_is_craftedsmelted",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/ShrinkGunItemIsCraftedsmeltedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -712,6 +973,9 @@
       "locked_code": false,
       "registry_name": "entity_tick_eat",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/EntityTickEatProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -744,7 +1008,8 @@
       "locked_code": false,
       "registry_name": "shrinkGunAllowed",
       "metadata": {
-        "type": "logic"
+        "type": "logic",
+        "files": []
       }
     },
     {
@@ -755,7 +1020,8 @@
       "locked_code": false,
       "registry_name": "shrinkGunMobUse",
       "metadata": {
-        "type": "logic"
+        "type": "logic",
+        "files": []
       }
     },
     {
@@ -766,6 +1032,9 @@
       "locked_code": false,
       "registry_name": "mob_spawn_give_gun",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/MobSpawnGiveGunProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -784,7 +1053,15 @@
       "sortid": 15,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "uvula"
+      "registry_name": "uvula",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/models/block/uvula.json",
+          "src/main/resources/assets/vore_mod/blockstates/uvula.json",
+          "src/main/java/net/jasontable/vore_mod/block/UvulaBlock.java",
+          "src/main/resources/assets/vore_mod/models/item/uvula.json"
+        ]
+      }
     },
     {
       "name": "CraftUvula",
@@ -792,7 +1069,12 @@
       "sortid": 62,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "craft_uvula"
+      "registry_name": "craft_uvula",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/craft_uvula.json"
+        ]
+      }
     },
     {
       "name": "Scab",
@@ -800,7 +1082,15 @@
       "sortid": 8,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "scab"
+      "registry_name": "scab",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/models/block/scab.json",
+          "src/main/java/net/jasontable/vore_mod/block/ScabBlock.java",
+          "src/main/resources/assets/vore_mod/blockstates/scab.json",
+          "src/main/resources/assets/vore_mod/models/item/scab.json"
+        ]
+      }
     },
     {
       "name": "BloodUpdateTick",
@@ -810,6 +1100,9 @@
       "locked_code": false,
       "registry_name": "blood_update_tick",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/BloodUpdateTickProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -838,6 +1131,9 @@
       "locked_code": false,
       "registry_name": "scab_update_tick",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/ScabUpdateTickProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "x",
@@ -867,6 +1163,9 @@
       "registry_name": "change_to_av",
       "metadata": {
         "return_type": "logic",
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/ChangeToAVProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -881,7 +1180,13 @@
       "sortid": 23,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "flesh"
+      "registry_name": "flesh",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/models/item/flesh.json",
+          "src/main/java/net/jasontable/vore_mod/item/FleshItem.java"
+        ]
+      }
     },
     {
       "name": "Shitfuel",
@@ -889,7 +1194,10 @@
       "sortid": 66,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "shitfuel"
+      "registry_name": "shitfuel",
+      "metadata": {
+        "files": []
+      }
     },
     {
       "name": "PooFuel",
@@ -897,7 +1205,10 @@
       "sortid": 67,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "poo_fuel"
+      "registry_name": "poo_fuel",
+      "metadata": {
+        "files": []
+      }
     },
     {
       "name": "Vorebose",
@@ -907,7 +1218,8 @@
       "locked_code": false,
       "registry_name": "vorebose",
       "metadata": {
-        "type": "logic"
+        "type": "logic",
+        "files": []
       }
     },
     {
@@ -916,7 +1228,15 @@
       "sortid": 16,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "esophagus"
+      "registry_name": "esophagus",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/models/item/esophagus.json",
+          "src/main/resources/assets/vore_mod/blockstates/esophagus.json",
+          "src/main/resources/assets/vore_mod/models/block/esophagus.json",
+          "src/main/java/net/jasontable/vore_mod/block/EsophagusBlock.java"
+        ]
+      }
     },
     {
       "name": "CraftEsophagus",
@@ -924,7 +1244,12 @@
       "sortid": 69,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "craft_esophagus"
+      "registry_name": "craft_esophagus",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/craft_esophagus.json"
+        ]
+      }
     },
     {
       "name": "TongueSlab",
@@ -932,7 +1257,17 @@
       "sortid": 6,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tongue_slab"
+      "registry_name": "tongue_slab",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/models/block/tongue_slab.json",
+          "src/main/resources/assets/vore_mod/models/block/tongue_slab_full.json",
+          "src/main/java/net/jasontable/vore_mod/block/TongueSlabBlock.java",
+          "src/main/resources/assets/vore_mod/models/block/tongue_slab_top.json",
+          "src/main/resources/assets/vore_mod/blockstates/tongue_slab.json",
+          "src/main/resources/assets/vore_mod/models/item/tongue_slab.json"
+        ]
+      }
     },
     {
       "name": "TongueSlabCraft",
@@ -940,7 +1275,12 @@
       "sortid": 70,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "tongue_slab_craft"
+      "registry_name": "tongue_slab_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/tongue_slab_craft.json"
+        ]
+      }
     },
     {
       "name": "ThinTongue",
@@ -948,7 +1288,15 @@
       "sortid": 17,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "thin_tongue"
+      "registry_name": "thin_tongue",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/blockstates/thin_tongue.json",
+          "src/main/resources/assets/vore_mod/models/item/thin_tongue.json",
+          "src/main/resources/assets/vore_mod/models/block/thin_tongue.json",
+          "src/main/java/net/jasontable/vore_mod/block/ThinTongueBlock.java"
+        ]
+      }
     },
     {
       "name": "ThinTongueCraft",
@@ -956,7 +1304,12 @@
       "sortid": 71,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "thin_tongue_craft"
+      "registry_name": "thin_tongue_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/thin_tongue_craft.json"
+        ]
+      }
     },
     {
       "name": "FoxblocklolOnBlockRightClicked",
@@ -966,6 +1319,9 @@
       "locked_code": false,
       "registry_name": "foxblocklol_on_block_right_clicked",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/FoxblocklolOnBlockRightClickedProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -996,7 +1352,17 @@
       "sortid": 4,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "rotten_flesh_slab"
+      "registry_name": "rotten_flesh_slab",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/vore_mod/models/block/rotten_flesh_slab.json",
+          "src/main/resources/assets/vore_mod/models/item/rotten_flesh_slab.json",
+          "src/main/resources/assets/vore_mod/blockstates/rotten_flesh_slab.json",
+          "src/main/java/net/jasontable/vore_mod/block/RottenFleshSlabBlock.java",
+          "src/main/resources/assets/vore_mod/models/block/rotten_flesh_slab_full.json",
+          "src/main/resources/assets/vore_mod/models/block/rotten_flesh_slab_top.json"
+        ]
+      }
     },
     {
       "name": "RottenFleshSlabCraft",
@@ -1004,7 +1370,12 @@
       "sortid": 73,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "rotten_flesh_slab_craft"
+      "registry_name": "rotten_flesh_slab_craft",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/vore_mod/recipes/rotten_flesh_slab_craft.json"
+        ]
+      }
     },
     {
       "name": "StomachAnimal",
@@ -1012,7 +1383,12 @@
       "sortid": 74,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "stomach_animal"
+      "registry_name": "stomach_animal",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/forge/tags/entity_types/stomach_animal.json"
+        ]
+      }
     },
     {
       "name": "StomachAnthro",
@@ -1020,7 +1396,12 @@
       "sortid": 75,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "stomach_anthro"
+      "registry_name": "stomach_anthro",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/forge/tags/entity_types/stomach_anthro.json"
+        ]
+      }
     },
     {
       "name": "StomachRotten",
@@ -1028,7 +1409,12 @@
       "sortid": 76,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "stomach_rotten"
+      "registry_name": "stomach_rotten",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/forge/tags/entity_types/stomach_rotten.json"
+        ]
+      }
     },
     {
       "name": "StomachNoeat",
@@ -1036,7 +1422,12 @@
       "sortid": 77,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "stomach_noeat"
+      "registry_name": "stomach_noeat",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/forge/tags/entity_types/stomach_noeat.json"
+        ]
+      }
     },
     {
       "name": "FallOutOFStomach",
@@ -1046,6 +1437,9 @@
       "locked_code": false,
       "registry_name": "fall_out_of_stomach",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/FallOutOFStomachProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1068,7 +1462,12 @@
       "sortid": 79,
       "compiles": true,
       "locked_code": false,
-      "registry_name": "stomach_rotten_animal"
+      "registry_name": "stomach_rotten_animal",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/forge/tags/entity_types/stomach_rotten_animal.json"
+        ]
+      }
     },
     {
       "name": "ExitBelly",
@@ -1078,6 +1477,9 @@
       "locked_code": false,
       "registry_name": "exit_belly",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/ExitBellyProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "entity",
@@ -1098,6 +1500,9 @@
       "locked_code": false,
       "registry_name": "vdb_set_belly_dest",
       "metadata": {
+        "files": [
+          "src/main/java/net/jasontable/vore_mod/procedures/VDBSetBellyDestProcedure.java"
+        ],
         "dependencies": [
           {
             "name": "arguments",
@@ -1120,6 +1525,30 @@
             "type": "world"
           }
         ]
+      }
+    },
+    {
+      "name": "RuleNoChat",
+      "type": "gamerule",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "rule_no_chat",
+      "metadata": {
+        "files": [],
+        "type": "logic"
+      }
+    },
+    {
+      "name": "Clotting",
+      "type": "gamerule",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clotting",
+      "metadata": {
+        "files": [],
+        "type": "logic"
       }
     }
   ],
@@ -1186,13 +1615,14 @@
       "block.vore_mod.anus": "Anus",
       "fluid.vore_mod.acid": "Acid",
       "block.vore_mod.poo": "Poo",
-      "item.vore_mod.belly": "Belly Portal Igniter",
       "block.vore_mod.shit": "Shit Block",
       "block.vore_mod.blood": "Blood",
+      "gamerule.ruleNoChat.description": "reduced chat messages from vore mod",
       "block.vore_mod.acid": "Acid",
       "block.vore_mod.fleshslab": "Flesh Slab",
       "tile.anus.name": "Anus",
       "gamerule.vorebose": "Vorebose",
+      "gamerule.ruleNoChat": "No vore chat",
       "fluid.acid": "Acid",
       "biome.vore_mod.innards": "Innards",
       "block.vore_mod.thin_tongue": "Thin Tongue",
@@ -1213,7 +1643,11 @@
       "item.vore_mod.flesh": "Flesh",
       "block.vore_mod.adminflesh": "Unbreakable Flesh Block",
       "gamerule.shrinkGunAllowed": "Shrink Gun Allowed",
+      "gamerule.clotting.description": "Blood will turn into scab when inside the body",
+      "gamerule.noClot.description": "Blood will not turn into scab.",
       "block.vore_mod.fleshblock": "Flesh Block",
+      "gamerule.noClot": "No Clotting",
+      "gamerule.clotting": "Blood Clotting",
       "block.vore_mod.flesh_slab": "Flesh Slab",
       "item.vore_mod.shrink_gun": "Shrink Gun",
       "block.vore_mod.scab": "Scab",
@@ -1242,10 +1676,10 @@
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "forge-1.19.2",
+    "currentGenerator": "forge-1.20.1",
     "credits": "Created with MCreator - https://mcreator.net/about \\ntest",
     "modElementsPackage": "net.jasontable.vore_mod",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202200347418
+  "mcreatorVersion": 202300336712
 }

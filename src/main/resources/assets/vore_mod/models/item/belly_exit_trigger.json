@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "vore_mod:items/bellyexit"
+    "layer0": "vore_mod:item/bellyexit"
   },
-  "render_type": "solid"
+  "render_type": "translucent"
 }

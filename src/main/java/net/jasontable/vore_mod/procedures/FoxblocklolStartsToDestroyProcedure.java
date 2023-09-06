@@ -8,7 +8,7 @@ public class FoxblocklolStartsToDestroyProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof Player _player && !_player.level.isClientSide())
-			_player.displayClientMessage(Component.literal("<Fox> Nooooo what are ya doing!?!?"), (false));
+		if (entity instanceof Player _player && !_player.level().isClientSide())
+			_player.displayClientMessage(Component.literal("<Fox> Nooooo what are ya doing!?!?"), false);
 	}
 }

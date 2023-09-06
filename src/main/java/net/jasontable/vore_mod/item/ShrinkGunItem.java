@@ -10,7 +10,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
@@ -20,7 +19,7 @@ import java.util.List;
 
 public class ShrinkGunItem extends Item {
 	public ShrinkGunItem() {
-		super(new Item.Properties().tab(CreativeModeTab.TAB_TOOLS).durability(20).rarity(Rarity.UNCOMMON));
+		super(new Item.Properties().durability(20).rarity(Rarity.UNCOMMON));
 	}
 
 	@Override

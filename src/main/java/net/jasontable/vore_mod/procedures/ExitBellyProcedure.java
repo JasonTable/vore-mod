@@ -10,7 +10,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
-import java.util.stream.Collectors;
+import net.jasontable.vore_mod.init.VoreModModGameRules;
+
 import java.util.List;
 import java.util.Comparator;
 
@@ -25,44 +26,38 @@ public class ExitBellyProcedure {
 		if (!(entity.getPersistentData().getString("preyExitCMD")).isEmpty()) {
 			exitCommandThiny = entity.getPersistentData().getString("preyExitCMD");
 			if ((exitCommandThiny).equals("uneat")) {
-				exitCommandThiny = "execute in " + entity.getPersistentData().getString("exitDIM") + " run tp @s "
-						+ entity.getPersistentData().getDouble("exitX") + " " + entity.getPersistentData().getDouble("exitY") + " "
+				exitCommandThiny = "execute in " + entity.getPersistentData().getString("exitDIM") + " run tp @s " + entity.getPersistentData().getDouble("exitX") + " " + entity.getPersistentData().getDouble("exitY") + " "
 						+ entity.getPersistentData().getDouble("exitZ");
 			}
 			{
 				final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).collect(Collectors.toList());
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator instanceof Player)) {
 						entityiterator.getPersistentData().putDouble("eatCoolDown", 120);
 						{
 							Entity _ent = entityiterator;
-							if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(),
-										_ent.getRotationVector(), _ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4,
-										_ent.getName().getString(), _ent.getDisplayName(), _ent.level.getServer(), _ent), exitCommandThiny);
+							if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+								_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
+										_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), exitCommandThiny);
 							}
 						}
-						if (!entityiterator.level.isClientSide())
+						if (!entityiterator.level().isClientSide())
 							entityiterator.discard();
 						countmobb = countmobb + 1;
 					}
 				}
 			}
-			if (countmobb > 0) {
-				if (entity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal((new java.text.DecimalFormat("#").format(countmobb) + ""
-							+ (countmobb == 1 ? " mob followed you" : " mobs followed you"))), (false));
+			if (countmobb > 0 && !world.getLevelData().getGameRules().getBoolean(VoreModModGameRules.RULE_NO_CHAT)) {
+				if (entity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal((new java.text.DecimalFormat("#").format(countmobb) + "" + (countmobb == 1 ? " mob followed you" : " mobs followed you"))), false);
 			}
 			entity.getPersistentData().putDouble("eatCoolDown", 120);
 			{
 				Entity _ent = entity;
-				if (!_ent.level.isClientSide() && _ent.getServer() != null) {
-					_ent.getServer().getCommands()
-							.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
-									_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
-									_ent.getDisplayName(), _ent.level.getServer(), _ent), exitCommandThiny);
+				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), exitCommandThiny);
 				}
 			}
 			entity.getPersistentData().putString("preyExitCMD", "");

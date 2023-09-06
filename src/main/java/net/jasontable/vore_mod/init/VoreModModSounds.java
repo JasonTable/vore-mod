@@ -15,8 +15,6 @@ import net.jasontable.vore_mod.VoreModMod;
 
 public class VoreModModSounds {
 	public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, VoreModMod.MODID);
-	public static final RegistryObject<SoundEvent> HEART_BEAT = REGISTRY.register("heart_beat",
-			() -> new SoundEvent(new ResourceLocation("vore_mod", "heart_beat")));
-	public static final RegistryObject<SoundEvent> STOMACH_GURGLES = REGISTRY.register("stomach_gurgles",
-			() -> new SoundEvent(new ResourceLocation("vore_mod", "stomach_gurgles")));
+	public static final RegistryObject<SoundEvent> HEART_BEAT = REGISTRY.register("heart_beat", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("vore_mod", "heart_beat")));
+	public static final RegistryObject<SoundEvent> STOMACH_GURGLES = REGISTRY.register("stomach_gurgles", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("vore_mod", "stomach_gurgles")));
 }

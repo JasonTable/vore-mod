@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "vore_mod:items/fbloxk2small"
+    "layer0": "vore_mod:item/fbloxk2small"
   },
-  "render_type": "solid"
+  "render_type": "translucent"
 }

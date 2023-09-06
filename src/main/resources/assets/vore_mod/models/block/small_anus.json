@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "vore_mod:blocks/ass",
-    "particle": "vore_mod:blocks/ass"
+    "all": "vore_mod:block/ass",
+    "particle": "vore_mod:block/ass"
   },
   "render_type": "cutout"
 }

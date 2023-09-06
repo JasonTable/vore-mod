@@ -1,10 +1,10 @@
 
 package net.jasontable.vore_mod.block;
 
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.material.PushReaction;
-import net.minecraft.world.level.material.MaterialColor;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
@@ -20,7 +20,7 @@ import java.util.Collections;
 
 public class AdminfleshBlock extends Block {
 	public AdminfleshBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_PINK).sound(SoundType.SLIME_BLOCK).strength(-1, 3600000));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_PINK).sound(SoundType.SLIME_BLOCK).strength(-1, 3600000).pushReaction(PushReaction.BLOCK));
 	}
 
 	@Override
@@ -29,12 +29,7 @@ public class AdminfleshBlock extends Block {
 	}
 
 	@Override
-	public PushReaction getPistonPushReaction(BlockState state) {
-		return PushReaction.BLOCK;
-	}
-
-	@Override
-	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+	public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;

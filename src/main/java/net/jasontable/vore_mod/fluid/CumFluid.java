@@ -14,8 +14,7 @@ import net.jasontable.vore_mod.init.VoreModModFluidTypes;
 import net.jasontable.vore_mod.init.VoreModModBlocks;
 
 public abstract class CumFluid extends ForgeFlowingFluid {
-	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> VoreModModFluidTypes.CUM_TYPE.get(),
-			() -> VoreModModFluids.CUM.get(), () -> VoreModModFluids.FLOWING_CUM.get()).explosionResistance(100f)
+	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> VoreModModFluidTypes.CUM_TYPE.get(), () -> VoreModModFluids.CUM.get(), () -> VoreModModFluids.FLOWING_CUM.get()).explosionResistance(100f)
 			.bucket(() -> VoreModModItems.CUM_BUCKET.get()).block(() -> (LiquidBlock) VoreModModBlocks.CUM.get());
 
 	private CumFluid() {

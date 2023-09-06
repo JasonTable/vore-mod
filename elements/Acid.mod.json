@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "fluid",
   "definition": {
     "name": "Acid",
@@ -24,7 +24,7 @@
     "generateBucket": true,
     "textureBucket": "",
     "creativeTab": {
-      "value": "MISC"
+      "value": "TOOLS"
     },
     "emptySound": {
       "value": ""
@@ -39,9 +39,6 @@
     "flammability": 0,
     "fireSpreadSpeed": 0,
     "colorOnMap": "DEFAULT",
-    "frequencyOnChunks": 5,
-    "spawnWorldTypes": [],
-    "restrictionBiomes": [],
     "onEntityCollides": {
       "name": "AcidMobplayerCollidesBlock"
     }

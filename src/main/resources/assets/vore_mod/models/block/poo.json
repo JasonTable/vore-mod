@@ -1,9 +1,9 @@
 {
   "parent": "vore_mod:custom/poo",
   "textures": {
-    "all": "vore_mod:blocks/shit",
-    "particle": "vore_mod:blocks/shit",
-    "0": "vore_mod:blocks/shit"
+    "all": "vore_mod:block/shit",
+    "particle": "vore_mod:block/shit",
+    "0": "vore_mod:block/shit"
   },
   "render_type": "solid"
 }

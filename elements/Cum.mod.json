@@ -1,5 +1,5 @@
 {
-  "_fv": 34,
+  "_fv": 47,
   "_type": "fluid",
   "definition": {
     "name": "Cum",
@@ -12,6 +12,9 @@
     "levelDecrease": 1,
     "slopeFindDistance": 4,
     "spawnParticles": false,
+    "dripParticle": {
+      "value": "EXPLOSION_NORMAL"
+    },
     "flowStrength": 1.0,
     "luminosity": 0,
     "density": 1000,
@@ -19,8 +22,12 @@
     "temperature": 300,
     "type": "WATER",
     "generateBucket": true,
+    "textureBucket": "",
     "creativeTab": {
-      "value": "MISC"
+      "value": "TOOLS"
+    },
+    "emptySound": {
+      "value": ""
     },
     "rarity": "COMMON",
     "specialInfo": [],
@@ -31,9 +38,6 @@
     "tickRate": 10,
     "flammability": 0,
     "fireSpreadSpeed": 0,
-    "colorOnMap": "DEFAULT",
-    "frequencyOnChunks": 5,
-    "spawnWorldTypes": [],
-    "restrictionBiomes": []
+    "colorOnMap": "DEFAULT"
   }
 }

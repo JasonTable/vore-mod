@@ -1,6 +1,5 @@
 package net.jasontable.vore_mod.procedures;
 
-import net.minecraftforge.server.ServerLifecycleHooks;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,11 +19,10 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.network.chat.Component;
-import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
@@ -54,16 +52,12 @@ public class EntityClickProcedure {
 			return;
 		String dimid = "";
 		String eat_text_coolhuh = "";
-		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == VoreModModItems.SHRINK_GUN
-				.get()) {
+		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == VoreModModItems.SHRINK_GUN.get()) {
 			if (world.getLevelData().getGameRules().getBoolean(VoreModModGameRules.VOREBOSE)) {
-				VoreModMod.LOGGER.info((entity.getDisplayName().getString() + " was right clicked on with shrink gun by "
-						+ sourceentity.getDisplayName().getString()));
+				VoreModMod.LOGGER.info((entity.getDisplayName().getString() + " was right clicked on with shrink gun by " + sourceentity.getDisplayName().getString()));
 			}
 			GetABellyProcedure.execute(world, entity);
-			if (!entity.getPersistentData().getBoolean("noEat")
-					&& !((world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == (ResourceKey.create(Registry.DIMENSION_REGISTRY,
-							new ResourceLocation("vore_mod:belly"))))) {
+			if (!entity.getPersistentData().getBoolean("noEat") && !((world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == (ResourceKey.create(Registries.DIMENSION, new ResourceLocation("vore_mod:belly"))))) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}
@@ -71,9 +65,9 @@ public class EntityClickProcedure {
 					public boolean checkGamemode(Entity _ent) {
 						if (_ent instanceof ServerPlayer _serverPlayer) {
 							return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
-						} else if (_ent.level.isClientSide() && _ent instanceof Player _player) {
-							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft
-									.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+						} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+									&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
 						}
 						return false;
 					}
@@ -93,43 +87,32 @@ public class EntityClickProcedure {
 				sourceentity.getPersistentData().putDouble("exitX", x);
 				sourceentity.getPersistentData().putDouble("exitY", y);
 				sourceentity.getPersistentData().putDouble("exitZ", z);
-				sourceentity.getPersistentData().putString("exitDIM",
-						((("" + (world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD)).replace("]", ""))
-								.replace("ResourceKey[minecraft:dimension / ", "")));
+				sourceentity.getPersistentData().putString("exitDIM", ((("" + (world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD)).replace("]", "")).replace("ResourceKey[minecraft:dimension / ", "")));
 				if (entity instanceof Fox) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, new BlockPos(x, y, z),
-									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.eat")), SoundSource.NEUTRAL, 1, 1);
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.eat")), SoundSource.NEUTRAL, 1, 1);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.eat")),
-									SoundSource.NEUTRAL, 1, 1, false);
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.eat")), SoundSource.NEUTRAL, 1, 1, false);
 						}
 					}
 				} else {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, new BlockPos(x, y, z),
-									ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1);
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.eat")),
-									SoundSource.NEUTRAL, 1, 1, false);
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.eat")), SoundSource.NEUTRAL, 1, 1, false);
 						}
 					}
 				}
 				{
 					Entity _ent = sourceentity;
-					if (!_ent.level.isClientSide() && _ent.getServer() != null) {
+					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
 						_ent.getServer().getCommands().performPrefixedCommand(
-								new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(),
-										_ent.level instanceof ServerLevel ? (ServerLevel) _ent.level : null, 4, _ent.getName().getString(),
-										_ent.getDisplayName(), _ent.level.getServer(), _ent),
-								("execute in vore_mod:belly run tp @s "
-										+ (entity.getPersistentData().getDouble("bellyOriginX")
-												+ entity.getPersistentData().getDouble("bellyOffsetX"))
-										+ " " + entity.getPersistentData().getDouble("bellyOffsetY") + " "
-										+ (entity.getPersistentData().getDouble("bellyOriginZ")
-												+ entity.getPersistentData().getDouble("bellyOffsetZ"))));
+								new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+										_ent.level().getServer(), _ent),
+								("execute in vore_mod:belly run tp @s " + (entity.getPersistentData().getDouble("bellyOriginX") + entity.getPersistentData().getDouble("bellyOffsetX")) + " " + entity.getPersistentData().getDouble("bellyOffsetY") + " "
+										+ (entity.getPersistentData().getDouble("bellyOriginZ") + entity.getPersistentData().getDouble("bellyOffsetZ"))));
 					}
 				}
 				if (!(entity.getPersistentData().getString("eatText")).isEmpty()) {
@@ -138,38 +121,36 @@ public class EntityClickProcedure {
 					eat_text_coolhuh = eat_text_coolhuh.replace("[prey]", sourceentity.getDisplayName().getString());
 					eat_text_coolhuh = eat_text_coolhuh.replace("[eater]", entity.getDisplayName().getString());
 					eat_text_coolhuh = eat_text_coolhuh.replace("[eatee]", sourceentity.getDisplayName().getString());
-					if (!world.isClientSide()) {
-						MinecraftServer _mcserv = ServerLifecycleHooks.getCurrentServer();
-						if (_mcserv != null)
-							_mcserv.getPlayerList().broadcastSystemMessage(Component.literal(eat_text_coolhuh), false);
+					if (!world.getLevelData().getGameRules().getBoolean(VoreModModGameRules.RULE_NO_CHAT)) {
+						if (!world.isClientSide() && world.getServer() != null)
+							world.getServer().getPlayerList().broadcastSystemMessage(Component.literal(eat_text_coolhuh), false);
 					}
 				}
 			} else {
-				if (sourceentity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal((entity.getDisplayName().getString() + " will not eat you.")), (false));
+				if (sourceentity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal((entity.getDisplayName().getString() + " will not eat you.")), false);
 			}
 		} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.NAME_TAG
-				&& ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getDisplayName().getString())
-						.equals("[AV]")) {
+				&& ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getDisplayName().getString()).equals("[AV]")) {
 			if (ChangeToAVProcedure.execute(entity)) {
 				if (!(new Object() {
 					public boolean checkGamemode(Entity _ent) {
 						if (_ent instanceof ServerPlayer _serverPlayer) {
 							return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
-						} else if (_ent.level.isClientSide() && _ent instanceof Player _player) {
-							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft
-									.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+						} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+									&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
 						}
 						return false;
 					}
 				}.checkGamemode(sourceentity))) {
-					((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)).shrink(1);
+					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).shrink(1);
 				}
-				if (sourceentity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal((entity.getDisplayName().getString() + " will anal vore you now.")), (false));
+				if (sourceentity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal((entity.getDisplayName().getString() + " will anal vore you now.")), false);
 			} else {
-				if (sourceentity instanceof Player _player && !_player.level.isClientSide())
-					_player.displayClientMessage(Component.literal((entity.getDisplayName().getString() + " cannot anal vore you.")), (false));
+				if (sourceentity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal((entity.getDisplayName().getString() + " cannot anal vore you.")), false);
 			}
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);

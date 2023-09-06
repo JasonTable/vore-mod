@@ -14,8 +14,7 @@ public class BellyExitTriggerEntityCollidesInTheBlockProcedure {
 		double orgz = 0;
 		double countmobb = 0;
 		String exitCommandThiny = "";
-		if ((world.getBlockState(new BlockPos(Math.floor(entity.getX()), Math.floor(entity.getY()), Math.floor(entity.getZ()))))
-				.getBlock() == VoreModModBlocks.BELLY_EXIT_TRIGGER.get() || entity.getY() < 0) {
+		if ((world.getBlockState(BlockPos.containing(Math.floor(entity.getX()), Math.floor(entity.getY()), Math.floor(entity.getZ())))).getBlock() == VoreModModBlocks.BELLY_EXIT_TRIGGER.get() || entity.getY() < 0) {
 			ExitBellyProcedure.execute(world, entity);
 		}
 	}

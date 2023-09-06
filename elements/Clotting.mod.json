@@ -1,0 +1,12 @@
+{
+  "_fv": 47,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "Blood Clotting",
+    "description": "Blood will turn into scab when inside the body",
+    "category": "PLAYER",
+    "defaultValueLogic": true,
+    "defaultValueNumber": 0
+  }
+}

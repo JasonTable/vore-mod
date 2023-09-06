@@ -10,15 +10,13 @@ public class ChangeToAVProcedure {
 		double thez = 0;
 		if (entity.getPersistentData().getBoolean("noEat")) {
 			return false;
-		} else if ((entity.getPersistentData().getString("bellyType")).equals("animal")
-				|| (entity.getPersistentData().getString("bellyType")).equals("rotten_animal")) {
+		} else if ((entity.getPersistentData().getString("bellyType")).equals("animal") || (entity.getPersistentData().getString("bellyType")).equals("rotten_animal")) {
 			entity.getPersistentData().putDouble("bellyOffsetX", 4);
 			entity.getPersistentData().putDouble("bellyOffsetY", 14);
 			entity.getPersistentData().putDouble("bellyOffsetZ", 10);
 			entity.getPersistentData().putString("eatText", "[prey] got shoved up [pred]'s ass");
 			return true;
-		} else if ((entity.getPersistentData().getString("bellyType")).equals("anthro")
-				|| (entity.getPersistentData().getString("bellyType")).equals("rotten")) {
+		} else if ((entity.getPersistentData().getString("bellyType")).equals("anthro") || (entity.getPersistentData().getString("bellyType")).equals("rotten")) {
 			entity.getPersistentData().putDouble("bellyOffsetX", 16);
 			entity.getPersistentData().putDouble("bellyOffsetY", 3);
 			entity.getPersistentData().putDouble("bellyOffsetZ", 10);

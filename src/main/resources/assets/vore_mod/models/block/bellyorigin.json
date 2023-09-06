@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "vore_mod:blocks/bellyorgin",
-    "particle": "vore_mod:blocks/bellyorgin"
+    "all": "vore_mod:block/bellyorgin",
+    "particle": "vore_mod:block/bellyorgin"
   },
   "render_type": "solid"
 }

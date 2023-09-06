@@ -14,8 +14,7 @@ import net.jasontable.vore_mod.init.VoreModModFluidTypes;
 import net.jasontable.vore_mod.init.VoreModModBlocks;
 
 public abstract class BloodFluid extends ForgeFlowingFluid {
-	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> VoreModModFluidTypes.BLOOD_TYPE.get(),
-			() -> VoreModModFluids.BLOOD.get(), () -> VoreModModFluids.FLOWING_BLOOD.get()).explosionResistance(100f)
+	public static final ForgeFlowingFluid.Properties PROPERTIES = new ForgeFlowingFluid.Properties(() -> VoreModModFluidTypes.BLOOD_TYPE.get(), () -> VoreModModFluids.BLOOD.get(), () -> VoreModModFluids.FLOWING_BLOOD.get()).explosionResistance(100f)
 			.bucket(() -> VoreModModItems.BLOOD_BUCKET.get()).block(() -> (LiquidBlock) VoreModModBlocks.BLOOD.get());
 
 	private BloodFluid() {

@@ -2,12 +2,13 @@
 package net.jasontable.vore_mod.block;
 
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -36,15 +37,12 @@ import net.jasontable.vore_mod.procedures.BellyExitTriggerEntityCollidesInTheBlo
 import java.util.List;
 import java.util.Collections;
 
-public class BellyExitTriggerBlock extends Block implements SimpleWaterloggedBlock
-
-{
+public class BellyExitTriggerBlock extends Block implements SimpleWaterloggedBlock {
 	public static final DirectionProperty FACING = DirectionalBlock.FACING;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public BellyExitTriggerBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(-1, 3600000).noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).strength(-1, 3600000).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
 	}
 
@@ -59,8 +57,12 @@ public class BellyExitTriggerBlock extends Block implements SimpleWaterloggedBlo
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
+	}
 
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return switch (state.getValue(FACING)) {
 			default -> box(0, 0, 0, 16, 16, 1);
 			case NORTH -> box(0, 0, 15, 16, 16, 16);
@@ -96,8 +98,7 @@ public class BellyExitTriggerBlock extends Block implements SimpleWaterloggedBlo
 	}
 
 	@Override
-	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos,
-			BlockPos facingPos) {
+	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
 		if (state.getValue(WATERLOGGED)) {
 			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
 		}
@@ -105,7 +106,7 @@ public class BellyExitTriggerBlock extends Block implements SimpleWaterloggedBlo
 	}
 
 	@Override
-	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+	public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
@@ -122,7 +123,6 @@ public class BellyExitTriggerBlock extends Block implements SimpleWaterloggedBlo
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-
 		BellyExitTriggerEntityCollidesInTheBlockProcedure.execute(world, entity);
 		return InteractionResult.SUCCESS;
 	}

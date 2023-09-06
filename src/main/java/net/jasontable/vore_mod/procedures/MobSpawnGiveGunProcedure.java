@@ -36,10 +36,8 @@ public class MobSpawnGiveGunProcedure {
 		if (entity == null)
 			return;
 		GetABellyProcedure.execute(world, entity);
-		if (!world.isClientSide() && world.getLevelData().getGameRules().getBoolean(VoreModModGameRules.SHRINKGUNMOBUSE)
-				&& (world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == (Level.OVERWORLD)
-				&& (entity.getPersistentData().getString("bellyType")).equals("")
-				&& (entity instanceof Fox && Math.random() < 0.1 || entity instanceof Zombie && Math.random() < 0.05)) {
+		if (!world.isClientSide() && world.getLevelData().getGameRules().getBoolean(VoreModModGameRules.SHRINKGUNMOBUSE) && (world instanceof Level _lvl ? _lvl.dimension() : Level.OVERWORLD) == Level.OVERWORLD
+				&& (entity.getPersistentData().getString("bellyType")).equals("") && (entity instanceof Fox && Math.random() < 0.1 || entity instanceof Zombie && Math.random() < 0.05)) {
 			if (entity instanceof LivingEntity _entity) {
 				ItemStack _setstack = new ItemStack(VoreModModItems.SHRINK_GUN.get());
 				_setstack.setCount(1);

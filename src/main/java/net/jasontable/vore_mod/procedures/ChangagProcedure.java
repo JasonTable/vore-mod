@@ -17,24 +17,22 @@ public class ChangagProcedure {
 			return;
 		if (!(guistate.containsKey("text:bellyname") ? ((EditBox) guistate.get("text:bellyname")).getValue() : "").isEmpty()) {
 			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
+				BlockPos _bp = BlockPos.containing(x, y, z);
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
-					_blockEntity.getPersistentData().putString("bellyname",
-							(guistate.containsKey("text:bellyname") ? ((EditBox) guistate.get("text:bellyname")).getValue() : ""));
+					_blockEntity.getPersistentData().putString("bellyname", (guistate.containsKey("text:bellyname") ? ((EditBox) guistate.get("text:bellyname")).getValue() : ""));
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}
 		}
 		if (!(guistate.containsKey("text:exitCMD") ? ((EditBox) guistate.get("text:exitCMD")).getValue() : "").isEmpty()) {
 			if (!world.isClientSide()) {
-				BlockPos _bp = new BlockPos(x, y, z);
+				BlockPos _bp = BlockPos.containing(x, y, z);
 				BlockEntity _blockEntity = world.getBlockEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_blockEntity != null)
-					_blockEntity.getPersistentData().putString("exitCMD",
-							(guistate.containsKey("text:exitCMD") ? ((EditBox) guistate.get("text:exitCMD")).getValue() : ""));
+					_blockEntity.getPersistentData().putString("exitCMD", (guistate.containsKey("text:exitCMD") ? ((EditBox) guistate.get("text:exitCMD")).getValue() : ""));
 				if (world instanceof Level _level)
 					_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 			}

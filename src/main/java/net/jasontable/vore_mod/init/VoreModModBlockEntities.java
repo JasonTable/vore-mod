@@ -18,11 +18,9 @@ import net.jasontable.vore_mod.VoreModMod;
 public class VoreModModBlockEntities {
 	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, VoreModMod.MODID);
 	public static final RegistryObject<BlockEntityType<?>> FOXBLOCK = register("foxblock", VoreModModBlocks.FOXBLOCK, FoxblocklolBlockEntity::new);
-	public static final RegistryObject<BlockEntityType<?>> SMALL_ANUS = register("small_anus", VoreModModBlocks.SMALL_ANUS,
-			SmallAnusBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> SMALL_ANUS = register("small_anus", VoreModModBlocks.SMALL_ANUS, SmallAnusBlockEntity::new);
 
-	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block,
-			BlockEntityType.BlockEntitySupplier<?> supplier) {
+	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));
 	}
 }

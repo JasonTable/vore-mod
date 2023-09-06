@@ -1,0 +1,51 @@
+{
+  "has_precipitation": false,
+  "temperature": 1.5,
+  "downfall": 0,
+  "effects": {
+    "ambient_sound": "vore_mod:heart_beat",
+    "mood_sound": {
+      "sound": "vore_mod:stomach_gurgles",
+      "tick_delay": 200,
+      "offset": 8,
+      "block_search_extent": 2
+    },
+    "particle": {
+      "options": {
+        "type": "falling_water"
+      },
+      "probability": 0.01
+    },
+    "foliage_color": -13312,
+    "grass_color": -13210,
+    "sky_color": -10092544,
+    "fog_color": -10092544,
+    "water_color": 4159204,
+    "water_fog_color": 329011
+  },
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [],
+    "axolotls": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ]
+}

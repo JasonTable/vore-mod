@@ -1,9 +1,8 @@
 
 package net.jasontable.vore_mod.block;
 
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.material.MaterialColor;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
@@ -22,7 +21,7 @@ import java.util.Collections;
 
 public class ScabBlock extends Block {
 	public ScabBlock() {
-		super(BlockBehaviour.Properties.of(Material.DIRT, MaterialColor.COLOR_RED).sound(SoundType.SLIME_BLOCK).strength(1f, 3f));
+		super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).sound(SoundType.SLIME_BLOCK).strength(1f, 3f));
 	}
 
 	@Override
@@ -31,7 +30,7 @@ public class ScabBlock extends Block {
 	}
 
 	@Override
-	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+	public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
@@ -50,7 +49,6 @@ public class ScabBlock extends Block {
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-
 		ScabUpdateTickProcedure.execute(world, x, y, z);
 		world.scheduleTick(pos, this, 2000);
 	}

@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "vore_mod:items/ass3small"
+    "layer0": "vore_mod:item/ass3small"
   },
-  "render_type": "solid"
+  "render_type": "translucent"
 }

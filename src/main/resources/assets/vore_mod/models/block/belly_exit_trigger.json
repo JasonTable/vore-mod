@@ -1,9 +1,9 @@
 {
   "parent": "vore_mod:custom/exittrig",
   "textures": {
-    "all": "vore_mod:blocks/exittrig",
-    "particle": "vore_mod:blocks/exittrig",
-    "0": "vore_mod:blocks/exittrig"
+    "all": "vore_mod:block/exittrig",
+    "particle": "vore_mod:block/exittrig",
+    "0": "vore_mod:block/exittrig"
   },
   "render_type": "solid"
 }

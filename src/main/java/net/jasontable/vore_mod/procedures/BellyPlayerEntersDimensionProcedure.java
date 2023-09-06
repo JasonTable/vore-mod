@@ -33,14 +33,13 @@ public class BellyPlayerEntersDimensionProcedure {
 		if (world.getLevelData().getGameRules().getBoolean(VoreModModGameRules.VOREBOSE)) {
 			VoreModMod.LOGGER.info(("[Vore_Mod] Entity " + entity.getDisplayName().getString() + " has been eaten."));
 		}
-		if (world.isEmptyBlock(new BlockPos(xx, 0, zz))) {
+		if (world.isEmptyBlock(BlockPos.containing(xx, 0, zz))) {
 			if ((entity.getPersistentData().getString("bellyDest")).equals("anthro")) {
 				if (world instanceof ServerLevel _serverworld) {
 					StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "hbelly0"));
 					if (template != null) {
-						template.placeInWorld(_serverworld, new BlockPos(xx, 0, zz), new BlockPos(xx, 0, zz),
-								new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
-								_serverworld.random, 3);
+						template.placeInWorld(_serverworld, BlockPos.containing(xx, 0, zz), BlockPos.containing(xx, 0, zz), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random,
+								3);
 					}
 				}
 				randy = Mth.nextInt(RandomSource.create(), 0, 5);
@@ -48,8 +47,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "hshit0"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx + 12, 3, zz + 6), new BlockPos(xx + 12, 3, zz + 6),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx + 12, 3, zz + 6), BlockPos.containing(xx + 12, 3, zz + 6), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -58,8 +56,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "hshit1"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx + 12, 3, zz + 6), new BlockPos(xx + 12, 3, zz + 6),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx + 12, 3, zz + 6), BlockPos.containing(xx + 12, 3, zz + 6), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -68,8 +65,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "hshit2"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx + 12, 3, zz + 6), new BlockPos(xx + 12, 3, zz + 6),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx + 12, 3, zz + 6), BlockPos.containing(xx + 12, 3, zz + 6), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -78,8 +74,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "hshit3"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx + 12, 3, zz + 6), new BlockPos(xx + 12, 3, zz + 6),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx + 12, 3, zz + 6), BlockPos.containing(xx + 12, 3, zz + 6), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -88,8 +83,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "hshit4"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx + 12, 3, zz + 6), new BlockPos(xx + 12, 3, zz + 6),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx + 12, 3, zz + 6), BlockPos.containing(xx + 12, 3, zz + 6), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -98,8 +92,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "hshit5"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx + 12, 3, zz + 6), new BlockPos(xx + 12, 3, zz + 6),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx + 12, 3, zz + 6), BlockPos.containing(xx + 12, 3, zz + 6), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -111,9 +104,8 @@ public class BellyPlayerEntersDimensionProcedure {
 				if (world instanceof ServerLevel _serverworld) {
 					StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "qbelly"));
 					if (template != null) {
-						template.placeInWorld(_serverworld, new BlockPos(xx, 0, zz), new BlockPos(xx, 0, zz),
-								new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
-								_serverworld.random, 3);
+						template.placeInWorld(_serverworld, BlockPos.containing(xx, 0, zz), BlockPos.containing(xx, 0, zz), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random,
+								3);
 					}
 				}
 				randy = Mth.nextInt(RandomSource.create(), 0, 6);
@@ -121,8 +113,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "shit0"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx, 13, zz + 8), new BlockPos(xx, 13, zz + 8),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx, 13, zz + 8), BlockPos.containing(xx, 13, zz + 8), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -131,8 +122,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "shit1"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx, 13, zz + 8), new BlockPos(xx, 13, zz + 8),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx, 13, zz + 8), BlockPos.containing(xx, 13, zz + 8), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -141,8 +131,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "shit2"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx, 13, zz + 8), new BlockPos(xx, 13, zz + 8),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx, 13, zz + 8), BlockPos.containing(xx, 13, zz + 8), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -151,8 +140,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "shit3"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx, 13, zz + 8), new BlockPos(xx, 13, zz + 8),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx, 13, zz + 8), BlockPos.containing(xx, 13, zz + 8), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -161,8 +149,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "shit4"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx, 13, zz + 8), new BlockPos(xx, 13, zz + 8),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx, 13, zz + 8), BlockPos.containing(xx, 13, zz + 8), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -171,8 +158,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "shit5"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx, 13, zz + 8), new BlockPos(xx, 13, zz + 8),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx, 13, zz + 8), BlockPos.containing(xx, 13, zz + 8), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -181,8 +167,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					if (world instanceof ServerLevel _serverworld) {
 						StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "shit6"));
 						if (template != null) {
-							template.placeInWorld(_serverworld, new BlockPos(xx, 13, zz + 8), new BlockPos(xx, 13, zz + 8),
-									new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
+							template.placeInWorld(_serverworld, BlockPos.containing(xx, 13, zz + 8), BlockPos.containing(xx, 13, zz + 8), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
 									_serverworld.random, 3);
 						}
 					}
@@ -194,9 +179,8 @@ public class BellyPlayerEntersDimensionProcedure {
 				if (world instanceof ServerLevel _serverworld) {
 					StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "nobelly"));
 					if (template != null) {
-						template.placeInWorld(_serverworld, new BlockPos(xx, 0, zz), new BlockPos(xx, 0, zz),
-								new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
-								_serverworld.random, 3);
+						template.placeInWorld(_serverworld, BlockPos.containing(xx, 0, zz), BlockPos.containing(xx, 0, zz), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random,
+								3);
 					}
 				}
 				VoreModMod.LOGGER.warn("[Vore_Mod] Error: belly NBT blank so belly placeholder is spawned");
@@ -204,18 +188,16 @@ public class BellyPlayerEntersDimensionProcedure {
 				if (world instanceof ServerLevel _serverworld) {
 					StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "rotten"));
 					if (template != null) {
-						template.placeInWorld(_serverworld, new BlockPos(xx, 0, zz), new BlockPos(xx, 0, zz),
-								new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
-								_serverworld.random, 3);
+						template.placeInWorld(_serverworld, BlockPos.containing(xx, 0, zz), BlockPos.containing(xx, 0, zz), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random,
+								3);
 					}
 				}
 			} else if ((entity.getPersistentData().getString("bellyDest")).equals("rotten_animal")) {
 				if (world instanceof ServerLevel _serverworld) {
 					StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("vore_mod", "rotten_animal"));
 					if (template != null) {
-						template.placeInWorld(_serverworld, new BlockPos(xx, 0, zz), new BlockPos(xx, 0, zz),
-								new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false),
-								_serverworld.random, 3);
+						template.placeInWorld(_serverworld, BlockPos.containing(xx, 0, zz), BlockPos.containing(xx, 0, zz), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random,
+								3);
 					}
 				}
 			} else if ((entity.getPersistentData().getString("bellyDest")).equals("nobelly")) {
@@ -228,8 +210,7 @@ public class BellyPlayerEntersDimensionProcedure {
 					VoreModMod.LOGGER.info(("[Vore_Mod] Belly id is custom belly \"" + "" + stringe + "\""));
 				}
 				if (world instanceof ServerLevel _level)
-					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(xx, 0, zz), Vec2.ZERO,
-							_level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(xx, 0, zz), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 							("place template vore_mod:" + stringe));
 			}
 			if (world.getLevelData().getGameRules().getBoolean(VoreModModGameRules.VOREBOSE)) {

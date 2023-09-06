@@ -1,0 +1,12 @@
+{
+  "_fv": 47,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "No vore chat",
+    "description": "reduced chat messages from vore mod",
+    "category": "CHAT",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 0
+  }
+}

@@ -1,6 +1,5 @@
 {
   "heart_beat": {
-    "category": "neutral",
     "subtitle": "subtitles.heart_beat",
     "sounds": [
       {
@@ -10,7 +9,6 @@
     ]
   },
   "stomach_gurgles": {
-    "category": "neutral",
     "subtitle": "subtitles.stomach_gurgles",
     "sounds": [
       {

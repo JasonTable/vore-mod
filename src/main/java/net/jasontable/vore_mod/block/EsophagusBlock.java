@@ -5,8 +5,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.BooleanOp;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
@@ -29,15 +28,12 @@ import net.minecraft.core.BlockPos;
 import java.util.List;
 import java.util.Collections;
 
-public class EsophagusBlock extends Block implements SimpleWaterloggedBlock
-
-{
+public class EsophagusBlock extends Block implements SimpleWaterloggedBlock {
 	public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public EsophagusBlock() {
-		super(BlockBehaviour.Properties.of(Material.DIRT).sound(SoundType.SLIME_BLOCK).strength(0.8999999999999999f, 3f).noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of().sound(SoundType.SLIME_BLOCK).strength(0.9f, 3f).noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(AXIS, Direction.Axis.Y).setValue(WATERLOGGED, false));
 	}
 
@@ -52,8 +48,12 @@ public class EsophagusBlock extends Block implements SimpleWaterloggedBlock
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		return Shapes.empty();
+	}
 
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return switch (state.getValue(AXIS)) {
 			case X -> Shapes.join(box(0, 0, 0, 16, 16, 16), box(0, 1, 1, 16, 15, 15), BooleanOp.ONLY_FIRST);
 			case Y -> Shapes.join(box(0, 0, 0, 16, 16, 16), box(1, 0, 1, 15, 16, 15), BooleanOp.ONLY_FIRST);
@@ -90,8 +90,7 @@ public class EsophagusBlock extends Block implements SimpleWaterloggedBlock
 	}
 
 	@Override
-	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos,
-			BlockPos facingPos) {
+	public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor world, BlockPos currentPos, BlockPos facingPos) {
 		if (state.getValue(WATERLOGGED)) {
 			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
 		}
@@ -99,7 +98,7 @@ public class EsophagusBlock extends Block implements SimpleWaterloggedBlock
 	}
 
 	@Override
-	public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+	public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;

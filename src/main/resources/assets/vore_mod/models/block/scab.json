@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "vore_mod:blocks/scab",
-    "particle": "vore_mod:blocks/scab"
+    "all": "vore_mod:block/scab",
+    "particle": "vore_mod:block/scab"
   },
   "render_type": "solid"
 }

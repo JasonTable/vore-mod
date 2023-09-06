@@ -1,9 +1,9 @@
 {
   "parent": "vore_mod:custom/uvula",
   "textures": {
-    "all": "vore_mod:blocks/fleshs",
-    "particle": "vore_mod:blocks/fleshs",
-    "0": "vore_mod:blocks/fleshs"
+    "all": "vore_mod:block/fleshs",
+    "particle": "vore_mod:block/fleshs",
+    "0": "vore_mod:block/fleshs"
   },
   "render_type": "solid"
 }
