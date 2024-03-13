@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "block",
   "definition": {
     "texture": "fbloxk",
@@ -34,7 +34,9 @@
       }
     ],
     "name": "Fox Block",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 0.8999999999999999,
     "resistance": 2.0,
     "hasGravity": false,
@@ -129,7 +131,7 @@
     "onBlockPlayedBy": {
       "name": "FoxblocklolBlockIsPlacedBy"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [],
     "generationShape": "UNIFORM",

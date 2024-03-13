@@ -48,7 +48,6 @@ public class BellyDimension {
 		double y = entity.getY();
 		double z = entity.getZ();
 		if (event.getTo() == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("vore_mod:belly"))) {
-
 			BellyPlayerEntersDimensionProcedure.execute(world, x, z, entity);
 		}
 	}

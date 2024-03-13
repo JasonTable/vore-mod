@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "block",
   "definition": {
     "texture": "scab",
@@ -34,7 +34,9 @@
       }
     ],
     "name": "Scab",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 1.0,
     "resistance": 3.0,
     "hasGravity": false,
@@ -120,7 +122,7 @@
     "onTickUpdate": {
       "name": "ScabUpdateTick"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {

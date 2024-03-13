@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "dimension",
   "definition": {
     "biomesInDimension": [
@@ -40,7 +40,9 @@
     },
     "enableIgniter": true,
     "igniterName": "Belly Portal Igniter",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "igniterTab": {
       "value": "TOOLS"
     },

@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "block",
   "definition": {
     "texture": "exittrig",
@@ -34,7 +34,9 @@
       }
     ],
     "name": "Belly Exit Trigger",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 1.0,
     "resistance": 2500.0,
     "hasGravity": false,
@@ -120,7 +122,7 @@
     "onRightClicked": {
       "name": "BellyExitTriggerEntityCollidesInTheBlock"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {

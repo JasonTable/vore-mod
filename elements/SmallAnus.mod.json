@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "block",
   "definition": {
     "texture": "ass",
@@ -34,7 +34,9 @@
       }
     ],
     "name": "Small Anus",
-    "specialInfo": [],
+    "specialInformation": {
+      "fixedValue": []
+    },
     "hardness": 0.8999999999999999,
     "resistance": 3.0,
     "hasGravity": false,
@@ -123,7 +125,7 @@
     "onBlockPlayedBy": {
       "name": "SmallAnusBlockIsPlacedBy"
     },
-    "spawnWorldTypes": [],
+    "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [
       {

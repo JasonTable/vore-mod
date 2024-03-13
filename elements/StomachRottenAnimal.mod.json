@@ -1,5 +1,5 @@
 {
-  "_fv": 47,
+  "_fv": 57,
   "_type": "tag",
   "definition": {
     "type": "Entities",
@@ -15,6 +15,7 @@
       }
     ],
     "biomes": [],
+    "damageTypes": [],
     "name": "stomach_rotten_animal",
     "namespace": "forge"
   }

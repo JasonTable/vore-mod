@@ -2,20 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "01",
-    "23"
+    "aa",
+    "aa"
   ],
   "key": {
-    "0": {
-      "item": "minecraft:rotten_flesh"
-    },
-    "1": {
-      "item": "minecraft:rotten_flesh"
-    },
-    "2": {
-      "item": "minecraft:rotten_flesh"
-    },
-    "3": {
+    "a": {
       "item": "minecraft:rotten_flesh"
     }
   },

@@ -2,20 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "01",
-    "23"
+    "aa",
+    "aa"
   ],
   "key": {
-    "0": {
-      "item": "vore_mod:flesh"
-    },
-    "1": {
-      "item": "vore_mod:flesh"
-    },
-    "2": {
-      "item": "vore_mod:flesh"
-    },
-    "3": {
+    "a": {
       "item": "vore_mod:flesh"
     }
   },

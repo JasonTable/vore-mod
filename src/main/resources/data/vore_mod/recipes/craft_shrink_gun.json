@@ -2,31 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "01 ",
-    "345",
-    "67 "
+    "aa ",
+    "aba",
+    "aa "
   ],
   "key": {
-    "0": {
+    "a": {
       "item": "minecraft:iron_ingot"
     },
-    "1": {
-      "item": "minecraft:iron_ingot"
-    },
-    "3": {
-      "item": "minecraft:iron_ingot"
-    },
-    "4": {
+    "b": {
       "item": "minecraft:nether_star"
-    },
-    "5": {
-      "item": "minecraft:iron_ingot"
-    },
-    "6": {
-      "item": "minecraft:iron_ingot"
-    },
-    "7": {
-      "item": "minecraft:iron_ingot"
     }
   },
   "result": {

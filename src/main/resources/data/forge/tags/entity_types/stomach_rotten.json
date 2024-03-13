@@ -2,10 +2,10 @@
   "replace": false,
   "values": [
     "drowned",
+    "giant",
     "zombie",
-    "husk",
-    "zombified_piglin",
     "zombie_villager",
-    "giant"
+    "zombified_piglin",
+    "husk"
   ]
 }

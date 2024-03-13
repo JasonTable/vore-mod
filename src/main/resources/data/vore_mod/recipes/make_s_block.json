@@ -2,36 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "012",
-    "345",
-    "678"
+    "aaa",
+    "aaa",
+    "aaa"
   ],
   "key": {
-    "0": {
-      "item": "vore_mod:poo"
-    },
-    "1": {
-      "item": "vore_mod:poo"
-    },
-    "2": {
-      "item": "vore_mod:poo"
-    },
-    "3": {
-      "item": "vore_mod:poo"
-    },
-    "4": {
-      "item": "vore_mod:poo"
-    },
-    "5": {
-      "item": "vore_mod:poo"
-    },
-    "6": {
-      "item": "vore_mod:poo"
-    },
-    "7": {
-      "item": "vore_mod:poo"
-    },
-    "8": {
+    "a": {
       "item": "vore_mod:poo"
     }
   },

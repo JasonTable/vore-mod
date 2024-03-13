@@ -23,7 +23,7 @@
       "name": "vore_mod:belly",
       "sea_level": 0,
       "legacy_random_source": true,
-      "disable_mob_generation": true,
+      "disable_mob_generation": false,
       "aquifers_enabled": false,
       "ore_veins_enabled": false,
       "default_block": {
